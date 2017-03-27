@@ -75,6 +75,8 @@ public class SchoolMedicalExaminationRecordItem implements Serializable {
     boolean lung_diseases;
     boolean other_defects;
     String other_defects_specify;
+    boolean referredForNutritionProblems;
+    boolean referred;
     @Lob
     String action_taken;
     boolean follow_up_visit_one_month;
@@ -468,6 +470,23 @@ public class SchoolMedicalExaminationRecordItem implements Serializable {
         this.createAt = createAt;
     }
 
+    public boolean isReferredForNutritionProblems() {
+        return referredForNutritionProblems;
+    }
+
+    public void setReferredForNutritionProblems(boolean referredForNutritionProblems) {
+        this.referredForNutritionProblems = referredForNutritionProblems;
+    }
+
+    public boolean isReferred() {
+        return referred;
+    }
+
+    public void setReferred(boolean referred) {
+        this.referred = referred;
+    }
+
+    
     
     
     @Override
