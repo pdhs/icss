@@ -38,6 +38,7 @@ public class Area implements Serializable {
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     Date createAt;
     
+    
 
     public Long getId() {
         return id;

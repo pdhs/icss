@@ -60,6 +60,96 @@ public class SchoolMedicalExaminationRecord implements Serializable {
         this.id = id;
     }
 
+    public Area getEducational_zone() {
+        return educational_zone;
+    }
+
+    public void setEducational_zone(Area educational_zone) {
+        this.educational_zone = educational_zone;
+    }
+
+    public Institution getSchool() {
+        return school;
+    }
+
+    public void setSchool(Institution school) {
+        this.school = school;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public Area getMoh_division() {
+        return moh_division;
+    }
+
+    public void setMoh_division(Area moh_division) {
+        this.moh_division = moh_division;
+    }
+
+    public Area getPhi_area() {
+        return phi_area;
+    }
+
+    public void setPhi_area(Area phi_area) {
+        this.phi_area = phi_area;
+    }
+
+    public Date getDate_screened() {
+        return date_screened;
+    }
+
+    public void setDate_screened(Date date_screened) {
+        this.date_screened = date_screened;
+    }
+
+    public Date getDate_examined() {
+        return date_examined;
+    }
+
+    public void setDate_examined(Date date_examined) {
+        this.date_examined = date_examined;
+    }
+
+    public WebUser getPhi() {
+        return phi;
+    }
+
+    public void setPhi(WebUser phi) {
+        this.phi = phi;
+    }
+
+    public WebUser getMoh_amoh_mo() {
+        return moh_amoh_mo;
+    }
+
+    public void setMoh_amoh_mo(WebUser moh_amoh_mo) {
+        this.moh_amoh_mo = moh_amoh_mo;
+    }
+
+    public WebUser getCreater() {
+        return creater;
+    }
+
+    public void setCreater(WebUser creater) {
+        this.creater = creater;
+    }
+
+    public Date getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

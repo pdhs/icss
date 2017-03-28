@@ -1,0 +1,2516 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="QuarterlySchoolHealthReturnListForm">
+                <p:panel header="#{bundle.ListQuarterlySchoolHealthReturnTitle}">
+                    <p:dataTable id="datalist" value="#{quarterlySchoolHealthReturnController.items}" var="item"
+                                 selectionMode="single" selection="#{quarterlySchoolHealthReturnController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.id}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_rdhs_division}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rdhs_division}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_moh_area}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.moh_area}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_report_year}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.report_year}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_report_quarter}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.report_quarter}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_total_no_of_schools_less_than_200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.total_no_of_schools_less_than_200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_total_no_of_schools_more_than_200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.total_no_of_schools_more_than_200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_total_no_of_schools}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.total_no_of_schools}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_no_of_schools_without_latrines_in_less_than_200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.no_of_schools_without_latrines_in_less_than_200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_no_of_schools_without_latrines_in_less_more_200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.no_of_schools_without_latrines_in_less_more_200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_no_of_schools_without_latrines}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.no_of_schools_without_latrines}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_no_of_schools_inadequate_latrines_in_less_than_200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.no_of_schools_inadequate_latrines_in_less_than_200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_no_of_schools_inadequate_latrines_in_less_more_200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.no_of_schools_inadequate_latrines_in_less_more_200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_no_of_schools_inadequate_latrines}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.no_of_schools_inadequate_latrines}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_no_of_schools_without_water_in_less_than_200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.no_of_schools_without_water_in_less_than_200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_no_of_schools_without_water_in_less_more_200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.no_of_schools_without_water_in_less_more_200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_no_of_schools_without_water}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.no_of_schools_without_water}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_month_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.month_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_month_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.month_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_month_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.month_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_No_Conducted_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_No_Conducted_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_No_Conducted_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_No_Conducted_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_No_Conducted_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_No_Conducted_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_No_Conducted}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_No_Conducted}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_Students_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_Students_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_Students_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_Students_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_Students_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_Students_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_Students}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_Students}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_Teachers_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_Teachers_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_Teachers_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_Teachers_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_Teachers_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_Teachers_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_reproductive_Health_Programmes_Teachers}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reproductive_Health_Programmes_Teachers}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_No_Conducted_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_No_Conducted_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_No_Conducted_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_No_Conducted_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_No_Conducted_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_No_Conducted_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_No_Conducted}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_No_Conducted}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_Students_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_Students_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_Students_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_Students_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_Students_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_Students_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_Students}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_Students}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_Teachers_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_Teachers_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_Teachers_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_Teachers_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_Teachers_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_Teachers_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_life_skills_Health_Programmes_Teachers}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.life_skills_Health_Programmes_Teachers}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_No_Conducted_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_No_Conducted_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_No_Conducted_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_No_Conducted_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_No_Conducted_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_No_Conducted_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_No_Conducted}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_No_Conducted}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_Students_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_Students_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_Students_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_Students_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_Students_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_Students_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_Students}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_Students}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_Teachers_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_Teachers_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_Teachers_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_Teachers_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_Teachers_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_Teachers_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_com_and_noncom_Health_Programmes_Teachers}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.com_and_noncom_Health_Programmes_Teachers}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_No_Conducted_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_No_Conducted_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_No_Conducted_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_No_Conducted_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_No_Conducted_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_No_Conducted_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_No_Conducted}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_No_Conducted}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_Students_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_Students_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_Students_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_Students_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_Students_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_Students_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_Students}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_Students}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_Teachers_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_Teachers_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_Teachers_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_Teachers_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_Teachers_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_Teachers_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutrition_programmes_Health_Programmes_Teachers}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutrition_programmes_Health_Programmes_Teachers}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_students_Councelled_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.students_Councelled_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_students_Councelled_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.students_Councelled_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_students_Councelled_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.students_Councelled_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_students_Councelled}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.students_Councelled}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_community_Health_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.community_Health_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_community_Health_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.community_Health_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_community_Health_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.community_Health_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_community_Health}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.community_Health}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_phi_smi_l200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.phi_smi_l200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_phi_smi_m200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.phi_smi_m200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_phi_smi}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.phi_smi}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_moh_smi_l200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.moh_smi_l200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_moh_smi_m200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.moh_smi_m200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_moh_smi}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.moh_smi}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_amoh_smi_l200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.amoh_smi_l200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_amoh_smi_m200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.amoh_smi_m200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_amoh_smi}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.amoh_smi}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_mo_smi_l200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mo_smi_l200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_mo_smi_m200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mo_smi_m200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_mo_smi}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mo_smi}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_rmo_smi_l200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rmo_smi_l200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_rmo_smi_m200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rmo_smi_m200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_rmo_smi}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rmo_smi}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_quarter_l200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_quarter_l200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_quarter_m200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_quarter_m200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_quarter}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_quarter}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_cumulative_l200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_cumulative_l200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_cumulative_m200}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_cumulative_m200}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_cumulative}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_cumulative}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_m_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_m_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_m_4}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_m_4}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_m_7}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_m_7}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_m_10}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_m_10}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_m_other}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_m_other}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_m_total}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_m_total}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_f_1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_f_1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_f_4}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_f_4}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_f_7}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_f_7}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_f_10}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_f_10}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_f_other}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_f_other}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_smi_l200_f_total}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.smi_l200_f_total}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_1_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_1_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_1_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_1_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_1_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_1_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_1_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_1_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_1_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_1_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_1_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_1_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_1_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_1_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_1_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_1_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_4_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_4_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_4_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_4_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_4_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_4_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_4_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_4_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_4_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_4_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_4_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_4_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_4_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_4_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_stunting_4_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.stunting_4_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_1_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_1_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_1_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_1_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_1_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_1_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_1_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_1_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_1_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_1_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_1_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_1_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_1_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_1_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_1_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_1_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_4_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_4_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_4_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_4_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_4_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_4_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_4_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_4_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_4_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_4_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_4_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_4_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_4_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_4_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_4_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_4_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_7_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_7_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_7_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_7_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_7_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_7_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_7_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_7_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_7_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_7_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_7_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_7_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_7_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_7_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_7_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_7_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_10_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_10_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_10_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_10_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_10_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_10_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_10_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_10_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_10_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_10_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_10_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_10_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_10_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_10_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_10_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_10_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_other_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_other_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_other_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_other_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_other_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_other_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_other_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_other_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_other_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_other_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_other_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_other_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_other_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_other_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_wasting_other_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wasting_other_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_1_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_1_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_1_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_1_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_1_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_1_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_1_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_1_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_1_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_1_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_1_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_1_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_1_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_1_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_1_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_1_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_4_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_4_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_4_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_4_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_4_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_4_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_4_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_4_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_4_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_4_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_4_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_4_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_4_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_4_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_4_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_4_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_7_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_7_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_7_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_7_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_7_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_7_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_7_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_7_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_7_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_7_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_7_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_7_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_7_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_7_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_7_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_7_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_10_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_10_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_10_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_10_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_10_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_10_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_10_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_10_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_10_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_10_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_10_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_10_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_10_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_10_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_10_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_10_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_other_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_other_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_other_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_other_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_other_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_other_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_other_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_other_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_other_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_other_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_other_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_other_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_other_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_other_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_overweight_other_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.overweight_other_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_1_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_1_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_1_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_1_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_1_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_1_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_1_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_1_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_1_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_1_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_1_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_1_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_1_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_1_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_1_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_1_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_4_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_4_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_4_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_4_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_4_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_4_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_4_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_4_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_4_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_4_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_4_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_4_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_4_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_4_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_4_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_4_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_7_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_7_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_7_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_7_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_7_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_7_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_7_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_7_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_7_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_7_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_7_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_7_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_7_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_7_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_7_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_7_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_10_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_10_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_10_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_10_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_10_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_10_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_10_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_10_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_10_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_10_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_10_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_10_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_10_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_10_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_10_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_10_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_other_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_other_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_other_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_other_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_other_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_other_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_other_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_other_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_other_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_other_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_other_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_other_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_other_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_other_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_obesity_other_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.obesity_other_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutritional_referrals_other_m_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutritional_referrals_other_m_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutritional_referrals_other_m_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutritional_referrals_other_m_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutritional_referrals_other_m_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutritional_referrals_other_m_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutritional_referrals_other_m}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutritional_referrals_other_m}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutritional_referrals_other_f_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutritional_referrals_other_f_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutritional_referrals_other_f_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutritional_referrals_other_f_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutritional_referrals_other_f_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutritional_referrals_other_f_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_nutritional_referrals_other_f}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nutritional_referrals_other_f}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_visual_defects_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.visual_defects_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_visual_defects_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.visual_defects_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_visual_defects_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.visual_defects_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_visual_defects}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.visual_defects}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_visual_defects_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.visual_defects_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_hearing_defects_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hearing_defects_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_hearing_defects_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hearing_defects_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_hearing_defects_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hearing_defects_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_hearing_defects}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hearing_defects}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_hearing_defects_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hearing_defects_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_speech_defects_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.speech_defects_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_speech_defects_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.speech_defects_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_speech_defects_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.speech_defects_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_speech_defects}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.speech_defects}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_speech_defects_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.speech_defects_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_pediculosis_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pediculosis_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_pediculosis_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pediculosis_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_pediculosis_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pediculosis_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_pediculosis}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pediculosis}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_pediculosis_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pediculosis_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_night_blindness_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.night_blindness_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_night_blindness_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.night_blindness_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_night_blindness_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.night_blindness_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_night_blindness}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.night_blindness}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_night_blindness_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.night_blindness_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_bitot_spots_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bitot_spots_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_bitot_spots_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bitot_spots_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_bitot_spots_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bitot_spots_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_bitot_spots}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bitot_spots}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_bitot_spots_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bitot_spots_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_squint_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.squint_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_squint_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.squint_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_squint_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.squint_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_squint}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.squint}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_squint_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.squint_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_pallor_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pallor_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_pallor_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pallor_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_pallor_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pallor_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_pallor}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pallor}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_pallor_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pallor_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_xeropthalmia_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.xeropthalmia_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_xeropthalmia_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.xeropthalmia_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_xeropthalmia_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.xeropthalmia_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_xeropthalmia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.xeropthalmia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_xeropthalmia_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.xeropthalmia_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_angular_stomatitis_or_glossitis_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.angular_stomatitis_or_glossitis_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_angular_stomatitis_or_glossitis_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.angular_stomatitis_or_glossitis_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_angular_stomatitis_or_glossitis_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.angular_stomatitis_or_glossitis_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_angular_stomatitis_or_glossitis}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.angular_stomatitis_or_glossitis}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_angular_stomatitis_or_glossitis_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.angular_stomatitis_or_glossitis_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_dental_caries_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dental_caries_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_dental_caries_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dental_caries_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_dental_caries_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dental_caries_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_dental_caries}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dental_caries}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_dental_caries_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dental_caries_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_calculus_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.calculus_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_calculus_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.calculus_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_calculus_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.calculus_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_calculus}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.calculus}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_calculus_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.calculus_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_fluorosis_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fluorosis_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_fluorosis_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fluorosis_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_fluorosis_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fluorosis_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_fluorosis}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fluorosis}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_fluorosis_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fluorosis_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_malocclusion_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.malocclusion_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_malocclusion_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.malocclusion_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_malocclusion_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.malocclusion_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_malocclusion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.malocclusion}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_malocclusion_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.malocclusion_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_goitre_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.goitre_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_goitre_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.goitre_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_goitre_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.goitre_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_goitre}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.goitre}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_goitre_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.goitre_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_ent_defects_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ent_defects_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_ent_defects_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ent_defects_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_ent_defects_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ent_defects_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_ent_defects}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ent_defects}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_ent_defects_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ent_defects_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_lymphadenopathy_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lymphadenopathy_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_lymphadenopathy_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lymphadenopathy_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_lymphadenopathy_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lymphadenopathy_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_lymphadenopathy}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lymphadenopathy}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_lymphadenopathy_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lymphadenopathy_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_scabies_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.scabies_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_scabies_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.scabies_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_scabies_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.scabies_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_scabies}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.scabies}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_scabies_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.scabies_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_hypopigmented_skin_patches_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hypopigmented_skin_patches_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_hypopigmented_skin_patches_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hypopigmented_skin_patches_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_hypopigmented_skin_patches_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hypopigmented_skin_patches_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_hypopigmented_skin_patches}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hypopigmented_skin_patches}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_hypopigmented_skin_patches_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hypopigmented_skin_patches_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_skin_disorders_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_skin_disorders_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_skin_disorders_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_skin_disorders_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_skin_disorders_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_skin_disorders_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_skin_disorders}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_skin_disorders}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_skin_disorders_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_skin_disorders_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_orthopaedic_disorders_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.orthopaedic_disorders_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_orthopaedic_disorders_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.orthopaedic_disorders_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_orthopaedic_disorders_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.orthopaedic_disorders_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_orthopaedic_disorders}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.orthopaedic_disorders}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_orthopaedic_disorders_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.orthopaedic_disorders_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_rheumatic_disorders_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rheumatic_disorders_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_rheumatic_disorders_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rheumatic_disorders_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_rheumatic_disorders_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rheumatic_disorders_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_rheumatic_disorders}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rheumatic_disorders}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_rheumatic_disorders_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rheumatic_disorders_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_heart_diseases_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.heart_diseases_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_heart_diseases_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.heart_diseases_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_heart_diseases_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.heart_diseases_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_heart_diseases}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.heart_diseases}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_heart_diseases_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.heart_diseases_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_lung_diseases_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lung_diseases_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_lung_diseases_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lung_diseases_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_lung_diseases_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lung_diseases_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_lung_diseases}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lung_diseases}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_lung_diseases_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lung_diseases_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_bronchial_asthma_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bronchial_asthma_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_bronchial_asthma_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bronchial_asthma_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_bronchial_asthma_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bronchial_asthma_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_bronchial_asthma}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bronchial_asthma}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_bronchial_asthma_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bronchial_asthma_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_behavioural_problems_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.behavioural_problems_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_behavioural_problems_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.behavioural_problems_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_behavioural_problems_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.behavioural_problems_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_behavioural_problems}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.behavioural_problems}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_behavioural_problems_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.behavioural_problems_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_learning_difficulties_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.learning_difficulties_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_learning_difficulties_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.learning_difficulties_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_learning_difficulties_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.learning_difficulties_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_learning_difficulties}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.learning_difficulties}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_learning_difficulties_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.learning_difficulties_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_defects_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_defects_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_defects_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_defects_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_defects_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_defects_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_defects}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_defects}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_other_defects_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_defects_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_total_defects_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.total_defects_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_total_defects_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.total_defects_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_total_defects_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.total_defects_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_total_defects}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.total_defects}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_total_defects_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.total_defects_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_referred_fm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.referred_fm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_referred_sm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.referred_sm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_referred_tm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.referred_tm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_referred}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.referred}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_referred_corrected}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.referred_corrected}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_preparedBy}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.preparedBy}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_preparedDate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.preparedDate}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_certifiedBy}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.certifiedBy}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListQuarterlySchoolHealthReturnTitle_certifiedDate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.certifiedDate}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{quarterlySchoolHealthReturnController.prepareCreate}" update=":QuarterlySchoolHealthReturnCreateForm" oncomplete="PF('QuarterlySchoolHealthReturnCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":QuarterlySchoolHealthReturnViewForm" oncomplete="PF('QuarterlySchoolHealthReturnViewDialog').show()" disabled="#{empty quarterlySchoolHealthReturnController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":QuarterlySchoolHealthReturnEditForm" oncomplete="PF('QuarterlySchoolHealthReturnEditDialog').show()" disabled="#{empty quarterlySchoolHealthReturnController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{quarterlySchoolHealthReturnController.destroy}" update=":growl,datalist" disabled="#{empty quarterlySchoolHealthReturnController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

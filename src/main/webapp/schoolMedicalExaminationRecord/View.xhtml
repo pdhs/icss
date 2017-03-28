@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="SchoolMedicalExaminationRecordViewDlg" widgetVar="SchoolMedicalExaminationRecordViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewSchoolMedicalExaminationRecordTitle}">
+            <h:form id="SchoolMedicalExaminationRecordViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{schoolMedicalExaminationRecordController.selected != null}">
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_id}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.id}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_educational_zone}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.educational_zone}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_educational_zone}"/>
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_school}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.school}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_school}"/>
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_grade}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.grade}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_grade}"/>
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_moh_division}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.moh_division}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_moh_division}"/>
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_phi_area}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.phi_area}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_phi_area}"/>
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_date_screened}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.date_screened}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_date_screened}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_date_examined}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.date_examined}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_date_examined}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_phi}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.phi}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_phi}"/>
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_moh_amoh_mo}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.moh_amoh_mo}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_moh_amoh_mo}"/>
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_creater}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.creater}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_creater}"/>
+                        <h:outputText value="#{bundle.ViewSchoolMedicalExaminationRecordLabel_createAt}"/>
+                        <h:outputText value="#{schoolMedicalExaminationRecordController.selected.createAt}" title="#{bundle.ViewSchoolMedicalExaminationRecordTitle_createAt}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="SchoolMedicalExaminationRecordViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

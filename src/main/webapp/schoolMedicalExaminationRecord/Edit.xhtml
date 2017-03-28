@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="SchoolMedicalExaminationRecordEditDlg" widgetVar="SchoolMedicalExaminationRecordEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditSchoolMedicalExaminationRecordTitle}">
+            <h:form id="SchoolMedicalExaminationRecordEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{schoolMedicalExaminationRecordController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{schoolMedicalExaminationRecordController.selected.id}" title="#{bundle.EditSchoolMedicalExaminationRecordTitle_id}" />
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_educational_zone}" for="educational_zone" />
+                        <p:selectOneMenu id="educational_zone" value="#{schoolMedicalExaminationRecordController.selected.educational_zone}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{areaController.itemsAvailableSelectOne}"
+                                           var="educational_zoneItem"
+                                           itemValue="#{educational_zoneItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_school}" for="school" />
+                        <p:selectOneMenu id="school" value="#{schoolMedicalExaminationRecordController.selected.school}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
+                                           var="schoolItem"
+                                           itemValue="#{schoolItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_grade}" for="grade" />
+                        <p:inputText id="grade" value="#{schoolMedicalExaminationRecordController.selected.grade}" title="#{bundle.EditSchoolMedicalExaminationRecordTitle_grade}" />
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_moh_division}" for="moh_division" />
+                        <p:selectOneMenu id="moh_division" value="#{schoolMedicalExaminationRecordController.selected.moh_division}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{areaController.itemsAvailableSelectOne}"
+                                           var="moh_divisionItem"
+                                           itemValue="#{moh_divisionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_phi_area}" for="phi_area" />
+                        <p:selectOneMenu id="phi_area" value="#{schoolMedicalExaminationRecordController.selected.phi_area}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{areaController.itemsAvailableSelectOne}"
+                                           var="phi_areaItem"
+                                           itemValue="#{phi_areaItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_date_screened}" for="date_screened" />
+                        <p:calendar id="date_screened" pattern="MM/dd/yyyy" value="#{schoolMedicalExaminationRecordController.selected.date_screened}" title="#{bundle.EditSchoolMedicalExaminationRecordTitle_date_screened}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_date_examined}" for="date_examined" />
+                        <p:calendar id="date_examined" pattern="MM/dd/yyyy" value="#{schoolMedicalExaminationRecordController.selected.date_examined}" title="#{bundle.EditSchoolMedicalExaminationRecordTitle_date_examined}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_phi}" for="phi" />
+                        <p:selectOneMenu id="phi" value="#{schoolMedicalExaminationRecordController.selected.phi}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{webUserController.itemsAvailableSelectOne}"
+                                           var="phiItem"
+                                           itemValue="#{phiItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_moh_amoh_mo}" for="moh_amoh_mo" />
+                        <p:selectOneMenu id="moh_amoh_mo" value="#{schoolMedicalExaminationRecordController.selected.moh_amoh_mo}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{webUserController.itemsAvailableSelectOne}"
+                                           var="moh_amoh_moItem"
+                                           itemValue="#{moh_amoh_moItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_creater}" for="creater" />
+                        <p:selectOneMenu id="creater" value="#{schoolMedicalExaminationRecordController.selected.creater}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{webUserController.itemsAvailableSelectOne}"
+                                           var="createrItem"
+                                           itemValue="#{createrItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditSchoolMedicalExaminationRecordLabel_createAt}" for="createAt" />
+                        <p:calendar id="createAt" pattern="MM/dd/yyyy HH:mm:ss" value="#{schoolMedicalExaminationRecordController.selected.createAt}" title="#{bundle.EditSchoolMedicalExaminationRecordTitle_createAt}"  showOn="button"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{schoolMedicalExaminationRecordController.update}" value="#{bundle.Save}" update="display,:SchoolMedicalExaminationRecordListForm:datalist,:growl" oncomplete="handleSubmit(args, 'SchoolMedicalExaminationRecordEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="SchoolMedicalExaminationRecordEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

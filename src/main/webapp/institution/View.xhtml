@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="InstitutionViewDlg" widgetVar="InstitutionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewInstitutionTitle}">
+            <h:form id="InstitutionViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{institutionController.selected != null}">
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_id}"/>
+                        <h:outputText value="#{institutionController.selected.id}" title="#{bundle.ViewInstitutionTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_type}"/>
+                        <h:outputText value="#{institutionController.selected.type}" title="#{bundle.ViewInstitutionTitle_type}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_name}"/>
+                        <h:outputText value="#{institutionController.selected.name}" title="#{bundle.ViewInstitutionTitle_name}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_code}"/>
+                        <h:outputText value="#{institutionController.selected.code}" title="#{bundle.ViewInstitutionTitle_code}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_address}"/>
+                        <h:outputText value="#{institutionController.selected.address}" title="#{bundle.ViewInstitutionTitle_address}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_telephone}"/>
+                        <h:outputText value="#{institutionController.selected.telephone}" title="#{bundle.ViewInstitutionTitle_telephone}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_email}"/>
+                        <h:outputText value="#{institutionController.selected.email}" title="#{bundle.ViewInstitutionTitle_email}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_fax}"/>
+                        <h:outputText value="#{institutionController.selected.fax}" title="#{bundle.ViewInstitutionTitle_fax}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_parentInstitution}"/>
+                        <h:outputText value="#{institutionController.selected.parentInstitution}" title="#{bundle.ViewInstitutionTitle_parentInstitution}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_area}"/>
+                        <h:outputText value="#{institutionController.selected.area}" title="#{bundle.ViewInstitutionTitle_area}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_creater}"/>
+                        <h:outputText value="#{institutionController.selected.creater}" title="#{bundle.ViewInstitutionTitle_creater}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_createAt}"/>
+                        <h:outputText value="#{institutionController.selected.createAt}" title="#{bundle.ViewInstitutionTitle_createAt}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_typeOfSchool}"/>
+                        <h:outputText value="#{institutionController.selected.typeOfSchool}" title="#{bundle.ViewInstitutionTitle_typeOfSchool}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_male_students}"/>
+                        <h:outputText value="#{institutionController.selected.male_students}" title="#{bundle.ViewInstitutionTitle_male_students}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_female_students}"/>
+                        <h:outputText value="#{institutionController.selected.female_students}" title="#{bundle.ViewInstitutionTitle_female_students}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_year_one_male_students}"/>
+                        <h:outputText value="#{institutionController.selected.year_one_male_students}" title="#{bundle.ViewInstitutionTitle_year_one_male_students}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_year_four_male_students}"/>
+                        <h:outputText value="#{institutionController.selected.year_four_male_students}" title="#{bundle.ViewInstitutionTitle_year_four_male_students}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_year_seven_male_students}"/>
+                        <h:outputText value="#{institutionController.selected.year_seven_male_students}" title="#{bundle.ViewInstitutionTitle_year_seven_male_students}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_year_ten_male_students}"/>
+                        <h:outputText value="#{institutionController.selected.year_ten_male_students}" title="#{bundle.ViewInstitutionTitle_year_ten_male_students}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_year_other_male_students}"/>
+                        <h:outputText value="#{institutionController.selected.year_other_male_students}" title="#{bundle.ViewInstitutionTitle_year_other_male_students}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_year_one_female_students}"/>
+                        <h:outputText value="#{institutionController.selected.year_one_female_students}" title="#{bundle.ViewInstitutionTitle_year_one_female_students}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_year_four_female_students}"/>
+                        <h:outputText value="#{institutionController.selected.year_four_female_students}" title="#{bundle.ViewInstitutionTitle_year_four_female_students}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_year_seven_female_students}"/>
+                        <h:outputText value="#{institutionController.selected.year_seven_female_students}" title="#{bundle.ViewInstitutionTitle_year_seven_female_students}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_year_ten_female_students}"/>
+                        <h:outputText value="#{institutionController.selected.year_ten_female_students}" title="#{bundle.ViewInstitutionTitle_year_ten_female_students}"/>
+                        <h:outputText value="#{bundle.ViewInstitutionLabel_year_other_female_students}"/>
+                        <h:outputText value="#{institutionController.selected.year_other_female_students}" title="#{bundle.ViewInstitutionTitle_year_other_female_students}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="InstitutionViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -59,6 +59,8 @@ public class Activity implements Serializable {
     @ManyToOne
     WebUser amo_rmo;
 
+    
+    
     public Long getId() {
         return id;
     }

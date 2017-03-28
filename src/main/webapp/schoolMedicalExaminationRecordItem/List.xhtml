@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="SchoolMedicalExaminationRecordItemListForm">
+                <p:panel header="#{bundle.ListSchoolMedicalExaminationRecordItemTitle}">
+                    <p:dataTable id="datalist" value="#{schoolMedicalExaminationRecordItemController.items}" var="item"
+                                 selectionMode="single" selection="#{schoolMedicalExaminationRecordItemController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.id}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_schoolMedicalExaminationRecord}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.schoolMedicalExaminationRecord}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_serial_no}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.serial_no}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_name}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.name}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_sex}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sex}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_date_of_birth}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.date_of_birth}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_age}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.age}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_height_cm}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.height_cm}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_weight_kg}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.weight_kg}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_bmi}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bmi}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_vision_left}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.vision_left}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_vision_right}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.vision_right}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_hearing_left}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hearing_left}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_hearing_right}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hearing_right}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_other_defects_specify}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.other_defects_specify}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_action_taken}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.action_taken}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_creater}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.creater}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchoolMedicalExaminationRecordItemTitle_createAt}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.createAt}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{schoolMedicalExaminationRecordItemController.prepareCreate}" update=":SchoolMedicalExaminationRecordItemCreateForm" oncomplete="PF('SchoolMedicalExaminationRecordItemCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":SchoolMedicalExaminationRecordItemViewForm" oncomplete="PF('SchoolMedicalExaminationRecordItemViewDialog').show()" disabled="#{empty schoolMedicalExaminationRecordItemController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":SchoolMedicalExaminationRecordItemEditForm" oncomplete="PF('SchoolMedicalExaminationRecordItemEditDialog').show()" disabled="#{empty schoolMedicalExaminationRecordItemController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{schoolMedicalExaminationRecordItemController.destroy}" update=":growl,datalist" disabled="#{empty schoolMedicalExaminationRecordItemController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>
