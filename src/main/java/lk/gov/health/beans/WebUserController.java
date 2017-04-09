@@ -6,29 +6,406 @@ import lk.gov.health.beans.util.JsfUtil.PersistAction;
 import lk.gov.health.faces.WebUserFacade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.ejb.EJBException;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import javax.inject.Inject;
+import javax.inject.Named;
+import lk.gov.health.schoolhealth.Area;
+import lk.gov.health.schoolhealth.AreaType;
+import lk.gov.health.schoolhealth.Institution;
+import lk.gov.health.schoolhealth.PrivilegeType;
 
-@ManagedBean(name = "webUserController")
+@Named
 @SessionScoped
 public class WebUserController implements Serializable {
 
     @EJB
     private lk.gov.health.faces.WebUserFacade ejbFacade;
+
+    @Inject
+    AreaController areaController;
+
     private List<WebUser> items = null;
     private WebUser selected;
 
+    List<Area> myProvinces;
+    List<Area> myDistricts;
+    List<Area> myMohAreas;
+    List<Area> myPhiAreas;
+
+    private Area loggedPhiArea;
+    private Area loggedMohArea;
+    private Area loggedRdhsArea;
+    private Area loggedPdhsArea;
+    private Institution loggedMohOffice;
+    private Institution loggedRdhsOffice;
+    private WebUser loggedUser;
+    private PrivilegeType loggedPrivilegeType;
+    private boolean logged;
+    private boolean developmentStage = true;
+
+    private String userName;
+    private String password;
+    private String confirmPassword;
+    private Area phiArea;
+    private Area mohArea;
+    private Area rdhsArea;
+    private Institution mohOffice;
+    private Institution rdhsOffice;
+
+    public String toAddNewUser() {
+
+        return "/add_new_user";
+    }
+
+    public String login() {
+        makeAllLoggedVariablesNull();
+        String j;
+        Map m = new HashMap();
+        j = "select w from WebUser w "
+                + " where upper(w.userName) = :un "
+                + " and w.password=:pw "
+                + " order by w.id desc";
+        m.put("un", userName.trim().toUpperCase());
+        m.put("pw", password);
+        loggedUser = getFacade().findFirstBySQL(j, m);
+        if (loggedUser == null) {
+            JsfUtil.addErrorMessage("Wrong login details, please retry!");
+            return "";
+        }
+        if (loggedUser.isActive() != true) {
+            JsfUtil.addErrorMessage("Your account needs Activation. Please contact system administrators!");
+            return "";
+        }
+        loggedPrivilegeType = loggedUser.getType();
+        fillLogginDetails();
+        logged = true;
+        return "";
+    }
+
+    public void fillLogginDetails() {
+        switch (loggedUser.getType()) {
+            case PHI:
+            case PHI_Staff:
+                loggedPhiArea = loggedUser.getArea();
+                loggedMohArea = loggedPhiArea.getParentArea();
+                loggedRdhsArea = loggedMohArea.getParentArea();
+                loggedPdhsArea = loggedRdhsArea.getParentArea();
+                myProvinces.add(loggedPdhsArea);
+                myDistricts.add(loggedRdhsArea);
+                myMohAreas.add(loggedMohArea);
+                myPhiAreas.add(loggedPhiArea);
+                break;
+            case SPHI:
+            case MOH:
+            case AMOH:
+            case RMO_AMO:
+            case MO:
+            case MOH_Staff:
+                loggedMohArea = loggedUser.getArea();
+                loggedRdhsArea = loggedMohArea.getParentArea();
+                loggedPdhsArea = loggedRdhsArea.getParentArea();
+                myProvinces.add(loggedPdhsArea);
+                myDistricts.add(loggedRdhsArea);
+                myMohAreas.add(loggedMohArea);
+                myPhiAreas = areaController.getAreas(AreaType.PHI, loggedMohArea);
+                break;
+            case MO_RDHS:
+            case CCP_RDHS:
+            case RDHS_Staff:
+            case DSPHI:
+            case MO_School_Health:
+                loggedRdhsArea = loggedUser.getArea();
+                loggedPdhsArea = loggedRdhsArea.getParentArea();
+                myProvinces.add(loggedPdhsArea);
+                myDistricts.add(loggedRdhsArea);
+                myMohAreas = areaController.getAreas(AreaType.MOH, loggedRdhsArea);
+                myPhiAreas = areaController.getAreas(AreaType.PHI, loggedRdhsArea);
+                break;
+            case PSPHI:
+            case PDHS_Staff:
+            case MO_PDHS:
+            case CCP_PDHS:
+                loggedPdhsArea = loggedUser.getArea();
+                myProvinces.add(loggedPdhsArea);
+                myDistricts = areaController.getAreas(AreaType.District, loggedPdhsArea);
+                myMohAreas = areaController.getAreas(AreaType.MOH, loggedPdhsArea);
+                myPhiAreas = areaController.getAreas(AreaType.PHI, loggedPdhsArea);
+                break;
+            case Institution_Administrator:
+            case Institution_Super_User:
+            case System_Administrator:
+            case System_Super_User:
+                myProvinces = areaController.getAreas(AreaType.Province, null);
+                myDistricts = areaController.getAreas(AreaType.District, null);
+                myMohAreas = areaController.getAreas(AreaType.MOH, null);
+                myPhiAreas = areaController.getAreas(AreaType.PHI, null);
+                break;
+            case Guest:
+                break;
+        }
+
+    }
+
+    public boolean isCapableOfAddingPhiAreas() {
+        if (developmentStage) {
+            return true;
+        }
+        if (loggedPrivilegeType == null) {
+            return false;
+        }
+        switch (loggedPrivilegeType) {
+            case System_Administrator:
+            case System_Super_User:
+            case Institution_Administrator:
+            case Institution_Super_User:
+            case MOH:
+            case MOH_Staff:
+            case AMOH:
+            case MO:
+            case RMO_AMO:
+            case PSPHI:
+            case DSPHI:
+            case SPHI:
+            case PHI:
+            case PHI_Staff:
+            case RDHS_Staff:
+            case PDHS_Staff:
+            case MO_School_Health:
+            case MO_RDHS:
+            case MO_PDHS:
+            case CCP_PDHS:
+            case CCP_RDHS:
+                return true;
+            case Guest:
+                return false;
+
+        }
+        return false;
+    }
+
+    public boolean isCapableOfAddingMohAreas() {
+        if (developmentStage) {
+            return true;
+        }
+        if (loggedPrivilegeType == null) {
+            return false;
+        }
+        switch (loggedPrivilegeType) {
+            case System_Administrator:
+            case System_Super_User:
+            case Institution_Administrator:
+            case Institution_Super_User:
+            case PSPHI:
+            case DSPHI:
+            case SPHI:
+            case RDHS_Staff:
+            case PDHS_Staff:
+            case MO_School_Health:
+            case MO_RDHS:
+            case MO_PDHS:
+            case CCP_PDHS:
+            case CCP_RDHS:
+                return true;
+            case PHI:
+            case PHI_Staff:
+            case MOH:
+            case MOH_Staff:
+            case AMOH:
+            case MO:
+            case RMO_AMO:
+            case Guest:
+                return false;
+
+        }
+        return false;
+    }
+
+    public boolean isCapableOfAddingRdhsAreas() {
+        if (developmentStage) {
+            return true;
+        }
+        if (loggedPrivilegeType == null) {
+            return false;
+        }
+        switch (loggedPrivilegeType) {
+            case System_Administrator:
+            case System_Super_User:
+            case Institution_Administrator:
+            case Institution_Super_User:
+            case PSPHI:
+            case PDHS_Staff:
+            case MO_PDHS:
+            case CCP_PDHS:
+                return true;
+            case CCP_RDHS:
+            case MO_School_Health:
+            case MO_RDHS:
+            case DSPHI:
+            case SPHI:
+            case RDHS_Staff:
+            case PHI:
+            case PHI_Staff:
+            case MOH:
+            case MOH_Staff:
+            case AMOH:
+            case MO:
+            case RMO_AMO:
+            case Guest:
+                return false;
+
+        }
+        return false;
+    }
+
+    public boolean isCapableOfAddingProvinces() {
+        if (developmentStage) {
+            return true;
+        }
+        if (loggedPrivilegeType == null) {
+            return false;
+        }
+        switch (loggedPrivilegeType) {
+            case System_Administrator:
+            case System_Super_User:
+                return true;
+            case Institution_Administrator:
+            case Institution_Super_User:
+            case PSPHI:
+            case PDHS_Staff:
+            case MO_PDHS:
+            case CCP_PDHS:
+            case CCP_RDHS:
+            case MO_School_Health:
+            case MO_RDHS:
+            case DSPHI:
+            case SPHI:
+            case RDHS_Staff:
+            case PHI:
+            case PHI_Staff:
+            case MOH:
+            case MOH_Staff:
+            case AMOH:
+            case MO:
+            case RMO_AMO:
+            case Guest:
+                return false;
+
+        }
+        return false;
+    }
+
+    public boolean isCapableOfManagingAnyArea() {
+        if (developmentStage = true) {
+            return true;
+        }
+        if (loggedPrivilegeType == null) {
+            return false;
+        }
+        switch (loggedPrivilegeType) {
+            case System_Administrator:
+            case System_Super_User:
+                return true;
+            case Institution_Administrator:
+            case Institution_Super_User:
+            case PSPHI:
+            case PDHS_Staff:
+            case MO_PDHS:
+            case CCP_PDHS:
+            case CCP_RDHS:
+            case MO_School_Health:
+            case MO_RDHS:
+            case DSPHI:
+            case SPHI:
+            case RDHS_Staff:
+            case PHI:
+            case PHI_Staff:
+            case MOH:
+            case MOH_Staff:
+            case AMOH:
+            case MO:
+            case RMO_AMO:
+            case Guest:
+                return false;
+
+        }
+        return false;
+    }
+
+    public String logout() {
+        makeAllLoggedVariablesNull();
+        return "";
+    }
+
+    public void makeAllLoggedVariablesNull() {
+        myProvinces = new ArrayList<Area>();
+        myDistricts = new ArrayList<Area>();
+        myMohAreas = new ArrayList<Area>();
+        myPhiAreas = new ArrayList<Area>();
+        loggedPhiArea = null;
+        loggedMohArea = null;
+        loggedRdhsArea = null;
+        loggedMohOffice = null;
+        loggedRdhsOffice = null;
+        loggedPdhsArea = null;
+        loggedUser = null;
+        loggedPrivilegeType = null;
+        logged = false;
+    }
+
     public WebUserController() {
+    }
+
+    public AreaController getAreaController() {
+        return areaController;
+    }
+
+    public void setAreaController(AreaController areaController) {
+        this.areaController = areaController;
+    }
+
+    public List<Area> getMyProvinces() {
+        return myProvinces;
+    }
+
+    public void setMyProvinces(List<Area> myProvinces) {
+        this.myProvinces = myProvinces;
+    }
+
+    public List<Area> getMyDistricts() {
+        return myDistricts;
+    }
+
+    public void setMyDistricts(List<Area> myDistricts) {
+        this.myDistricts = myDistricts;
+    }
+
+    public List<Area> getMyMohAreas() {
+        return myMohAreas;
+    }
+
+    public void setMyMohAreas(List<Area> myMohAreas) {
+        this.myMohAreas = myMohAreas;
+    }
+
+    public List<Area> getMyPhiAreas() {
+        return myPhiAreas;
+    }
+
+    public void setMyPhiAreas(List<Area> myPhiAreas) {
+        this.myPhiAreas = myPhiAreas;
     }
 
     public WebUser getSelected() {
@@ -115,6 +492,153 @@ public class WebUserController implements Serializable {
 
     public List<WebUser> getItemsAvailableSelectOne() {
         return getFacade().findAll();
+    }
+
+    public Area getLoggedPhiArea() {
+        return loggedPhiArea;
+    }
+
+    public void setLoggedPhiArea(Area loggedPhiArea) {
+        this.loggedPhiArea = loggedPhiArea;
+    }
+
+    public Area getLoggedMohArea() {
+        return loggedMohArea;
+    }
+
+    public void setLoggedMohArea(Area loggedMohArea) {
+        this.loggedMohArea = loggedMohArea;
+    }
+
+    public Area getLoggedRdhsArea() {
+        return loggedRdhsArea;
+    }
+
+    public void setLoggedRdhsArea(Area loggedRdhsArea) {
+        this.loggedRdhsArea = loggedRdhsArea;
+    }
+
+    public Area getLoggedPdhsArea() {
+        return loggedPdhsArea;
+    }
+
+    public void setLoggedPdhsArea(Area loggedPdhsArea) {
+        this.loggedPdhsArea = loggedPdhsArea;
+    }
+
+    public Institution getLoggedMohOffice() {
+        return loggedMohOffice;
+    }
+
+    public void setLoggedMohOffice(Institution loggedMohOffice) {
+        this.loggedMohOffice = loggedMohOffice;
+    }
+
+    public Institution getLoggedRdhsOffice() {
+        return loggedRdhsOffice;
+    }
+
+    public void setLoggedRdhsOffice(Institution loggedRdhsOffice) {
+        this.loggedRdhsOffice = loggedRdhsOffice;
+    }
+
+    public WebUser getLoggedUser() {
+        return loggedUser;
+    }
+
+    public void setLoggedUser(WebUser loggedUser) {
+        this.loggedUser = loggedUser;
+    }
+
+    public PrivilegeType getLoggedPrivilegeType() {
+        return loggedPrivilegeType;
+    }
+
+    public void setLoggedPrivilegeType(PrivilegeType loggedPrivilegeType) {
+        this.loggedPrivilegeType = loggedPrivilegeType;
+    }
+
+    public boolean isLogged() {
+        if (developmentStage == true) {
+            return true;
+        }
+        return logged;
+    }
+
+    public void setLogged(boolean logged) {
+        this.logged = logged;
+    }
+
+    public boolean isDevelopmentStage() {
+        return developmentStage;
+    }
+
+    public void setDevelopmentStage(boolean developmentStage) {
+        this.developmentStage = developmentStage;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    public Area getPhiArea() {
+        return phiArea;
+    }
+
+    public void setPhiArea(Area phiArea) {
+        this.phiArea = phiArea;
+    }
+
+    public Area getMohArea() {
+        return mohArea;
+    }
+
+    public void setMohArea(Area mohArea) {
+        this.mohArea = mohArea;
+    }
+
+    public Area getRdhsArea() {
+        return rdhsArea;
+    }
+
+    public void setRdhsArea(Area rdhsArea) {
+        this.rdhsArea = rdhsArea;
+    }
+
+    public Institution getMohOffice() {
+        return mohOffice;
+    }
+
+    public void setMohOffice(Institution mohOffice) {
+        this.mohOffice = mohOffice;
+    }
+
+    public Institution getRdhsOffice() {
+        return rdhsOffice;
+    }
+
+    public void setRdhsOffice(Institution rdhsOffice) {
+        this.rdhsOffice = rdhsOffice;
     }
 
     @FacesConverter(forClass = WebUser.class)

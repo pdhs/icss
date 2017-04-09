@@ -1,14 +1,12 @@
 package lk.gov.health.beans;
 
-import lk.gov.health.schoolhealth.Area;
+import lk.gov.health.schoolhealth.SummeryOfSchoolMedicalInspection;
 import lk.gov.health.beans.util.JsfUtil;
 import lk.gov.health.beans.util.JsfUtil.PersistAction;
-import lk.gov.health.faces.AreaFacade;
+import lk.gov.health.faces.SummeryOfSchoolMedicalInspectionFacade;
 
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,71 +17,25 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
-import javax.inject.Inject;
 import javax.inject.Named;
-import lk.gov.health.schoolhealth.AreaType;
 
 @Named
 @SessionScoped
-public class AreaController implements Serializable {
+public class SummeryOfSchoolMedicalInspectionController implements Serializable {
 
     @EJB
-    private lk.gov.health.faces.AreaFacade ejbFacade;
-    private List<Area> items = null;
-    private Area selected;
+    private lk.gov.health.faces.SummeryOfSchoolMedicalInspectionFacade ejbFacade;
+    private List<SummeryOfSchoolMedicalInspection> items = null;
+    private SummeryOfSchoolMedicalInspection selected;
 
-    @Inject
-    WebUserController webUserController;
-
-    public String toAddProvince() {
-        if (!webUserController.isCapableOfAddingProvinces()) {
-            JsfUtil.addErrorMessage("You are not autherized");
-            return "";
-        }
-        selected = new Area();
-        selected.setType(AreaType.Province);
-        return "/area/add_province";
+    public SummeryOfSchoolMedicalInspectionController() {
     }
 
-    public String saveNewProvince() {
-        if (!webUserController.isCapableOfAddingProvinces()) {
-            JsfUtil.addErrorMessage("You are not autherized");
-            return "";
-        }
-        getFacade().create(selected);
-        selected = null;
-        items = null;
-        webUserController.fillLogginDetails();
-        JsfUtil.addErrorMessage("New Province Saved");
-        return "/area/add_area_index";
-    }
-
-    
-    public List<Area> getAreas(AreaType areaType, Area superArea){
-        String j ;
-        Map m = new HashMap();
-        j="select a "
-                + " from Area a "
-                + " wehre a.name is not null ";
-        if(areaType!=null){
-            j+=" and a.type=:t";
-            m.put("t", areaType);
-        }
-        if(superArea!=null){
-            j+=" and (a.parentArea=:pa or a.parentArea.parentArea=:pa or a.parentArea.parentArea.parentArea=:pa  or a.parentArea.parentArea.parentArea.parentArea=:pa) ";
-            m.put("pa", areaType);
-        }
-        return getFacade().findBySQL(j, m);
-    }
-    
-    public AreaController() {
-    }
-
-    public Area getSelected() {
+    public SummeryOfSchoolMedicalInspection getSelected() {
         return selected;
     }
 
-    public void setSelected(Area selected) {
+    public void setSelected(SummeryOfSchoolMedicalInspection selected) {
         this.selected = selected;
     }
 
@@ -93,36 +45,36 @@ public class AreaController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private AreaFacade getFacade() {
+    private SummeryOfSchoolMedicalInspectionFacade getFacade() {
         return ejbFacade;
     }
 
-    public Area prepareCreate() {
-        selected = new Area();
+    public SummeryOfSchoolMedicalInspection prepareCreate() {
+        selected = new SummeryOfSchoolMedicalInspection();
         initializeEmbeddableKey();
         return selected;
     }
 
     public void create() {
-        persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle").getString("AreaCreated"));
+        persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle2").getString("SummeryOfSchoolMedicalInspectionCreated"));
         if (!JsfUtil.isValidationFailed()) {
             items = null;    // Invalidate list of items to trigger re-query.
         }
     }
 
     public void update() {
-        persist(PersistAction.UPDATE, ResourceBundle.getBundle("/Bundle").getString("AreaUpdated"));
+        persist(PersistAction.UPDATE, ResourceBundle.getBundle("/Bundle2").getString("SummeryOfSchoolMedicalInspectionUpdated"));
     }
 
     public void destroy() {
-        persist(PersistAction.DELETE, ResourceBundle.getBundle("/Bundle").getString("AreaDeleted"));
+        persist(PersistAction.DELETE, ResourceBundle.getBundle("/Bundle2").getString("SummeryOfSchoolMedicalInspectionDeleted"));
         if (!JsfUtil.isValidationFailed()) {
             selected = null; // Remove selection
             items = null;    // Invalidate list of items to trigger re-query.
         }
     }
 
-    public List<Area> getItems() {
+    public List<SummeryOfSchoolMedicalInspection> getItems() {
         if (items == null) {
             items = getFacade().findAll();
         }
@@ -148,33 +100,33 @@ public class AreaController implements Serializable {
                 if (msg.length() > 0) {
                     JsfUtil.addErrorMessage(msg);
                 } else {
-                    JsfUtil.addErrorMessage(ex, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+                    JsfUtil.addErrorMessage(ex, ResourceBundle.getBundle("/Bundle2").getString("PersistenceErrorOccured"));
                 }
             } catch (Exception ex) {
                 Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-                JsfUtil.addErrorMessage(ex, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+                JsfUtil.addErrorMessage(ex, ResourceBundle.getBundle("/Bundle2").getString("PersistenceErrorOccured"));
             }
         }
     }
 
-    public List<Area> getItemsAvailableSelectMany() {
+    public List<SummeryOfSchoolMedicalInspection> getItemsAvailableSelectMany() {
         return getFacade().findAll();
     }
 
-    public List<Area> getItemsAvailableSelectOne() {
+    public List<SummeryOfSchoolMedicalInspection> getItemsAvailableSelectOne() {
         return getFacade().findAll();
     }
 
-    @FacesConverter(forClass = Area.class)
-    public static class AreaControllerConverter implements Converter {
+    @FacesConverter(forClass = SummeryOfSchoolMedicalInspection.class)
+    public static class SummeryOfSchoolMedicalInspectionControllerConverter implements Converter {
 
         @Override
         public Object getAsObject(FacesContext facesContext, UIComponent component, String value) {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            AreaController controller = (AreaController) facesContext.getApplication().getELResolver().
-                    getValue(facesContext.getELContext(), null, "areaController");
+            SummeryOfSchoolMedicalInspectionController controller = (SummeryOfSchoolMedicalInspectionController) facesContext.getApplication().getELResolver().
+                    getValue(facesContext.getELContext(), null, "summeryOfSchoolMedicalInspectionController");
             return controller.getFacade().find(getKey(value));
         }
 
@@ -195,11 +147,11 @@ public class AreaController implements Serializable {
             if (object == null) {
                 return null;
             }
-            if (object instanceof Area) {
-                Area o = (Area) object;
+            if (object instanceof SummeryOfSchoolMedicalInspection) {
+                SummeryOfSchoolMedicalInspection o = (SummeryOfSchoolMedicalInspection) object;
                 return getStringKey(o.getId());
             } else {
-                Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "object {0} is of type {1}; expected type: {2}", new Object[]{object, object.getClass().getName(), Area.class.getName()});
+                Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "object {0} is of type {1}; expected type: {2}", new Object[]{object, object.getClass().getName(), SummeryOfSchoolMedicalInspection.class.getName()});
                 return null;
             }
         }

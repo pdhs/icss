@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="SummeryOfSchoolMedicalInspectionViewDlg" widgetVar="SummeryOfSchoolMedicalInspectionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle}">
+            <h:form id="SummeryOfSchoolMedicalInspectionViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{summeryOfSchoolMedicalInspectionController.selected != null}">
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_id}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.id}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_id}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_educationalZone}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.educationalZone}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_educationalZone}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_school}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.school}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_school}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_mohArea}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.mohArea}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_mohArea}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_phiArea}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.phiArea}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_phiArea}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dateExamined}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dateExamined}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dateExamined}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_totalNoOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_totalNoOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberExaminedOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberExaminedOfChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberExaminedOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberOfDefectsOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberOfDefectsOfChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberOfDefectsOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenAdtVaccinesOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenAdtVaccinesOfChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenAdtVaccinesOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_numberGivenVitaminOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.numberGivenVitaminOfChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_numberGivenVitaminOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_stuntingOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_stuntingOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_wastingOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_wastingOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_overweightOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_overweightOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_obesityChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_obesityChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_visualDefectsChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_visualDefectsChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_hearingDefectsChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_hearingDefectsChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_speechDeefctsChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_speechDeefctsChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_pallorChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_pallorChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_dentalCariesChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_dentalCariesChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_calculusChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_calculusChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_entDefectsChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_entDefectsChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_heartDeceasesChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_heartDeceasesChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_asthmaChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_asthmaChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_behaviouralProblemsChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_behaviouralProblemsChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildren1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildren1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildren4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildren4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildren7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildren7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildren10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildren10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_learningDifficultiesChildren1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_learningDifficultiesChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1Children1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1Children1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1Children1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1Children1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1Children4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1Children4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1Children4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1Children4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1Children7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1Children7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1Children7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1Children7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1Children10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1Children10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1Children10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1Children10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1ChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1ChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1ChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1ChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1ChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1ChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1ChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1ChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1ChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1ChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem1Children1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem1Children1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2Children1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2Children1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2Children1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2Children1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2Children4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2Children4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2Children4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2Children4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2Children7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2Children7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2Children7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2Children7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2Children10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2Children10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2Children10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2Children10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2ChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2ChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2ChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2ChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2ChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2ChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2ChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2ChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2ChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2ChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem2Children1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem2Children1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3Children1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3Children1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3Children1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3Children1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3Children4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3Children4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3Children4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3Children4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3Children7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3Children7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3Children7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3Children7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3Children10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3Children10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3Children10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3Children10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3ChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3ChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3ChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3ChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3ChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3ChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3ChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3ChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3ChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3ChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem3Children1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem3Children1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4Children1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4Children1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4Children1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4Children1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4Children4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4Children4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4Children4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4Children4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4Children7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4Children7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4Children7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4Children7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4Children10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4Children10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4Children10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4Children10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4ChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4ChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4ChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4ChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4ChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4ChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4ChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4ChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4ChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4ChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem4Children1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem4Children1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5Children1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5Children1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5Children1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5Children1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5Children4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5Children4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5Children4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5Children4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5Children7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5Children7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5Children7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5Children7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5Children10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5Children10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5Children10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5Children10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5ChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5ChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5ChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5ChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5ChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5ChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5ChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5ChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5ChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5ChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem5Children1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem5Children1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6Children1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6Children1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6Children1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6Children1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6Children4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6Children4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6Children4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6Children4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6Children7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6Children7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6Children7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6Children7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6Children10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6Children10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6Children10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6Children10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6ChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6ChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6ChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6ChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6ChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6ChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6ChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6ChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6ChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6ChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem6Children1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem6Children1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7Children1Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children1Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7Children1Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7Children1Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children1Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7Children1Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7Children4Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children4Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7Children4Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7Children4Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children4Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7Children4Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7Children7Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children7Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7Children7Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7Children7Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children7Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7Children7Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7Children10Male}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children10Male}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7Children10Male}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7Children10Female}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children10Female}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7Children10Female}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7ChildrenOtherMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenOtherMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7ChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7ChildrenOtherFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenOtherFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7ChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7ChildrenMale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenMale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7ChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7ChildrenFemale}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenFemale}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7ChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7ChildrenMalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenMalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7ChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_otherHealthProblem7Children1FemalePercentage}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children1FemalePercentage}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_otherHealthProblem7Children1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_phi}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.phi}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_phi}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_moh}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.moh}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_moh}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_amoh}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.amoh}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_amoh}"/>
+                        <h:outputText value="#{bundle2.ViewSummeryOfSchoolMedicalInspectionLabel_mo}"/>
+                        <h:outputText value="#{summeryOfSchoolMedicalInspectionController.selected.mo}" title="#{bundle2.ViewSummeryOfSchoolMedicalInspectionTitle_mo}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle2.Close}" onclick="SummeryOfSchoolMedicalInspectionViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
