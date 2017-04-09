@@ -1,5 +1,6 @@
 package lk.gov.health.beans;
 
+import com.sun.javafx.scene.control.skin.VirtualFlow;
 import lk.gov.health.schoolhealth.WebUser;
 import lk.gov.health.beans.util.JsfUtil;
 import lk.gov.health.beans.util.JsfUtil.PersistAction;
@@ -44,6 +45,7 @@ public class WebUserController implements Serializable {
     List<Area> myDistricts;
     List<Area> myMohAreas;
     List<Area> myPhiAreas;
+    List<PrivilegeType> myPrivilegeTypes;
 
     private Area loggedPhiArea;
     private Area loggedMohArea;
@@ -66,8 +68,47 @@ public class WebUserController implements Serializable {
     private Institution rdhsOffice;
 
     public String toAddNewUser() {
+        selected = new WebUser();
+        return "/webUser/add_new_user";
+    }
 
-        return "/add_new_user";
+    public String saveNewUser() {
+        if (userName == null) {
+            JsfUtil.addErrorMessage("Enter a Username");
+            return "";
+        }
+        if (userName.trim().equals("")) {
+            JsfUtil.addErrorMessage("Enter a Username");
+            return "";
+        }
+        if (userName.contains(" ")) {
+            JsfUtil.addErrorMessage("Username can NOT contain spaces");
+            return "";
+        }
+        if (password == null) {
+            JsfUtil.addErrorMessage("Enter a Password");
+            return "";
+        }
+        if (password.contains(" ")) {
+            JsfUtil.addErrorMessage("Password can NOT contain spaces");
+            return "";
+        }
+        if (password.equals(confirmPassword)) {
+            JsfUtil.addErrorMessage("Passwords NOT matching");
+            return "";
+        }
+        try{
+            getFacade().create(selected);
+        }catch(Exception e){
+            JsfUtil.addErrorMessage("User name already taken. Please select another username");
+            return "";
+        }
+        JsfUtil.addSuccessMessage("User Added");
+        userName = "";
+        password = "";
+        confirmPassword = "";
+        selected = null;
+        return "/webUser/add_webUser_index";
     }
 
     public String login() {
@@ -91,11 +132,120 @@ public class WebUserController implements Serializable {
         }
         loggedPrivilegeType = loggedUser.getType();
         fillLogginDetails();
+        fillPrivilegeTypes();
         logged = true;
         return "";
     }
 
+    public void fillPrivilegeTypes() {
+        myPrivilegeTypes = new VirtualFlow.ArrayLinkedList<PrivilegeType>();
+        if (developmentStage) {
+            //System Level
+            myPrivilegeTypes.add(PrivilegeType.System_Administrator);
+            myPrivilegeTypes.add(PrivilegeType.System_Super_User);
+            myPrivilegeTypes.add(PrivilegeType.Institution_Administrator);
+            myPrivilegeTypes.add(PrivilegeType.Institution_Super_User);
+            //Provincial Level
+            myPrivilegeTypes.add(PrivilegeType.CCP_PDHS);
+            myPrivilegeTypes.add(PrivilegeType.MO_PDHS);
+            myPrivilegeTypes.add(PrivilegeType.PSPHI);
+            myPrivilegeTypes.add(PrivilegeType.PDHS_Staff);
+            //District Level
+            myPrivilegeTypes.add(PrivilegeType.CCP_RDHS);
+            myPrivilegeTypes.add(PrivilegeType.MO_School_Health);
+            myPrivilegeTypes.add(PrivilegeType.MO_RDHS);
+            myPrivilegeTypes.add(PrivilegeType.DSPHI);
+            myPrivilegeTypes.add(PrivilegeType.RDHS_Staff);
+            //MOH Level
+            myPrivilegeTypes.add(PrivilegeType.MOH);
+            myPrivilegeTypes.add(PrivilegeType.AMOH);
+            myPrivilegeTypes.add(PrivilegeType.MO);
+            myPrivilegeTypes.add(PrivilegeType.RMO_AMO);
+            myPrivilegeTypes.add(PrivilegeType.SPHI);
+            //PHI Level
+            myPrivilegeTypes.add(PrivilegeType.MOH_Staff);
+            myPrivilegeTypes.add(PrivilegeType.PHI);
+            myPrivilegeTypes.add(PrivilegeType.PHI_Staff);
+            //Guest Level
+            myPrivilegeTypes.add(PrivilegeType.Guest);
+            return;
+        }
+
+        switch (loggedUser.getType()) {
+            //Guest Level
+            case Guest:
+                myPrivilegeTypes.add(PrivilegeType.Guest);
+                return;
+            //PHI Level
+            case PHI:
+            case PHI_Staff:
+                myPrivilegeTypes.add(PrivilegeType.PHI_Staff);
+                myPrivilegeTypes.add(PrivilegeType.PHI);
+                return;
+            //MOH Level
+            case MOH:
+            case AMOH:
+            case MO:
+            case RMO_AMO:
+            case SPHI:
+            case MOH_Staff:
+                myPrivilegeTypes.add(PrivilegeType.MOH);
+                myPrivilegeTypes.add(PrivilegeType.AMOH);
+                myPrivilegeTypes.add(PrivilegeType.MO);
+                myPrivilegeTypes.add(PrivilegeType.RMO_AMO);
+                myPrivilegeTypes.add(PrivilegeType.SPHI);
+                myPrivilegeTypes.add(PrivilegeType.MOH_Staff);
+                return;
+            //District Level
+            case CCP_RDHS:
+            case MO_School_Health:
+            case MO_RDHS:
+            case DSPHI:
+            case RDHS_Staff:
+                myPrivilegeTypes.add(PrivilegeType.CCP_RDHS);
+                myPrivilegeTypes.add(PrivilegeType.MO_School_Health);
+                myPrivilegeTypes.add(PrivilegeType.MO_RDHS);
+                myPrivilegeTypes.add(PrivilegeType.DSPHI);
+                myPrivilegeTypes.add(PrivilegeType.RDHS_Staff);
+                return;
+            //Provincial Level
+            case CCP_PDHS:
+            case MO_PDHS:
+            case PSPHI:
+            case PDHS_Staff:
+                myPrivilegeTypes.add(PrivilegeType.CCP_PDHS);
+                myPrivilegeTypes.add(PrivilegeType.MO_PDHS);
+                myPrivilegeTypes.add(PrivilegeType.PSPHI);
+                myPrivilegeTypes.add(PrivilegeType.PDHS_Staff);
+                return;
+            //System Level
+
+            case System_Super_User:
+            case Institution_Super_User:
+                myPrivilegeTypes.add(PrivilegeType.System_Super_User);
+                myPrivilegeTypes.add(PrivilegeType.Institution_Super_User);
+                return;
+            case Institution_Administrator:
+            case System_Administrator:
+                myPrivilegeTypes.add(PrivilegeType.System_Administrator);
+                myPrivilegeTypes.add(PrivilegeType.Institution_Administrator);
+                return;
+        }
+    }
+
+    public List<PrivilegeType> getMyPrivilegeTypes() {
+        return myPrivilegeTypes;
+    }
+
+    public void setMyPrivilegeTypes(List<PrivilegeType> myPrivilegeTypes) {
+        this.myPrivilegeTypes = myPrivilegeTypes;
+    }
+
     public void fillLogginDetails() {
+        if (developmentStage) {
+            loggedUser = new WebUser();
+            loggedUser.setType(PrivilegeType.System_Administrator);
+        }
         switch (loggedUser.getType()) {
             case PHI:
             case PHI_Staff:

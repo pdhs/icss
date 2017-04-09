@@ -28,6 +28,10 @@ a:link:hover, a:visited:hover  {
   text-decoration : underline;
 }
 
-.alignTop{
+.alignTop td{
+    vertical-align: top;
+}
+
+.alignTop {
     vertical-align: top;
 }
