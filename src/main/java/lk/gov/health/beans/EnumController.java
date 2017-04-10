@@ -8,6 +8,7 @@ package lk.gov.health.beans;
 import javax.inject.Named;
 import javax.enterprise.context.ApplicationScoped;
 import lk.gov.health.schoolhealth.AreaType;
+import lk.gov.health.schoolhealth.InstitutionType;
 import lk.gov.health.schoolhealth.PrivilegeType;
 
 /**
@@ -31,5 +32,10 @@ public class EnumController {
     public PrivilegeType[] getPrivilegeTypes(){
         return PrivilegeType.values();
     }
+    
+    public InstitutionType[] getInstitutionTypes(){
+        return InstitutionType.values();
+    }
+    
     
 }

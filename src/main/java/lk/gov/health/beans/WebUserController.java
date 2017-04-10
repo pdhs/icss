@@ -26,6 +26,7 @@ import javax.inject.Named;
 import lk.gov.health.schoolhealth.Area;
 import lk.gov.health.schoolhealth.AreaType;
 import lk.gov.health.schoolhealth.Institution;
+import lk.gov.health.schoolhealth.InstitutionType;
 import lk.gov.health.schoolhealth.PrivilegeType;
 
 @Named
@@ -37,6 +38,8 @@ public class WebUserController implements Serializable {
 
     @Inject
     AreaController areaController;
+    @Inject
+    InstitutionController institutionController;
 
     private List<WebUser> items = null;
     private WebUser selected;
@@ -47,6 +50,7 @@ public class WebUserController implements Serializable {
     List<Area> myEducationalZones;
     List<Area> myPhiAreas;
     List<Area> myAreas;
+    List<Institution> mySchools;
     List<PrivilegeType> myPrivilegeTypes;
 
     private Area loggedPhiArea;
@@ -68,6 +72,7 @@ public class WebUserController implements Serializable {
     private Area rdhsArea;
     private Institution mohOffice;
     private Institution rdhsOffice;
+
 
     public String toAddNewUser() {
         selected = new WebUser();
@@ -150,47 +155,26 @@ public class WebUserController implements Serializable {
     public void fillPrivilegeTypes() {
         myPrivilegeTypes = new ArrayList<PrivilegeType>();
         if (developmentStage) {
-            //System Level
-            myPrivilegeTypes.add(PrivilegeType.System_Administrator);
-            myPrivilegeTypes.add(PrivilegeType.System_Super_User);
-            myPrivilegeTypes.add(PrivilegeType.Institution_Administrator);
-            myPrivilegeTypes.add(PrivilegeType.Institution_Super_User);
-            //Provincial Level
-            myPrivilegeTypes.add(PrivilegeType.CCP_PDHS);
-            myPrivilegeTypes.add(PrivilegeType.MO_PDHS);
-            myPrivilegeTypes.add(PrivilegeType.PSPHI);
-            myPrivilegeTypes.add(PrivilegeType.PDHS_Staff);
-            //District Level
-            myPrivilegeTypes.add(PrivilegeType.CCP_RDHS);
-            myPrivilegeTypes.add(PrivilegeType.MO_School_Health);
-            myPrivilegeTypes.add(PrivilegeType.MO_RDHS);
-            myPrivilegeTypes.add(PrivilegeType.DSPHI);
-            myPrivilegeTypes.add(PrivilegeType.RDHS_Staff);
-            //MOH Level
-            myPrivilegeTypes.add(PrivilegeType.MOH);
-            myPrivilegeTypes.add(PrivilegeType.AMOH);
-            myPrivilegeTypes.add(PrivilegeType.MO);
-            myPrivilegeTypes.add(PrivilegeType.RMO_AMO);
-            myPrivilegeTypes.add(PrivilegeType.SPHI);
-            //PHI Level
-            myPrivilegeTypes.add(PrivilegeType.MOH_Staff);
-            myPrivilegeTypes.add(PrivilegeType.PHI);
-            myPrivilegeTypes.add(PrivilegeType.PHI_Staff);
-            //Guest Level
-            myPrivilegeTypes.add(PrivilegeType.Guest);
+            addGuestPrivilages();
+            addPhiPrivilages();
+            addMohPrivilages();
+            addRdhsPrivilages();
+            addPdhsPrivileges();
+            addSuperUserPrivileges();
+            addAdminsPrivileges();
             return;
         }
 
         switch (loggedUser.getType()) {
             //Guest Level
             case Guest:
-                myPrivilegeTypes.add(PrivilegeType.Guest);
+                addGuestPrivilages();
                 return;
             //PHI Level
             case PHI:
             case PHI_Staff:
-                myPrivilegeTypes.add(PrivilegeType.PHI_Staff);
-                myPrivilegeTypes.add(PrivilegeType.PHI);
+                addGuestPrivilages();
+                addPhiPrivilages();
                 return;
             //MOH Level
             case MOH:
@@ -199,12 +183,9 @@ public class WebUserController implements Serializable {
             case RMO_AMO:
             case SPHI:
             case MOH_Staff:
-                myPrivilegeTypes.add(PrivilegeType.MOH);
-                myPrivilegeTypes.add(PrivilegeType.AMOH);
-                myPrivilegeTypes.add(PrivilegeType.MO);
-                myPrivilegeTypes.add(PrivilegeType.RMO_AMO);
-                myPrivilegeTypes.add(PrivilegeType.SPHI);
-                myPrivilegeTypes.add(PrivilegeType.MOH_Staff);
+                addGuestPrivilages();
+                addPhiPrivilages();
+                addMohPrivilages();
                 return;
             //District Level
             case CCP_RDHS:
@@ -212,35 +193,92 @@ public class WebUserController implements Serializable {
             case MO_RDHS:
             case DSPHI:
             case RDHS_Staff:
-                myPrivilegeTypes.add(PrivilegeType.CCP_RDHS);
-                myPrivilegeTypes.add(PrivilegeType.MO_School_Health);
-                myPrivilegeTypes.add(PrivilegeType.MO_RDHS);
-                myPrivilegeTypes.add(PrivilegeType.DSPHI);
-                myPrivilegeTypes.add(PrivilegeType.RDHS_Staff);
+                addGuestPrivilages();
+                addPhiPrivilages();
+                addMohPrivilages();
+                addRdhsPrivilages();
                 return;
             //Provincial Level
             case CCP_PDHS:
             case MO_PDHS:
             case PSPHI:
             case PDHS_Staff:
-                myPrivilegeTypes.add(PrivilegeType.CCP_PDHS);
-                myPrivilegeTypes.add(PrivilegeType.MO_PDHS);
-                myPrivilegeTypes.add(PrivilegeType.PSPHI);
-                myPrivilegeTypes.add(PrivilegeType.PDHS_Staff);
+                addGuestPrivilages();
+                addPhiPrivilages();
+                addMohPrivilages();
+                addRdhsPrivilages();
+                addPdhsPrivileges();
                 return;
             //System Level
 
             case System_Super_User:
             case Institution_Super_User:
-                myPrivilegeTypes.add(PrivilegeType.System_Super_User);
-                myPrivilegeTypes.add(PrivilegeType.Institution_Super_User);
+                addGuestPrivilages();
+                addPhiPrivilages();
+                addMohPrivilages();
+                addRdhsPrivilages();
+                addPdhsPrivileges();
+                addSuperUserPrivileges();
                 return;
             case Institution_Administrator:
             case System_Administrator:
-                myPrivilegeTypes.add(PrivilegeType.System_Administrator);
-                myPrivilegeTypes.add(PrivilegeType.Institution_Administrator);
+                addGuestPrivilages();
+                addPhiPrivilages();
+                addMohPrivilages();
+                addRdhsPrivilages();
+                addPdhsPrivileges();
+                addSuperUserPrivileges();
+                addAdminsPrivileges();
                 return;
         }
+    }
+
+    private void addGuestPrivilages() {
+        myPrivilegeTypes.add(PrivilegeType.Guest);
+    }
+
+    private void addPhiPrivilages() {
+        myPrivilegeTypes.add(PrivilegeType.PHI_Staff);
+        myPrivilegeTypes.add(PrivilegeType.PHI);
+    }
+
+    private void addMohPrivilages() {
+        //MOH Level
+        myPrivilegeTypes.add(PrivilegeType.MOH);
+        myPrivilegeTypes.add(PrivilegeType.AMOH);
+        myPrivilegeTypes.add(PrivilegeType.MO);
+        myPrivilegeTypes.add(PrivilegeType.RMO_AMO);
+        myPrivilegeTypes.add(PrivilegeType.SPHI);
+        myPrivilegeTypes.add(PrivilegeType.MOH_Staff);
+        return;
+
+    }
+
+    private void addRdhsPrivilages() {
+        //District Level
+        myPrivilegeTypes.add(PrivilegeType.CCP_RDHS);
+        myPrivilegeTypes.add(PrivilegeType.MO_School_Health);
+        myPrivilegeTypes.add(PrivilegeType.MO_RDHS);
+        myPrivilegeTypes.add(PrivilegeType.DSPHI);
+        myPrivilegeTypes.add(PrivilegeType.RDHS_Staff);
+    }
+
+    private void addPdhsPrivileges() {
+        //Provincial Level
+        myPrivilegeTypes.add(PrivilegeType.CCP_PDHS);
+        myPrivilegeTypes.add(PrivilegeType.MO_PDHS);
+        myPrivilegeTypes.add(PrivilegeType.PSPHI);
+        myPrivilegeTypes.add(PrivilegeType.PDHS_Staff);
+    }
+
+    private void addSuperUserPrivileges() {
+        myPrivilegeTypes.add(PrivilegeType.System_Super_User);
+        myPrivilegeTypes.add(PrivilegeType.Institution_Super_User);
+    }
+
+    private void addAdminsPrivileges() {
+        myPrivilegeTypes.add(PrivilegeType.System_Administrator);
+        myPrivilegeTypes.add(PrivilegeType.Institution_Administrator);
     }
 
     public List<PrivilegeType> getMyPrivilegeTypes() {
@@ -253,9 +291,9 @@ public class WebUserController implements Serializable {
 
     public void fillLogginDetails() {
         if (developmentStage) {
-//            loggedUser = new WebUser();
-//            loggedUser.setType(PrivilegeType.System_Administrator);
             myAreas = areaController.getAreas(null, null);
+            myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
+            mySchools = institutionController.getInstitutions(InstitutionType.School, null, null, null) ;
         }
         switch (loggedUser.getType()) {
             case PHI:
@@ -269,7 +307,8 @@ public class WebUserController implements Serializable {
                 myMohAreas.add(loggedMohArea);
                 myPhiAreas.add(loggedPhiArea);
                 myAreas = areaController.getAreas(null, loggedPhiArea);
-                myEducationalZones=areaController.getAreas(AreaType.Province, loggedPdhsArea);
+                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, loggedPdhsArea);
+                mySchools = institutionController.getInstitutions(InstitutionType.School, loggedPhiArea , null, null) ;
                 break;
             case SPHI:
             case MOH:
@@ -285,7 +324,8 @@ public class WebUserController implements Serializable {
                 myMohAreas.add(loggedMohArea);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedMohArea);
                 myAreas = areaController.getAreas(null, loggedMohArea);
-                myEducationalZones=areaController.getAreas(AreaType.Province, loggedPdhsArea);
+                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, loggedPdhsArea);
+                mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, loggedRdhsArea) ;
                 break;
             case MO_RDHS:
             case CCP_RDHS:
@@ -299,7 +339,8 @@ public class WebUserController implements Serializable {
                 myMohAreas = areaController.getAreas(AreaType.MOH, loggedRdhsArea);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedRdhsArea);
                 myAreas = areaController.getAreas(null, loggedRdhsArea);
-                myEducationalZones=areaController.getAreas(AreaType.Province, loggedPdhsArea);
+                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, loggedPdhsArea);
+                mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, loggedRdhsArea) ;
                 break;
             case PSPHI:
             case PDHS_Staff:
@@ -311,7 +352,8 @@ public class WebUserController implements Serializable {
                 myMohAreas = areaController.getAreas(AreaType.MOH, loggedPdhsArea);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedPdhsArea);
                 myAreas = areaController.getAreas(null, loggedPdhsArea);
-                myEducationalZones=areaController.getAreas(AreaType.Province, loggedPdhsArea);
+                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, loggedPdhsArea);
+                mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, loggedPdhsArea) ;
                 break;
             case Institution_Administrator:
             case Institution_Super_User:
@@ -322,7 +364,8 @@ public class WebUserController implements Serializable {
                 myMohAreas = areaController.getAreas(AreaType.MOH, null);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, null);
                 myAreas = areaController.getAreas(null, null);
-                myEducationalZones=areaController.getAreas(AreaType.Province, loggedPdhsArea);
+                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, loggedPdhsArea);
+                mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, null) ;
                 break;
             case Guest:
                 break;
@@ -479,7 +522,7 @@ public class WebUserController implements Serializable {
     }
 
     public boolean isCapableOfManagingAnyArea() {
-        if (developmentStage = true) {
+        if (developmentStage) {
             return true;
         }
         if (loggedPrivilegeType == null) {
@@ -517,7 +560,7 @@ public class WebUserController implements Serializable {
 
     public String logout() {
         makeAllLoggedVariablesNull();
-        logged=false;
+        logged = false;
         return "";
     }
 
@@ -607,8 +650,6 @@ public class WebUserController implements Serializable {
         this.myEducationalZones = myEducationalZones;
     }
 
-    
-    
     public WebUser prepareCreate() {
         selected = new WebUser();
         initializeEmbeddableKey();
@@ -742,7 +783,7 @@ public class WebUserController implements Serializable {
     }
 
     public boolean isLogged() {
-        if (developmentStage == true) {
+        if (developmentStage) {
             System.out.println("development Stage ");
             return true;
         }

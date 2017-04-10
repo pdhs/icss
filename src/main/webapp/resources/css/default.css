@@ -52,3 +52,13 @@ a:link:hover, a:visited:hover  {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+.defaultButton{
+    width: 200px;
+    text-align: left;
+}
+
+.ui-button.defaultButton{
+    width: 200px;
+    text-align: left;
+}

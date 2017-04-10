@@ -25,26 +25,19 @@
                             <p:column headerText="Educational Zone" width="100">
                                 <p:outputLabel value="#{m.name}" ></p:outputLabel>
                             </p:column>
-                            <p:column headerText="School Census No." width="100">
-                                <p:outputLabel value="#{m.code}" ></p:outputLabel>
-                            </p:column>
-
                         </p:dataTable>
                     </p:panel>
-                    <p:panel header="Add New MOH Area" >
+                    <p:panel header="Add New Educational Zone" >
                         <h:form >
                             <p:panelGrid columns="2" rendered="#{areaController.selected ne null}" >
                                 <p:outputLabel value="Type:" for="type" />
                                 <p:outputLabel id="type" value="#{areaController.selected.type}" title="Type" />
                                 <p:outputLabel value="District"  />
                                 <p:selectOneMenu value="#{areaController.selected.parentArea}" required="true" >
-                                    <f:selectItems value="#{webUserController.myProvinces}" var="d" itemLabel="#{d.name}" itemValue="#{d}" ></f:selectItems>
+                                    <f:selectItems value="#{webUserController.myDistricts}" var="d" itemLabel="#{d.name}" itemValue="#{d}" ></f:selectItems>
                                 </p:selectOneMenu>
                                 <p:outputLabel value="Name:" for="name" />
                                 <p:inputText id="name" value="#{areaController.selected.name}" title="Name" />
-                                <p:outputLabel value="School Census No." for="code" />
-                                <p:inputText id="code" value="#{areaController.selected.code}" title="Name" />
-
                             </p:panelGrid>
                             <p:commandButton ajax="false" value="Save" action="#{areaController.saveNewEducationalZone()}" ></p:commandButton>
                         </h:form>

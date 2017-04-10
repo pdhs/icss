@@ -42,32 +42,52 @@ public class Institution implements Serializable {
     @ManyToOne
     Area area;
     @ManyToOne
+    Area educationalZone;
+    @ManyToOne
+    Area phiArea;
+    @ManyToOne
     WebUser creater;
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     Date createAt;
-    
+
     TypeOfSchool typeOfSchool;
     int male_students;
     int female_students;
-    
+
     int year_one_male_students;
     int year_four_male_students;
     int year_seven_male_students;
     int year_ten_male_students;
     int year_other_male_students;
-    
+
     int year_one_female_students;
     int year_four_female_students;
     int year_seven_female_students;
     int year_ten_female_students;
     int year_other_female_students;
-    
+
     boolean no_latrines;
     boolean inadequate_toilet_facilities;
     boolean no_drinking_water_supply;
-    
-    
 
+    public Area getEducationalZone() {
+        return educationalZone;
+    }
+
+    public void setEducationalZone(Area educationalZone) {
+        this.educationalZone = educationalZone;
+    }
+
+    public Area getPhiArea() {
+        return phiArea;
+    }
+
+    public void setPhiArea(Area phiArea) {
+        this.phiArea = phiArea;
+    }
+
+    
+    
     public Long getId() {
         return id;
     }
@@ -292,8 +312,6 @@ public class Institution implements Serializable {
         this.no_drinking_water_supply = no_drinking_water_supply;
     }
 
-    
-    
     @Override
     public int hashCode() {
         int hash = 0;
