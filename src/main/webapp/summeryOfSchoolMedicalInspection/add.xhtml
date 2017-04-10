@@ -20,7 +20,7 @@
 
 
                     <h:form>
-                        
+
                         <p:commandButton ajax="false" value="Save This Summery" action="#{summeryOfSchoolMedicalInspectionController.saveSummery()}" ></p:commandButton>
                         <p:commandButton ajax="false" value="Add New Summery" action="#{summeryOfSchoolMedicalInspectionController.toAddSummery()}" ></p:commandButton>
 
@@ -187,17 +187,29 @@
                                                         <p:outputLabel value="Total no. of children" ></p:outputLabel>
                                                     </td>
                                                     <td>
-                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren1Male}" title="TotalNoOfChildren1Male" />
+                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren1Male}" title="TotalNoOfChildren1Male" >
+                                                            <f:ajax event="blur" listener="#{summeryOfSchoolMedicalInspectionController.calTotalNoOfChildren()}" execute="@this" render="totalNoOfChildrenMale totalNoOfChildrenFemale totalNoOfChildrenMalePercentage totalNoOfChildren1FemalePercentage" ></f:ajax>
+                                                        </p:inputText>
                                                     </td><td>
-                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren1Female}" title="TotalNoOfChildren1Female" />
+                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren1Female}" title="TotalNoOfChildren1Female" >
+                                                            <f:ajax event="blur" listener="#{summeryOfSchoolMedicalInspectionController.calTotalNoOfChildren()}" execute="@this" render="totalNoOfChildrenMale totalNoOfChildrenFemale totalNoOfChildrenMalePercentage totalNoOfChildren1FemalePercentage" ></f:ajax>
+                                                        </p:inputText>
                                                     </td><td>
-                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren4Male}" title="TotalNoOfChildren4Male" />
+                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren4Male}" title="TotalNoOfChildren4Male" >
+                                                            <f:ajax event="blur" listener="#{summeryOfSchoolMedicalInspectionController.calTotalNoOfChildren()}" execute="@this" render="totalNoOfChildrenMale totalNoOfChildrenFemale totalNoOfChildrenMalePercentage totalNoOfChildren1FemalePercentage" ></f:ajax>
+                                                        </p:inputText>
                                                     </td><td>
-                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren4Female}" title="TotalNoOfChildren4Female" />
+                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren4Female}" title="TotalNoOfChildren4Female" >
+                                                            <f:ajax event="blur" listener="#{summeryOfSchoolMedicalInspectionController.calTotalNoOfChildren()}" execute="@this" render="totalNoOfChildrenMale totalNoOfChildrenFemale totalNoOfChildrenMalePercentage totalNoOfChildren1FemalePercentage" ></f:ajax>
+                                                        </p:inputText>
                                                     </td><td>
-                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren7Male}" title="TotalNoOfChildren7Male" />
+                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren7Male}" title="TotalNoOfChildren7Male" >
+                                                        <f:ajax event="blur" listener="#{summeryOfSchoolMedicalInspectionController.calTotalNoOfChildren()}" execute="@this" render="totalNoOfChildrenMale totalNoOfChildrenFemale totalNoOfChildrenMalePercentage totalNoOfChildren1FemalePercentage" ></f:ajax>
+                                                        </p:inputText>
                                                     </td><td>
-                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren7Female}" title="TotalNoOfChildren7Female" />
+                                                        <p:inputText styleClass="shortNumbers" id="totalNoOfChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren7Female}" title="TotalNoOfChildren7Female" >
+                                                        <f:ajax event="blur" listener="#{summeryOfSchoolMedicalInspectionController.calTotalNoOfChildren()}" execute="@this" render="totalNoOfChildrenMale totalNoOfChildrenFemale totalNoOfChildrenMalePercentage totalNoOfChildren1FemalePercentage" ></f:ajax>
+                                                        </p:inputText>
                                                     </td><td>
                                                         <p:inputText styleClass="shortNumbers" id="totalNoOfChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.totalNoOfChildren10Male}" title="TotalNoOfChildren10Male" />
 

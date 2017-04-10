@@ -32,24 +32,22 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
         selected = new SummeryOfSchoolMedicalInspection();
         return "/summeryOfSchoolMedicalInspection/add";
     }
-    
-    public String saveSummery(){
-        if(selected==null){
+
+    public String saveSummery() {
+        if (selected == null) {
             JsfUtil.addErrorMessage("Nothing to save");
             return "";
         }
-        if(selected.getId()==null){
+        if (selected.getId() == null) {
             getFacade().create(selected);
             JsfUtil.addSuccessMessage("Saved");
             return "";
-        }else{
+        } else {
             getFacade().edit(selected);
             JsfUtil.addSuccessMessage("Updated");
             return "";
         }
     }
-    
-    
 
     public SummeryOfSchoolMedicalInspectionController() {
     }
@@ -138,6 +136,39 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
 
     public List<SummeryOfSchoolMedicalInspection> getItemsAvailableSelectOne() {
         return getFacade().findAll();
+    }
+
+    public void calTotalNoOfChildren() {
+        if (selected == null) {
+            return;
+        }
+        selected.setTotalNoOfChildrenMale(
+                selected.getTotalNoOfChildren1Male()
+                + selected.getTotalNoOfChildren4Male()
+                + selected.getTotalNoOfChildren7Male()
+                + selected.getTotalNoOfChildren10Male()
+                + selected.getTotalNoOfChildrenOtherMale()
+        );
+        selected.setTotalNoOfChildrenFemale(
+                selected.getTotalNoOfChildren1Female()
+                + selected.getTotalNoOfChildren4Female()
+                + selected.getTotalNoOfChildren7Female()
+                + selected.getTotalNoOfChildren10Female()
+                + selected.getTotalNoOfChildrenOtherFemale()
+        );
+        int imp;
+        int ifp;
+        int tm = selected.getTotalNoOfChildrenMale();
+        int tf = selected.getTotalNoOfChildrenFemale();
+        if (tm + tf == 0) {
+            imp=0;
+            ifp=0;
+        } else {
+            imp = tm * 100 / (tm + tf);
+            ifp = tf * 100 / (tm + tf);
+        }
+        selected.setTotalNoOfChildren1FemalePercentage(ifp);
+        selected.setTotalNoOfChildrenMalePercentage(imp);
     }
 
     @FacesConverter(forClass = SummeryOfSchoolMedicalInspection.class)
