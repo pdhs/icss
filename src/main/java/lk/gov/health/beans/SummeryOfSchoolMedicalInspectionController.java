@@ -32,6 +32,24 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
         selected = new SummeryOfSchoolMedicalInspection();
         return "/summeryOfSchoolMedicalInspection/add";
     }
+    
+    public String saveSummery(){
+        if(selected==null){
+            JsfUtil.addErrorMessage("Nothing to save");
+            return "";
+        }
+        if(selected.getId()==null){
+            getFacade().create(selected);
+            JsfUtil.addSuccessMessage("Saved");
+            return "";
+        }else{
+            getFacade().edit(selected);
+            JsfUtil.addSuccessMessage("Updated");
+            return "";
+        }
+    }
+    
+    
 
     public SummeryOfSchoolMedicalInspectionController() {
     }

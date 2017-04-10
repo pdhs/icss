@@ -20,6 +20,9 @@
 
 
                     <h:form>
+                        
+                        <p:commandButton ajax="false" value="Save This Summery" action="#{summeryOfSchoolMedicalInspectionController.saveSummery()}" ></p:commandButton>
+                        <p:commandButton ajax="false" value="Add New Summery" action="#{summeryOfSchoolMedicalInspectionController.toAddSummery()}" ></p:commandButton>
 
                         <p:tabView >
                             <p:tab title="Inspection Details" >
@@ -485,19 +488,19 @@
                                             <p:outputLabel value="Stunting" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren1Male}" title="StuntingOfChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren1Female}" title="StuntingOfChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren4Male}" title="StuntingOfChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren4Female}" title="StuntingOfChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren7Male}" title="StuntingOfChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren7Female}" title="StuntingOfChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren10Male}" title="StuntingOfChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren10Female}" title="StuntingOfChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenOtherMale}" title="StuntingOfChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenOtherFemale}" title="StuntingOfChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenMale}" title="StuntingOfChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenFemale}" title="StuntingOfChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenMalePercentage}" title="StuntingOfChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren1Male}" title="StuntingOfChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren1Female}" title="StuntingOfChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren4Male}" title="StuntingOfChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren4Female}" title="StuntingOfChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren7Male}" title="StuntingOfChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren7Female}" title="StuntingOfChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren10Male}" title="StuntingOfChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren10Female}" title="StuntingOfChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenOtherMale}" title="StuntingOfChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenOtherFemale}" title="StuntingOfChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenMale}" title="StuntingOfChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenFemale}" title="StuntingOfChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="stuntingOfChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildrenMalePercentage}" title="StuntingOfChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="stuntingOfChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.stuntingOfChildren1FemalePercentage}" title="StuntingOfChildren1FemalePercentage" />
 
                                         </td>
@@ -508,19 +511,19 @@
                                             <p:outputLabel value="Wasting" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren1Male}" title="WastingOfChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren1Female}" title="WastingOfChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren4Male}" title="WastingOfChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren4Female}" title="WastingOfChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren7Male}" title="WastingOfChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren7Female}" title="WastingOfChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren10Male}" title="WastingOfChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren10Female}" title="WastingOfChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenOtherMale}" title="WastingOfChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenOtherFemale}" title="WastingOfChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenMale}" title="WastingOfChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenFemale}" title="WastingOfChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenMalePercentage}" title="WastingOfChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren1Male}" title="WastingOfChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren1Female}" title="WastingOfChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren4Male}" title="WastingOfChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren4Female}" title="WastingOfChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren7Male}" title="WastingOfChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren7Female}" title="WastingOfChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren10Male}" title="WastingOfChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren10Female}" title="WastingOfChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenOtherMale}" title="WastingOfChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenOtherFemale}" title="WastingOfChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenMale}" title="WastingOfChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenFemale}" title="WastingOfChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="wastingOfChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildrenMalePercentage}" title="WastingOfChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="wastingOfChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.wastingOfChildren1FemalePercentage}" title="WastingOfChildren1FemalePercentage" />
 
                                         </td>
@@ -531,19 +534,19 @@
                                             <p:outputLabel value="Overweight" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren1Male}" title="OverweightOfChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren1Female}" title="OverweightOfChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren4Male}" title="OverweightOfChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren4Female}" title="OverweightOfChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren7Male}" title="OverweightOfChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren7Female}" title="OverweightOfChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren10Male}" title="OverweightOfChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren10Female}" title="OverweightOfChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenOtherMale}" title="OverweightOfChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenOtherFemale}" title="OverweightOfChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenMale}" title="OverweightOfChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenFemale}" title="OverweightOfChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenMalePercentage}" title="OverweightOfChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren1Male}" title="OverweightOfChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren1Female}" title="OverweightOfChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren4Male}" title="OverweightOfChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren4Female}" title="OverweightOfChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren7Male}" title="OverweightOfChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren7Female}" title="OverweightOfChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren10Male}" title="OverweightOfChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren10Female}" title="OverweightOfChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenOtherMale}" title="OverweightOfChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenOtherFemale}" title="OverweightOfChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenMale}" title="OverweightOfChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenFemale}" title="OverweightOfChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="overweightOfChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildrenMalePercentage}" title="OverweightOfChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="overweightOfChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.overweightOfChildren1FemalePercentage}" title="OverweightOfChildren1FemalePercentage" />
 
                                         </td>
@@ -554,19 +557,19 @@
                                             <p:outputLabel value="Obesity" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren1Male}" title="ObesityChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren1Female}" title="ObesityChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren4Male}" title="ObesityChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren4Female}" title="ObesityChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren7Male}" title="ObesityChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren7Female}" title="ObesityChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren10Male}" title="ObesityChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren10Female}" title="ObesityChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenOtherMale}" title="ObesityChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenOtherFemale}" title="ObesityChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenMale}" title="ObesityChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenFemale}" title="ObesityChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="obesityChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenMalePercentage}" title="ObesityChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren1Male}" title="ObesityChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren1Female}" title="ObesityChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren4Male}" title="ObesityChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren4Female}" title="ObesityChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren7Male}" title="ObesityChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren7Female}" title="ObesityChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren10Male}" title="ObesityChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren10Female}" title="ObesityChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenOtherMale}" title="ObesityChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenOtherFemale}" title="ObesityChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenMale}" title="ObesityChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenFemale}" title="ObesityChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="obesityChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildrenMalePercentage}" title="ObesityChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="obesityChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.obesityChildren1FemalePercentage}" title="ObesityChildren1FemalePercentage" />
 
                                         </td>
@@ -577,19 +580,19 @@
                                             <p:outputLabel value="Visual Defects" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren1Male}" title="VisualDefectsChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren1Female}" title="VisualDefectsChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren4Male}" title="VisualDefectsChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren4Female}" title="VisualDefectsChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren7Male}" title="VisualDefectsChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren7Female}" title="VisualDefectsChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren10Male}" title="VisualDefectsChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren10Female}" title="VisualDefectsChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenOtherMale}" title="VisualDefectsChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenOtherFemale}" title="VisualDefectsChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenMale}" title="VisualDefectsChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenFemale}" title="VisualDefectsChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenMalePercentage}" title="VisualDefectsChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren1Male}" title="VisualDefectsChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren1Female}" title="VisualDefectsChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren4Male}" title="VisualDefectsChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren4Female}" title="VisualDefectsChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren7Male}" title="VisualDefectsChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren7Female}" title="VisualDefectsChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren10Male}" title="VisualDefectsChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren10Female}" title="VisualDefectsChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenOtherMale}" title="VisualDefectsChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenOtherFemale}" title="VisualDefectsChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenMale}" title="VisualDefectsChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenFemale}" title="VisualDefectsChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="visualDefectsChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildrenMalePercentage}" title="VisualDefectsChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="visualDefectsChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.visualDefectsChildren1FemalePercentage}" title="VisualDefectsChildren1FemalePercentage" />
 
                                         </td>
@@ -600,19 +603,19 @@
                                             <p:outputLabel value="Hearing Defects" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren1Male}" title="HearingDefectsChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren1Female}" title="HearingDefectsChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren4Male}" title="HearingDefectsChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren4Female}" title="HearingDefectsChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren7Male}" title="HearingDefectsChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren7Female}" title="HearingDefectsChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren10Male}" title="HearingDefectsChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren10Female}" title="HearingDefectsChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenOtherMale}" title="HearingDefectsChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenOtherFemale}" title="HearingDefectsChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenMale}" title="HearingDefectsChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenFemale}" title="HearingDefectsChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenMalePercentage}" title="HearingDefectsChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren1Male}" title="HearingDefectsChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren1Female}" title="HearingDefectsChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren4Male}" title="HearingDefectsChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren4Female}" title="HearingDefectsChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren7Male}" title="HearingDefectsChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren7Female}" title="HearingDefectsChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren10Male}" title="HearingDefectsChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren10Female}" title="HearingDefectsChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenOtherMale}" title="HearingDefectsChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenOtherFemale}" title="HearingDefectsChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenMale}" title="HearingDefectsChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenFemale}" title="HearingDefectsChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="hearingDefectsChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildrenMalePercentage}" title="HearingDefectsChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="hearingDefectsChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.hearingDefectsChildren1FemalePercentage}" title="HearingDefectsChildren1FemalePercentage" />
 
                                         </td>
@@ -624,19 +627,19 @@
                                             <p:outputLabel value="Speech Defects" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren1Male}" title="SpeechDeefctsChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren1Female}" title="SpeechDeefctsChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren4Male}" title="SpeechDeefctsChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren4Female}" title="SpeechDeefctsChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren7Male}" title="SpeechDeefctsChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren7Female}" title="SpeechDeefctsChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren10Male}" title="SpeechDeefctsChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren10Female}" title="SpeechDeefctsChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenOtherMale}" title="SpeechDeefctsChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenOtherFemale}" title="SpeechDeefctsChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenMale}" title="SpeechDeefctsChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenFemale}" title="SpeechDeefctsChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenMalePercentage}" title="SpeechDeefctsChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren1Male}" title="SpeechDeefctsChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren1Female}" title="SpeechDeefctsChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren4Male}" title="SpeechDeefctsChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren4Female}" title="SpeechDeefctsChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren7Male}" title="SpeechDeefctsChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren7Female}" title="SpeechDeefctsChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren10Male}" title="SpeechDeefctsChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren10Female}" title="SpeechDeefctsChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenOtherMale}" title="SpeechDeefctsChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenOtherFemale}" title="SpeechDeefctsChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenMale}" title="SpeechDeefctsChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenFemale}" title="SpeechDeefctsChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="speechDeefctsChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildrenMalePercentage}" title="SpeechDeefctsChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="speechDeefctsChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.speechDeefctsChildren1FemalePercentage}" title="SpeechDeefctsChildren1FemalePercentage" />
 
                                         </td>
@@ -647,19 +650,19 @@
                                             <p:outputLabel value="Pallor" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren1Male}" title="PallorChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren1Female}" title="PallorChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren4Male}" title="PallorChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren4Female}" title="PallorChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren7Male}" title="PallorChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren7Female}" title="PallorChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren10Male}" title="PallorChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren10Female}" title="PallorChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenOtherMale}" title="PallorChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenOtherFemale}" title="PallorChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenMale}" title="PallorChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenFemale}" title="PallorChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="pallorChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenMalePercentage}" title="PallorChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren1Male}" title="PallorChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren1Female}" title="PallorChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren4Male}" title="PallorChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren4Female}" title="PallorChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren7Male}" title="PallorChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren7Female}" title="PallorChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren10Male}" title="PallorChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren10Female}" title="PallorChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenOtherMale}" title="PallorChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenOtherFemale}" title="PallorChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenMale}" title="PallorChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenFemale}" title="PallorChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="pallorChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildrenMalePercentage}" title="PallorChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="pallorChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.pallorChildren1FemalePercentage}" title="PallorChildren1FemalePercentage" />
 
                                         </td>
@@ -670,19 +673,19 @@
                                             <p:outputLabel value="Dental Caries" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren1Male}" title="DentalCariesChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren1Female}" title="DentalCariesChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren4Male}" title="DentalCariesChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren4Female}" title="DentalCariesChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren7Male}" title="DentalCariesChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren7Female}" title="DentalCariesChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren10Male}" title="DentalCariesChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren10Female}" title="DentalCariesChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenOtherMale}" title="DentalCariesChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenOtherFemale}" title="DentalCariesChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenMale}" title="DentalCariesChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenFemale}" title="DentalCariesChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenMalePercentage}" title="DentalCariesChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren1Male}" title="DentalCariesChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren1Female}" title="DentalCariesChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren4Male}" title="DentalCariesChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren4Female}" title="DentalCariesChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren7Male}" title="DentalCariesChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren7Female}" title="DentalCariesChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren10Male}" title="DentalCariesChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren10Female}" title="DentalCariesChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenOtherMale}" title="DentalCariesChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenOtherFemale}" title="DentalCariesChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenMale}" title="DentalCariesChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenFemale}" title="DentalCariesChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="dentalCariesChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildrenMalePercentage}" title="DentalCariesChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="dentalCariesChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.dentalCariesChildren1FemalePercentage}" title="DentalCariesChildren1FemalePercentage" />
 
                                         </td>
@@ -693,19 +696,19 @@
                                             <p:outputLabel value="Calculus" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren1Male}" title="CalculusChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren1Female}" title="CalculusChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren4Male}" title="CalculusChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren4Female}" title="CalculusChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren7Male}" title="CalculusChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren7Female}" title="CalculusChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren10Male}" title="CalculusChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren10Female}" title="CalculusChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenOtherMale}" title="CalculusChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenOtherFemale}" title="CalculusChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenMale}" title="CalculusChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenFemale}" title="CalculusChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="calculusChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenMalePercentage}" title="CalculusChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren1Male}" title="CalculusChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren1Female}" title="CalculusChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren4Male}" title="CalculusChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren4Female}" title="CalculusChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren7Male}" title="CalculusChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren7Female}" title="CalculusChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren10Male}" title="CalculusChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren10Female}" title="CalculusChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenOtherMale}" title="CalculusChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenOtherFemale}" title="CalculusChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenMale}" title="CalculusChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenFemale}" title="CalculusChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="calculusChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildrenMalePercentage}" title="CalculusChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="calculusChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.calculusChildren1FemalePercentage}" title="CalculusChildren1FemalePercentage" />
 
                                         </td>
@@ -716,19 +719,19 @@
                                             <p:outputLabel value="ENT Defects" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren1Male}" title="EntDefectsChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren1Female}" title="EntDefectsChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren4Male}" title="EntDefectsChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren4Female}" title="EntDefectsChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren7Male}" title="EntDefectsChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren7Female}" title="EntDefectsChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren10Male}" title="EntDefectsChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren10Female}" title="EntDefectsChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenOtherMale}" title="EntDefectsChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenOtherFemale}" title="EntDefectsChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenMale}" title="EntDefectsChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenFemale}" title="EntDefectsChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenMalePercentage}" title="EntDefectsChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren1Male}" title="EntDefectsChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren1Female}" title="EntDefectsChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren4Male}" title="EntDefectsChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren4Female}" title="EntDefectsChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren7Male}" title="EntDefectsChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren7Female}" title="EntDefectsChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren10Male}" title="EntDefectsChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren10Female}" title="EntDefectsChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenOtherMale}" title="EntDefectsChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenOtherFemale}" title="EntDefectsChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenMale}" title="EntDefectsChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenFemale}" title="EntDefectsChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="entDefectsChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildrenMalePercentage}" title="EntDefectsChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="entDefectsChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.entDefectsChildren1FemalePercentage}" title="EntDefectsChildren1FemalePercentage" />
 
                                         </td>
@@ -740,19 +743,19 @@
                                             <p:outputLabel value="Heart Diseases" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren1Male}" title="HeartDeceasesChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren1Female}" title="HeartDeceasesChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren4Male}" title="HeartDeceasesChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren4Female}" title="HeartDeceasesChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren7Male}" title="HeartDeceasesChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren7Female}" title="HeartDeceasesChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren10Male}" title="HeartDeceasesChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren10Female}" title="HeartDeceasesChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenOtherMale}" title="HeartDeceasesChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenOtherFemale}" title="HeartDeceasesChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenMale}" title="HeartDeceasesChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenFemale}" title="HeartDeceasesChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenMalePercentage}" title="HeartDeceasesChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren1Male}" title="HeartDeceasesChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren1Female}" title="HeartDeceasesChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren4Male}" title="HeartDeceasesChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren4Female}" title="HeartDeceasesChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren7Male}" title="HeartDeceasesChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren7Female}" title="HeartDeceasesChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren10Male}" title="HeartDeceasesChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren10Female}" title="HeartDeceasesChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenOtherMale}" title="HeartDeceasesChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenOtherFemale}" title="HeartDeceasesChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenMale}" title="HeartDeceasesChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenFemale}" title="HeartDeceasesChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="heartDeceasesChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildrenMalePercentage}" title="HeartDeceasesChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="heartDeceasesChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.heartDeceasesChildren1FemalePercentage}" title="HeartDeceasesChildren1FemalePercentage" />
 
                                         </td>
@@ -763,19 +766,19 @@
                                             <p:outputLabel value="Asthma" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren1Male}" title="AsthmaChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren1Female}" title="AsthmaChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren4Male}" title="AsthmaChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren4Female}" title="AsthmaChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren7Male}" title="AsthmaChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren7Female}" title="AsthmaChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren10Male}" title="AsthmaChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren10Female}" title="AsthmaChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenOtherMale}" title="AsthmaChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenOtherFemale}" title="AsthmaChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenMale}" title="AsthmaChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenFemale}" title="AsthmaChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="asthmaChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenMalePercentage}" title="AsthmaChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren1Male}" title="AsthmaChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren1Female}" title="AsthmaChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren4Male}" title="AsthmaChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren4Female}" title="AsthmaChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren7Male}" title="AsthmaChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren7Female}" title="AsthmaChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren10Male}" title="AsthmaChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren10Female}" title="AsthmaChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenOtherMale}" title="AsthmaChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenOtherFemale}" title="AsthmaChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenMale}" title="AsthmaChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenFemale}" title="AsthmaChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="asthmaChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildrenMalePercentage}" title="AsthmaChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="asthmaChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.asthmaChildren1FemalePercentage}" title="AsthmaChildren1FemalePercentage" />
 
                                         </td>
@@ -786,19 +789,19 @@
                                             <p:outputLabel value="Behavioural Problems" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren1Male}" title="BehaviouralProblemsChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren1Female}" title="BehaviouralProblemsChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren4Male}" title="BehaviouralProblemsChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren4Female}" title="BehaviouralProblemsChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren7Male}" title="BehaviouralProblemsChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren7Female}" title="BehaviouralProblemsChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren10Male}" title="BehaviouralProblemsChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren10Female}" title="BehaviouralProblemsChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenOtherMale}" title="BehaviouralProblemsChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenOtherFemale}" title="BehaviouralProblemsChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenMale}" title="BehaviouralProblemsChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenFemale}" title="BehaviouralProblemsChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenMalePercentage}" title="BehaviouralProblemsChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren1Male}" title="BehaviouralProblemsChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren1Female}" title="BehaviouralProblemsChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren4Male}" title="BehaviouralProblemsChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren4Female}" title="BehaviouralProblemsChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren7Male}" title="BehaviouralProblemsChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren7Female}" title="BehaviouralProblemsChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren10Male}" title="BehaviouralProblemsChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren10Female}" title="BehaviouralProblemsChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenOtherMale}" title="BehaviouralProblemsChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenOtherFemale}" title="BehaviouralProblemsChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenMale}" title="BehaviouralProblemsChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenFemale}" title="BehaviouralProblemsChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildrenMalePercentage}" title="BehaviouralProblemsChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="behaviouralProblemsChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.behaviouralProblemsChildren1FemalePercentage}" title="BehaviouralProblemsChildren1FemalePercentage" />
 
                                         </td>
@@ -809,296 +812,209 @@
                                             <p:outputLabel value="Learning Difficulties" ></p:outputLabel>
                                         </td>
                                         <td>
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren1Male}" title="LearningDifficultiesChildren1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren1Female}" title="LearningDifficultiesChildren1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren4Male}" title="LearningDifficultiesChildren4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren4Female}" title="LearningDifficultiesChildren4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren7Male}" title="LearningDifficultiesChildren7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren7Female}" title="LearningDifficultiesChildren7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren10Male}" title="LearningDifficultiesChildren10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren10Female}" title="LearningDifficultiesChildren10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenOtherMale}" title="LearningDifficultiesChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenOtherFemale}" title="LearningDifficultiesChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenMale}" title="LearningDifficultiesChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenFemale}" title="LearningDifficultiesChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenMalePercentage}" title="LearningDifficultiesChildrenMalePercentage" />
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren1Male}" title="LearningDifficultiesChildren1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren1Female}" title="LearningDifficultiesChildren1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren4Male}" title="LearningDifficultiesChildren4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren4Female}" title="LearningDifficultiesChildren4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren7Male}" title="LearningDifficultiesChildren7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren7Female}" title="LearningDifficultiesChildren7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren10Male}" title="LearningDifficultiesChildren10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren10Female}" title="LearningDifficultiesChildren10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenOtherMale}" title="LearningDifficultiesChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenOtherFemale}" title="LearningDifficultiesChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenMale}" title="LearningDifficultiesChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenFemale}" title="LearningDifficultiesChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildrenMalePercentage}" title="LearningDifficultiesChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="learningDifficultiesChildren1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.learningDifficultiesChildren1FemalePercentage}" title="LearningDifficultiesChildren1FemalePercentage" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">
-                                            <p:outputLabel value="OtherHealthProblem1:" for="otherHealthProblem1" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1}" title="OtherHealthProblem1" />
-                                            <p:outputLabel value="OtherHealthProblem1Children1Male:" for="otherHealthProblem1Children1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children1Male}" title="OtherHealthProblem1Children1Male" />
-                                            <p:outputLabel value="OtherHealthProblem1Children1Female:" for="otherHealthProblem1Children1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children1Female}" title="OtherHealthProblem1Children1Female" />
-                                            <p:outputLabel value="OtherHealthProblem1Children4Male:" for="otherHealthProblem1Children4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children4Male}" title="OtherHealthProblem1Children4Male" />
-                                            <p:outputLabel value="OtherHealthProblem1Children4Female:" for="otherHealthProblem1Children4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children4Female}" title="OtherHealthProblem1Children4Female" />
-                                            <p:outputLabel value="OtherHealthProblem1Children7Male:" for="otherHealthProblem1Children7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children7Male}" title="OtherHealthProblem1Children7Male" />
-                                            <p:outputLabel value="OtherHealthProblem1Children7Female:" for="otherHealthProblem1Children7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children7Female}" title="OtherHealthProblem1Children7Female" />
-                                            <p:outputLabel value="OtherHealthProblem1Children10Male:" for="otherHealthProblem1Children10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children10Male}" title="OtherHealthProblem1Children10Male" />
-                                            <p:outputLabel value="OtherHealthProblem1Children10Female:" for="otherHealthProblem1Children10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children10Female}" title="OtherHealthProblem1Children10Female" />
-                                            <p:outputLabel value="OtherHealthProblem1ChildrenOtherMale:" for="otherHealthProblem1ChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenOtherMale}" title="OtherHealthProblem1ChildrenOtherMale" />
-                                            <p:outputLabel value="OtherHealthProblem1ChildrenOtherFemale:" for="otherHealthProblem1ChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenOtherFemale}" title="OtherHealthProblem1ChildrenOtherFemale" />
-                                            <p:outputLabel value="OtherHealthProblem1ChildrenMale:" for="otherHealthProblem1ChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenMale}" title="OtherHealthProblem1ChildrenMale" />
-                                            <p:outputLabel value="OtherHealthProblem1ChildrenFemale:" for="otherHealthProblem1ChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenFemale}" title="OtherHealthProblem1ChildrenFemale" />
-                                            <p:outputLabel value="OtherHealthProblem1ChildrenMalePercentage:" for="otherHealthProblem1ChildrenMalePercentage" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenMalePercentage}" title="OtherHealthProblem1ChildrenMalePercentage" />
-                                            <p:outputLabel value="OtherHealthProblem1Children1FemalePercentage:" for="otherHealthProblem1Children1FemalePercentage" />
+                                            <p:selectOneMenu id="otherHealthProblem1" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1}" >
+                                                <f:selectItems value="#{enumController.otherHealthProblems}" ></f:selectItems>
+                                            </p:selectOneMenu></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children1Male}" title="OtherHealthProblem1Children1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children1Female}" title="OtherHealthProblem1Children1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children4Male}" title="OtherHealthProblem1Children4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children4Female}" title="OtherHealthProblem1Children4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children7Male}" title="OtherHealthProblem1Children7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children7Female}" title="OtherHealthProblem1Children7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children10Male}" title="OtherHealthProblem1Children10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children10Female}" title="OtherHealthProblem1Children10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenOtherMale}" title="OtherHealthProblem1ChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenOtherFemale}" title="OtherHealthProblem1ChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenMale}" title="OtherHealthProblem1ChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenFemale}" title="OtherHealthProblem1ChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem1ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1ChildrenMalePercentage}" title="OtherHealthProblem1ChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="otherHealthProblem1Children1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem1Children1FemalePercentage}" title="OtherHealthProblem1Children1FemalePercentage" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" >
-                                            <p:outputLabel value="OtherHealthProblem2:" for="otherHealthProblem2" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2}" title="OtherHealthProblem2" />
-                                            <p:outputLabel value="OtherHealthProblem2Children1Male:" for="otherHealthProblem2Children1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children1Male}" title="OtherHealthProblem2Children1Male" />
-                                            <p:outputLabel value="OtherHealthProblem2Children1Female:" for="otherHealthProblem2Children1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children1Female}" title="OtherHealthProblem2Children1Female" />
-                                            <p:outputLabel value="OtherHealthProblem2Children4Male:" for="otherHealthProblem2Children4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children4Male}" title="OtherHealthProblem2Children4Male" />
-                                            <p:outputLabel value="OtherHealthProblem2Children4Female:" for="otherHealthProblem2Children4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children4Female}" title="OtherHealthProblem2Children4Female" />
-                                            <p:outputLabel value="OtherHealthProblem2Children7Male:" for="otherHealthProblem2Children7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children7Male}" title="OtherHealthProblem2Children7Male" />
-                                            <p:outputLabel value="OtherHealthProblem2Children7Female:" for="otherHealthProblem2Children7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children7Female}" title="OtherHealthProblem2Children7Female" />
-                                            <p:outputLabel value="OtherHealthProblem2Children10Male:" for="otherHealthProblem2Children10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children10Male}" title="OtherHealthProblem2Children10Male" />
-                                            <p:outputLabel value="OtherHealthProblem2Children10Female:" for="otherHealthProblem2Children10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children10Female}" title="OtherHealthProblem2Children10Female" />
-                                            <p:outputLabel value="OtherHealthProblem2ChildrenOtherMale:" for="otherHealthProblem2ChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenOtherMale}" title="OtherHealthProblem2ChildrenOtherMale" />
-                                            <p:outputLabel value="OtherHealthProblem2ChildrenOtherFemale:" for="otherHealthProblem2ChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenOtherFemale}" title="OtherHealthProblem2ChildrenOtherFemale" />
-                                            <p:outputLabel value="OtherHealthProblem2ChildrenMale:" for="otherHealthProblem2ChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenMale}" title="OtherHealthProblem2ChildrenMale" />
-                                            <p:outputLabel value="OtherHealthProblem2ChildrenFemale:" for="otherHealthProblem2ChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenFemale}" title="OtherHealthProblem2ChildrenFemale" />
-                                            <p:outputLabel value="OtherHealthProblem2ChildrenMalePercentage:" for="otherHealthProblem2ChildrenMalePercentage" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenMalePercentage}" title="OtherHealthProblem2ChildrenMalePercentage" />
-                                            <p:outputLabel value="OtherHealthProblem2Children1FemalePercentage:" for="otherHealthProblem2Children1FemalePercentage" />
+                                            <p:selectOneMenu  id="otherHealthProblem2" 
+                                                              value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2}" >
+                                                <f:selectItems value="#{enumController.otherHealthProblems}" ></f:selectItems>
+                                            </p:selectOneMenu></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children1Male}" title="OtherHealthProblem2Children1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children1Female}" title="OtherHealthProblem2Children1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children4Male}" title="OtherHealthProblem2Children4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children4Female}" title="OtherHealthProblem2Children4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children7Male}" title="OtherHealthProblem2Children7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children7Female}" title="OtherHealthProblem2Children7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children10Male}" title="OtherHealthProblem2Children10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children10Female}" title="OtherHealthProblem2Children10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenOtherMale}" title="OtherHealthProblem2ChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenOtherFemale}" title="OtherHealthProblem2ChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenMale}" title="OtherHealthProblem2ChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenFemale}" title="OtherHealthProblem2ChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem2ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2ChildrenMalePercentage}" title="OtherHealthProblem2ChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="otherHealthProblem2Children1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem2Children1FemalePercentage}" title="OtherHealthProblem2Children1FemalePercentage" />
-
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" >
-                                            <p:outputLabel value="OtherHealthProblem3:" for="otherHealthProblem3" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3}" title="OtherHealthProblem3" />
-                                            <p:outputLabel value="OtherHealthProblem3Children1Male:" for="otherHealthProblem3Children1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children1Male}" title="OtherHealthProblem3Children1Male" />
-                                            <p:outputLabel value="OtherHealthProblem3Children1Female:" for="otherHealthProblem3Children1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children1Female}" title="OtherHealthProblem3Children1Female" />
-                                            <p:outputLabel value="OtherHealthProblem3Children4Male:" for="otherHealthProblem3Children4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children4Male}" title="OtherHealthProblem3Children4Male" />
-                                            <p:outputLabel value="OtherHealthProblem3Children4Female:" for="otherHealthProblem3Children4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children4Female}" title="OtherHealthProblem3Children4Female" />
-                                            <p:outputLabel value="OtherHealthProblem3Children7Male:" for="otherHealthProblem3Children7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children7Male}" title="OtherHealthProblem3Children7Male" />
-                                            <p:outputLabel value="OtherHealthProblem3Children7Female:" for="otherHealthProblem3Children7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children7Female}" title="OtherHealthProblem3Children7Female" />
-                                            <p:outputLabel value="OtherHealthProblem3Children10Male:" for="otherHealthProblem3Children10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children10Male}" title="OtherHealthProblem3Children10Male" />
-                                            <p:outputLabel value="OtherHealthProblem3Children10Female:" for="otherHealthProblem3Children10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children10Female}" title="OtherHealthProblem3Children10Female" />
-                                            <p:outputLabel value="OtherHealthProblem3ChildrenOtherMale:" for="otherHealthProblem3ChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenOtherMale}" title="OtherHealthProblem3ChildrenOtherMale" />
-                                            <p:outputLabel value="OtherHealthProblem3ChildrenOtherFemale:" for="otherHealthProblem3ChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenOtherFemale}" title="OtherHealthProblem3ChildrenOtherFemale" />
-                                            <p:outputLabel value="OtherHealthProblem3ChildrenMale:" for="otherHealthProblem3ChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenMale}" title="OtherHealthProblem3ChildrenMale" />
-                                            <p:outputLabel value="OtherHealthProblem3ChildrenFemale:" for="otherHealthProblem3ChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenFemale}" title="OtherHealthProblem3ChildrenFemale" />
-                                            <p:outputLabel value="OtherHealthProblem3ChildrenMalePercentage:" for="otherHealthProblem3ChildrenMalePercentage" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenMalePercentage}" title="OtherHealthProblem3ChildrenMalePercentage" />
-                                            <p:outputLabel value="OtherHealthProblem3Children1FemalePercentage:" for="otherHealthProblem3Children1FemalePercentage" />
+                                            <p:selectOneMenu id="otherHealthProblem3"
+                                                             value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3}" >
+                                                <f:selectItems value="#{enumController.otherHealthProblems}" ></f:selectItems>
+                                            </p:selectOneMenu></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children1Male}" title="OtherHealthProblem3Children1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children1Female}" title="OtherHealthProblem3Children1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children4Male}" title="OtherHealthProblem3Children4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children4Female}" title="OtherHealthProblem3Children4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children7Male}" title="OtherHealthProblem3Children7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children7Female}" title="OtherHealthProblem3Children7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children10Male}" title="OtherHealthProblem3Children10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children10Female}" title="OtherHealthProblem3Children10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenOtherMale}" title="OtherHealthProblem3ChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenOtherFemale}" title="OtherHealthProblem3ChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenMale}" title="OtherHealthProblem3ChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenFemale}" title="OtherHealthProblem3ChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem3ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3ChildrenMalePercentage}" title="OtherHealthProblem3ChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="otherHealthProblem3Children1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem3Children1FemalePercentage}" title="OtherHealthProblem3Children1FemalePercentage" />
-
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" >
-                                            <p:outputLabel value="OtherHealthProblem4:" for="otherHealthProblem4" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4}" title="OtherHealthProblem4" />
-                                            <p:outputLabel value="OtherHealthProblem4Children1Male:" for="otherHealthProblem4Children1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children1Male}" title="OtherHealthProblem4Children1Male" />
-                                            <p:outputLabel value="OtherHealthProblem4Children1Female:" for="otherHealthProblem4Children1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children1Female}" title="OtherHealthProblem4Children1Female" />
-                                            <p:outputLabel value="OtherHealthProblem4Children4Male:" for="otherHealthProblem4Children4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children4Male}" title="OtherHealthProblem4Children4Male" />
-                                            <p:outputLabel value="OtherHealthProblem4Children4Female:" for="otherHealthProblem4Children4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children4Female}" title="OtherHealthProblem4Children4Female" />
-                                            <p:outputLabel value="OtherHealthProblem4Children7Male:" for="otherHealthProblem4Children7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children7Male}" title="OtherHealthProblem4Children7Male" />
-                                            <p:outputLabel value="OtherHealthProblem4Children7Female:" for="otherHealthProblem4Children7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children7Female}" title="OtherHealthProblem4Children7Female" />
-                                            <p:outputLabel value="OtherHealthProblem4Children10Male:" for="otherHealthProblem4Children10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children10Male}" title="OtherHealthProblem4Children10Male" />
-                                            <p:outputLabel value="OtherHealthProblem4Children10Female:" for="otherHealthProblem4Children10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children10Female}" title="OtherHealthProblem4Children10Female" />
-                                            <p:outputLabel value="OtherHealthProblem4ChildrenOtherMale:" for="otherHealthProblem4ChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenOtherMale}" title="OtherHealthProblem4ChildrenOtherMale" />
-                                            <p:outputLabel value="OtherHealthProblem4ChildrenOtherFemale:" for="otherHealthProblem4ChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenOtherFemale}" title="OtherHealthProblem4ChildrenOtherFemale" />
-                                            <p:outputLabel value="OtherHealthProblem4ChildrenMale:" for="otherHealthProblem4ChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenMale}" title="OtherHealthProblem4ChildrenMale" />
-                                            <p:outputLabel value="OtherHealthProblem4ChildrenFemale:" for="otherHealthProblem4ChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenFemale}" title="OtherHealthProblem4ChildrenFemale" />
-                                            <p:outputLabel value="OtherHealthProblem4ChildrenMalePercentage:" for="otherHealthProblem4ChildrenMalePercentage" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenMalePercentage}" title="OtherHealthProblem4ChildrenMalePercentage" />
-                                            <p:outputLabel value="OtherHealthProblem4Children1FemalePercentage:" for="otherHealthProblem4Children1FemalePercentage" />
+                                            <p:selectOneMenu id="otherHealthProblem4"
+                                                             value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4}" >
+                                                <f:selectItems value="#{enumController.otherHealthProblems}" ></f:selectItems>
+                                            </p:selectOneMenu></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children1Male}" title="OtherHealthProblem4Children1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children1Female}" title="OtherHealthProblem4Children1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children4Male}" title="OtherHealthProblem4Children4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children4Female}" title="OtherHealthProblem4Children4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children7Male}" title="OtherHealthProblem4Children7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children7Female}" title="OtherHealthProblem4Children7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children10Male}" title="OtherHealthProblem4Children10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children10Female}" title="OtherHealthProblem4Children10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenOtherMale}" title="OtherHealthProblem4ChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenOtherFemale}" title="OtherHealthProblem4ChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenMale}" title="OtherHealthProblem4ChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenFemale}" title="OtherHealthProblem4ChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem4ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4ChildrenMalePercentage}" title="OtherHealthProblem4ChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="otherHealthProblem4Children1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem4Children1FemalePercentage}" title="OtherHealthProblem4Children1FemalePercentage" />
-
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" >
-                                            <p:outputLabel value="OtherHealthProblem5:" for="otherHealthProblem5" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5}" title="OtherHealthProblem5" />
-                                            <p:outputLabel value="OtherHealthProblem5Children1Male:" for="otherHealthProblem5Children1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children1Male}" title="OtherHealthProblem5Children1Male" />
-                                            <p:outputLabel value="OtherHealthProblem5Children1Female:" for="otherHealthProblem5Children1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children1Female}" title="OtherHealthProblem5Children1Female" />
-                                            <p:outputLabel value="OtherHealthProblem5Children4Male:" for="otherHealthProblem5Children4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children4Male}" title="OtherHealthProblem5Children4Male" />
-                                            <p:outputLabel value="OtherHealthProblem5Children4Female:" for="otherHealthProblem5Children4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children4Female}" title="OtherHealthProblem5Children4Female" />
-                                            <p:outputLabel value="OtherHealthProblem5Children7Male:" for="otherHealthProblem5Children7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children7Male}" title="OtherHealthProblem5Children7Male" />
-                                            <p:outputLabel value="OtherHealthProblem5Children7Female:" for="otherHealthProblem5Children7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children7Female}" title="OtherHealthProblem5Children7Female" />
-                                            <p:outputLabel value="OtherHealthProblem5Children10Male:" for="otherHealthProblem5Children10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children10Male}" title="OtherHealthProblem5Children10Male" />
-                                            <p:outputLabel value="OtherHealthProblem5Children10Female:" for="otherHealthProblem5Children10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children10Female}" title="OtherHealthProblem5Children10Female" />
-                                            <p:outputLabel value="OtherHealthProblem5ChildrenOtherMale:" for="otherHealthProblem5ChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenOtherMale}" title="OtherHealthProblem5ChildrenOtherMale" />
-                                            <p:outputLabel value="OtherHealthProblem5ChildrenOtherFemale:" for="otherHealthProblem5ChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenOtherFemale}" title="OtherHealthProblem5ChildrenOtherFemale" />
-                                            <p:outputLabel value="OtherHealthProblem5ChildrenMale:" for="otherHealthProblem5ChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenMale}" title="OtherHealthProblem5ChildrenMale" />
-                                            <p:outputLabel value="OtherHealthProblem5ChildrenFemale:" for="otherHealthProblem5ChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenFemale}" title="OtherHealthProblem5ChildrenFemale" />
-                                            <p:outputLabel value="OtherHealthProblem5ChildrenMalePercentage:" for="otherHealthProblem5ChildrenMalePercentage" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenMalePercentage}" title="OtherHealthProblem5ChildrenMalePercentage" />
-                                            <p:outputLabel value="OtherHealthProblem5Children1FemalePercentage:" for="otherHealthProblem5Children1FemalePercentage" />
+                                            <p:selectOneMenu id="otherHealthProblem5"
+                                                             value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5}" >
+                                                <f:selectItems value="#{enumController.otherHealthProblems}" ></f:selectItems>
+                                            </p:selectOneMenu></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children1Male}" title="OtherHealthProblem5Children1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children1Female}" title="OtherHealthProblem5Children1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children4Male}" title="OtherHealthProblem5Children4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children4Female}" title="OtherHealthProblem5Children4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children7Male}" title="OtherHealthProblem5Children7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children7Female}" title="OtherHealthProblem5Children7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children10Male}" title="OtherHealthProblem5Children10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children10Female}" title="OtherHealthProblem5Children10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenOtherMale}" title="OtherHealthProblem5ChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenOtherFemale}" title="OtherHealthProblem5ChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenMale}" title="OtherHealthProblem5ChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenFemale}" title="OtherHealthProblem5ChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem5ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5ChildrenMalePercentage}" title="OtherHealthProblem5ChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="otherHealthProblem5Children1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem5Children1FemalePercentage}" title="OtherHealthProblem5Children1FemalePercentage" />
-
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" >
-                                            <p:outputLabel value="OtherHealthProblem6:" for="otherHealthProblem6" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6}" title="OtherHealthProblem6" />
-                                            <p:outputLabel value="OtherHealthProblem6Children1Male:" for="otherHealthProblem6Children1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children1Male}" title="OtherHealthProblem6Children1Male" />
-                                            <p:outputLabel value="OtherHealthProblem6Children1Female:" for="otherHealthProblem6Children1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children1Female}" title="OtherHealthProblem6Children1Female" />
-                                            <p:outputLabel value="OtherHealthProblem6Children4Male:" for="otherHealthProblem6Children4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children4Male}" title="OtherHealthProblem6Children4Male" />
-                                            <p:outputLabel value="OtherHealthProblem6Children4Female:" for="otherHealthProblem6Children4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children4Female}" title="OtherHealthProblem6Children4Female" />
-                                            <p:outputLabel value="OtherHealthProblem6Children7Male:" for="otherHealthProblem6Children7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children7Male}" title="OtherHealthProblem6Children7Male" />
-                                            <p:outputLabel value="OtherHealthProblem6Children7Female:" for="otherHealthProblem6Children7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children7Female}" title="OtherHealthProblem6Children7Female" />
-                                            <p:outputLabel value="OtherHealthProblem6Children10Male:" for="otherHealthProblem6Children10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children10Male}" title="OtherHealthProblem6Children10Male" />
-                                            <p:outputLabel value="OtherHealthProblem6Children10Female:" for="otherHealthProblem6Children10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children10Female}" title="OtherHealthProblem6Children10Female" />
-                                            <p:outputLabel value="OtherHealthProblem6ChildrenOtherMale:" for="otherHealthProblem6ChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenOtherMale}" title="OtherHealthProblem6ChildrenOtherMale" />
-                                            <p:outputLabel value="OtherHealthProblem6ChildrenOtherFemale:" for="otherHealthProblem6ChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenOtherFemale}" title="OtherHealthProblem6ChildrenOtherFemale" />
-                                            <p:outputLabel value="OtherHealthProblem6ChildrenMale:" for="otherHealthProblem6ChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenMale}" title="OtherHealthProblem6ChildrenMale" />
-                                            <p:outputLabel value="OtherHealthProblem6ChildrenFemale:" for="otherHealthProblem6ChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenFemale}" title="OtherHealthProblem6ChildrenFemale" />
-                                            <p:outputLabel value="OtherHealthProblem6ChildrenMalePercentage:" for="otherHealthProblem6ChildrenMalePercentage" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenMalePercentage}" title="OtherHealthProblem6ChildrenMalePercentage" />
-                                            <p:outputLabel value="OtherHealthProblem6Children1FemalePercentage:" for="otherHealthProblem6Children1FemalePercentage" />
+                                            <p:selectOneMenu id="otherHealthProblem6"
+                                                             value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6}" >
+                                                <f:selectItems value="#{enumController.otherHealthProblems}" ></f:selectItems>
+                                            </p:selectOneMenu></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children1Male}" title="OtherHealthProblem6Children1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children1Female}" title="OtherHealthProblem6Children1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children4Male}" title="OtherHealthProblem6Children4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children4Female}" title="OtherHealthProblem6Children4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children7Male}" title="OtherHealthProblem6Children7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children7Female}" title="OtherHealthProblem6Children7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children10Male}" title="OtherHealthProblem6Children10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children10Female}" title="OtherHealthProblem6Children10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenOtherMale}" title="OtherHealthProblem6ChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenOtherFemale}" title="OtherHealthProblem6ChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenMale}" title="OtherHealthProblem6ChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenFemale}" title="OtherHealthProblem6ChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem6ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6ChildrenMalePercentage}" title="OtherHealthProblem6ChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="otherHealthProblem6Children1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem6Children1FemalePercentage}" title="OtherHealthProblem6Children1FemalePercentage" />
-
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" >
-                                            <p:outputLabel value="OtherHealthProblem7:" for="otherHealthProblem7" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7}" title="OtherHealthProblem7" />
-                                            <p:outputLabel value="OtherHealthProblem7Children1Male:" for="otherHealthProblem7Children1Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children1Male}" title="OtherHealthProblem7Children1Male" />
-                                            <p:outputLabel value="OtherHealthProblem7Children1Female:" for="otherHealthProblem7Children1Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children1Female}" title="OtherHealthProblem7Children1Female" />
-                                            <p:outputLabel value="OtherHealthProblem7Children4Male:" for="otherHealthProblem7Children4Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children4Male}" title="OtherHealthProblem7Children4Male" />
-                                            <p:outputLabel value="OtherHealthProblem7Children4Female:" for="otherHealthProblem7Children4Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children4Female}" title="OtherHealthProblem7Children4Female" />
-                                            <p:outputLabel value="OtherHealthProblem7Children7Male:" for="otherHealthProblem7Children7Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children7Male}" title="OtherHealthProblem7Children7Male" />
-                                            <p:outputLabel value="OtherHealthProblem7Children7Female:" for="otherHealthProblem7Children7Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children7Female}" title="OtherHealthProblem7Children7Female" />
-                                            <p:outputLabel value="OtherHealthProblem7Children10Male:" for="otherHealthProblem7Children10Male" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children10Male}" title="OtherHealthProblem7Children10Male" />
-                                            <p:outputLabel value="OtherHealthProblem7Children10Female:" for="otherHealthProblem7Children10Female" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children10Female}" title="OtherHealthProblem7Children10Female" />
-                                            <p:outputLabel value="OtherHealthProblem7ChildrenOtherMale:" for="otherHealthProblem7ChildrenOtherMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenOtherMale}" title="OtherHealthProblem7ChildrenOtherMale" />
-                                            <p:outputLabel value="OtherHealthProblem7ChildrenOtherFemale:" for="otherHealthProblem7ChildrenOtherFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenOtherFemale}" title="OtherHealthProblem7ChildrenOtherFemale" />
-                                            <p:outputLabel value="OtherHealthProblem7ChildrenMale:" for="otherHealthProblem7ChildrenMale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenMale}" title="OtherHealthProblem7ChildrenMale" />
-                                            <p:outputLabel value="OtherHealthProblem7ChildrenFemale:" for="otherHealthProblem7ChildrenFemale" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenFemale}" title="OtherHealthProblem7ChildrenFemale" />
-                                            <p:outputLabel value="OtherHealthProblem7ChildrenMalePercentage:" for="otherHealthProblem7ChildrenMalePercentage" />
-                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenMalePercentage}" title="OtherHealthProblem7ChildrenMalePercentage" />
-                                            <p:outputLabel value="OtherHealthProblem7Children1FemalePercentage:" for="otherHealthProblem7Children1FemalePercentage" />
+                                            <p:selectOneMenu id="otherHealthProblem7"
+                                                             value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7}" >
+                                                <f:selectItems value="#{enumController.otherHealthProblems}" ></f:selectItems>
+                                            </p:selectOneMenu></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children1Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children1Male}" title="OtherHealthProblem7Children1Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children1Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children1Female}" title="OtherHealthProblem7Children1Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children4Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children4Male}" title="OtherHealthProblem7Children4Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children4Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children4Female}" title="OtherHealthProblem7Children4Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children7Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children7Male}" title="OtherHealthProblem7Children7Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children7Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children7Female}" title="OtherHealthProblem7Children7Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children10Male" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children10Male}" title="OtherHealthProblem7Children10Male" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children10Female" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children10Female}" title="OtherHealthProblem7Children10Female" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7ChildrenOtherMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenOtherMale}" title="OtherHealthProblem7ChildrenOtherMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7ChildrenOtherFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenOtherFemale}" title="OtherHealthProblem7ChildrenOtherFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7ChildrenMale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenMale}" title="OtherHealthProblem7ChildrenMale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7ChildrenFemale" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenFemale}" title="OtherHealthProblem7ChildrenFemale" /></td><td>
+                                            <p:inputText styleClass="shortNumbers" id="otherHealthProblem7ChildrenMalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7ChildrenMalePercentage}" title="OtherHealthProblem7ChildrenMalePercentage" /></td><td>
                                             <p:inputText styleClass="shortNumbers" id="otherHealthProblem7Children1FemalePercentage" value="#{summeryOfSchoolMedicalInspectionController.selected.otherHealthProblem7Children1FemalePercentage}" title="OtherHealthProblem7Children1FemalePercentage" />
-
                                         </td>
                                     </tr>
-
                                 </table>
 
 
                             </p:tab>
+
+                            <p:tab title="Staff Details" >
+                                <p:panelGrid columns="2">
+                                    <p:outputLabel value="Phi:" for="phi" />
+                                    <p:selectOneMenu id="phi" value="#{summeryOfSchoolMedicalInspectionController.selected.phi}" >
+                                        <!-- TODO: update below reference to list of available items-->
+                                        <f:selectItems value="#{fixme}"/>
+                                    </p:selectOneMenu>
+                                    <p:outputLabel value="Moh:" for="moh" />
+                                    <p:selectOneMenu id="moh" value="#{summeryOfSchoolMedicalInspectionController.selected.moh}" >
+                                        <!-- TODO: update below reference to list of available items-->
+                                        <f:selectItems value="#{fixme}"/>
+                                    </p:selectOneMenu>
+                                    <p:outputLabel value="Amoh:" for="amoh" />
+                                    <p:selectOneMenu id="amoh" value="#{summeryOfSchoolMedicalInspectionController.selected.amoh}" >
+                                        <!-- TODO: update below reference to list of available items-->
+                                        <f:selectItems value="#{fixme}"/>
+                                    </p:selectOneMenu>
+                                    <p:outputLabel value="Mo:" for="mo" />
+                                    <p:selectOneMenu id="mo" value="#{summeryOfSchoolMedicalInspectionController.selected.mo}" >
+                                        <!-- TODO: update below reference to list of available items-->
+                                        <f:selectItems value="#{fixme}"/>
+                                    </p:selectOneMenu>
+                                </p:panelGrid>
+                            </p:tab>
+
                         </p:tabView>
 
 
-                        <p:panelGrid columns="2">
-                            <p:outputLabel value="Phi:" for="phi" />
-                            <p:selectOneMenu id="phi" value="#{summeryOfSchoolMedicalInspectionController.selected.phi}" >
-                                <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
-                            </p:selectOneMenu>
-                            <p:outputLabel value="Moh:" for="moh" />
-                            <p:selectOneMenu id="moh" value="#{summeryOfSchoolMedicalInspectionController.selected.moh}" >
-                                <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
-                            </p:selectOneMenu>
-                            <p:outputLabel value="Amoh:" for="amoh" />
-                            <p:selectOneMenu id="amoh" value="#{summeryOfSchoolMedicalInspectionController.selected.amoh}" >
-                                <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
-                            </p:selectOneMenu>
-                            <p:outputLabel value="Mo:" for="mo" />
-                            <p:selectOneMenu id="mo" value="#{summeryOfSchoolMedicalInspectionController.selected.mo}" >
-                                <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
-                            </p:selectOneMenu>
-                        </p:panelGrid>
+
                     </h:form>
                 </f:view>
 
