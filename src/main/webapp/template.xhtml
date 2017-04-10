@@ -8,9 +8,9 @@
     <h:head>
         <title><ui:insert name="title">Default Title</ui:insert></title>
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
-         <h:outputStylesheet library="css" name="default.css"/>
+        <h:outputStylesheet library="css" name="default.css"/>
         <h:outputScript library="js" name="jsfcrud.js"/>
-       
+
     </h:head>
 
     <h:body>
@@ -29,19 +29,46 @@
                             <p:menuitem value="QuarterlySchoolHealthReturn" outcome="/quarterlySchoolHealthReturn/List.xhtml" />
                             <p:menuitem value="SchoolMedicalExaminationRecord" outcome="/schoolMedicalExaminationRecord/List.xhtml" />
                             <p:menuitem value="SchoolMedicalExaminationRecordItem" outcome="/schoolMedicalExaminationRecordItem/List.xhtml" />
-                            <p:menuitem value="WebUser" outcome="/webUser/List.xhtml" />
+                            <p:menuitem value="WebUser" action="/webUser/add_webuser_index" />
                         </p:submenu>
                     </p:menubar>
                 </h:form>
             </p:layoutUnit>
 
             <p:layoutUnit position="south" size="60">
-                <ui:insert name="footer"/>
+                <ui:insert name="footer">
+                    <h:form >
+                        <h:panelGrid columns="20" rendered="#{webUserController.logged}" >
+                            <p:outputLabel value="Logged User : #{webUserController.loggedUser.name}" ></p:outputLabel>
+                            <p:spacer height="1" width="30" ></p:spacer>
+
+                            <h1>#{webUserController.logged}</h1>
+                            <p:commandLink ajax="false" value="Logout" action="#{webUserController.logout()}" ></p:commandLink>
+                        </h:panelGrid>
+                    </h:form>
+                </ui:insert>
             </p:layoutUnit>
 
             <p:layoutUnit position="center">
+
+                <p:panel header="Login" rendered="#{!webUserController.logged}" styleClass="centrecontent">
+                    <h:form >
+                        <h:panelGrid columns="3" >
+                            <p:outputLabel value="Username" ></p:outputLabel>
+                            <p:spacer height="1" width="30" ></p:spacer>
+                            <p:inputText value="#{webUserController.userName}" ></p:inputText>
+                            <p:outputLabel value="Password" ></p:outputLabel>
+                            <p:spacer height="1" width="30" ></p:spacer>
+                            <p:inputText value="#{webUserController.password}" ></p:inputText>
+                        </h:panelGrid>
+                        <p:commandButton style="float: right; margin-left: 80px;" ajax="false" value="Login" action="#{webUserController.login()}" ></p:commandButton>                            
+                    </h:form>
+                </p:panel>
+
                 <h:panelGrid rendered="#{webUserController.logged}" >
-                    <ui:insert name="body"/>
+                    <ui:insert name="body">
+                        Please Login to continue
+                    </ui:insert>
                 </h:panelGrid>
 
 

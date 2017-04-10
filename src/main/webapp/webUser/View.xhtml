@@ -20,18 +20,8 @@
                         <h:outputText value="#{webUserController.selected.userName}" title="#{bundle.ViewWebUserTitle_userName}"/>
                         <h:outputText value="#{bundle.ViewWebUserLabel_password}"/>
                         <h:outputText value="#{webUserController.selected.password}" title="#{bundle.ViewWebUserTitle_password}"/>
-                        <h:outputText value="#{bundle.ViewWebUserLabel_creater}"/>
-                        <h:outputText value="#{webUserController.selected.creater}" title="#{bundle.ViewWebUserTitle_creater}"/>
-                        <h:outputText value="#{bundle.ViewWebUserLabel_createAt}"/>
-                        <h:outputText value="#{webUserController.selected.createAt}" title="#{bundle.ViewWebUserTitle_createAt}">
-                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                        </h:outputText>
-                        <h:outputText value="#{bundle.ViewWebUserLabel_institution}"/>
-                        <h:outputText value="#{webUserController.selected.institution}" title="#{bundle.ViewWebUserTitle_institution}"/>
                         <h:outputText value="#{bundle.ViewWebUserLabel_area}"/>
-                        <h:outputText value="#{webUserController.selected.area}" title="#{bundle.ViewWebUserTitle_area}"/>
-                        <h:outputText value="#{bundle.ViewWebUserLabel_id}"/>
-                        <h:outputText value="#{webUserController.selected.id}" title="#{bundle.ViewWebUserTitle_id}"/>
+                        <h:outputText value="#{webUserController.selected.area.name}" title="#{bundle.ViewWebUserTitle_area}"/>
                     </p:panelGrid>
                     <p:commandButton value="#{bundle.Close}" onclick="WebUserViewDialog.hide()"/>
                 </h:panelGroup>

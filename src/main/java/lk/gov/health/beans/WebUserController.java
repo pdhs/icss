@@ -44,7 +44,9 @@ public class WebUserController implements Serializable {
     List<Area> myProvinces;
     List<Area> myDistricts;
     List<Area> myMohAreas;
+    List<Area> myEducationalZones;
     List<Area> myPhiAreas;
+    List<Area> myAreas;
     List<PrivilegeType> myPrivilegeTypes;
 
     private Area loggedPhiArea;
@@ -56,7 +58,7 @@ public class WebUserController implements Serializable {
     private WebUser loggedUser;
     private PrivilegeType loggedPrivilegeType;
     private boolean logged;
-    private boolean developmentStage = true;
+    private boolean developmentStage = false;
 
     private String userName;
     private String password;
@@ -69,6 +71,7 @@ public class WebUserController implements Serializable {
 
     public String toAddNewUser() {
         selected = new WebUser();
+        selected.setActive(true);
         return "/webUser/add_new_user";
     }
 
@@ -93,13 +96,15 @@ public class WebUserController implements Serializable {
             JsfUtil.addErrorMessage("Password can NOT contain spaces");
             return "";
         }
-        if (password.equals(confirmPassword)) {
+        if (!password.equals(confirmPassword)) {
             JsfUtil.addErrorMessage("Passwords NOT matching");
             return "";
         }
-        try{
+        try {
+            selected.setUserName(userName);
+            selected.setPassword(password);
             getFacade().create(selected);
-        }catch(Exception e){
+        } catch (Exception e) {
             JsfUtil.addErrorMessage("User name already taken. Please select another username");
             return "";
         }
@@ -108,27 +113,32 @@ public class WebUserController implements Serializable {
         password = "";
         confirmPassword = "";
         selected = null;
-        return "/webUser/add_webUser_index";
+        return "/webUser/add_webuser_index";
     }
 
     public String login() {
         makeAllLoggedVariablesNull();
-        String j;
-        Map m = new HashMap();
-        j = "select w from WebUser w "
-                + " where upper(w.userName) = :un "
-                + " and w.password=:pw "
-                + " order by w.id desc";
-        m.put("un", userName.trim().toUpperCase());
-        m.put("pw", password);
-        loggedUser = getFacade().findFirstBySQL(j, m);
-        if (loggedUser == null) {
-            JsfUtil.addErrorMessage("Wrong login details, please retry!");
-            return "";
-        }
-        if (loggedUser.isActive() != true) {
-            JsfUtil.addErrorMessage("Your account needs Activation. Please contact system administrators!");
-            return "";
+        if (developmentStage) {
+            loggedUser = new WebUser();
+            loggedUser.setType(PrivilegeType.System_Administrator);
+        } else {
+            String j;
+            Map m = new HashMap();
+            j = "select w from WebUser w "
+                    + " where upper(w.userName) = :un "
+                    + " and w.password=:pw "
+                    + " order by w.id desc";
+            m.put("un", userName.trim().toUpperCase());
+            m.put("pw", password);
+            loggedUser = getFacade().findFirstBySQL(j, m);
+            if (loggedUser == null) {
+                JsfUtil.addErrorMessage("Wrong login details, please retry!");
+                return "";
+            }
+            if (loggedUser.isActive() != true) {
+                JsfUtil.addErrorMessage("Your account needs Activation. Please contact system administrators!");
+                return "";
+            }
         }
         loggedPrivilegeType = loggedUser.getType();
         fillLogginDetails();
@@ -138,7 +148,7 @@ public class WebUserController implements Serializable {
     }
 
     public void fillPrivilegeTypes() {
-        myPrivilegeTypes = new VirtualFlow.ArrayLinkedList<PrivilegeType>();
+        myPrivilegeTypes = new ArrayList<PrivilegeType>();
         if (developmentStage) {
             //System Level
             myPrivilegeTypes.add(PrivilegeType.System_Administrator);
@@ -243,8 +253,9 @@ public class WebUserController implements Serializable {
 
     public void fillLogginDetails() {
         if (developmentStage) {
-            loggedUser = new WebUser();
-            loggedUser.setType(PrivilegeType.System_Administrator);
+//            loggedUser = new WebUser();
+//            loggedUser.setType(PrivilegeType.System_Administrator);
+            myAreas = areaController.getAreas(null, null);
         }
         switch (loggedUser.getType()) {
             case PHI:
@@ -257,6 +268,8 @@ public class WebUserController implements Serializable {
                 myDistricts.add(loggedRdhsArea);
                 myMohAreas.add(loggedMohArea);
                 myPhiAreas.add(loggedPhiArea);
+                myAreas = areaController.getAreas(null, loggedPhiArea);
+                myEducationalZones=areaController.getAreas(AreaType.Province, loggedPdhsArea);
                 break;
             case SPHI:
             case MOH:
@@ -271,6 +284,8 @@ public class WebUserController implements Serializable {
                 myDistricts.add(loggedRdhsArea);
                 myMohAreas.add(loggedMohArea);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedMohArea);
+                myAreas = areaController.getAreas(null, loggedMohArea);
+                myEducationalZones=areaController.getAreas(AreaType.Province, loggedPdhsArea);
                 break;
             case MO_RDHS:
             case CCP_RDHS:
@@ -283,6 +298,8 @@ public class WebUserController implements Serializable {
                 myDistricts.add(loggedRdhsArea);
                 myMohAreas = areaController.getAreas(AreaType.MOH, loggedRdhsArea);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedRdhsArea);
+                myAreas = areaController.getAreas(null, loggedRdhsArea);
+                myEducationalZones=areaController.getAreas(AreaType.Province, loggedPdhsArea);
                 break;
             case PSPHI:
             case PDHS_Staff:
@@ -293,6 +310,8 @@ public class WebUserController implements Serializable {
                 myDistricts = areaController.getAreas(AreaType.District, loggedPdhsArea);
                 myMohAreas = areaController.getAreas(AreaType.MOH, loggedPdhsArea);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedPdhsArea);
+                myAreas = areaController.getAreas(null, loggedPdhsArea);
+                myEducationalZones=areaController.getAreas(AreaType.Province, loggedPdhsArea);
                 break;
             case Institution_Administrator:
             case Institution_Super_User:
@@ -302,6 +321,8 @@ public class WebUserController implements Serializable {
                 myDistricts = areaController.getAreas(AreaType.District, null);
                 myMohAreas = areaController.getAreas(AreaType.MOH, null);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, null);
+                myAreas = areaController.getAreas(null, null);
+                myEducationalZones=areaController.getAreas(AreaType.Province, loggedPdhsArea);
                 break;
             case Guest:
                 break;
@@ -496,6 +517,7 @@ public class WebUserController implements Serializable {
 
     public String logout() {
         makeAllLoggedVariablesNull();
+        logged=false;
         return "";
     }
 
@@ -504,6 +526,7 @@ public class WebUserController implements Serializable {
         myDistricts = new ArrayList<Area>();
         myMohAreas = new ArrayList<Area>();
         myPhiAreas = new ArrayList<Area>();
+        myEducationalZones = new ArrayList<Area>();
         loggedPhiArea = null;
         loggedMohArea = null;
         loggedRdhsArea = null;
@@ -576,6 +599,16 @@ public class WebUserController implements Serializable {
         return ejbFacade;
     }
 
+    public List<Area> getMyEducationalZones() {
+        return myEducationalZones;
+    }
+
+    public void setMyEducationalZones(List<Area> myEducationalZones) {
+        this.myEducationalZones = myEducationalZones;
+    }
+
+    
+    
     public WebUser prepareCreate() {
         selected = new WebUser();
         initializeEmbeddableKey();
@@ -710,8 +743,10 @@ public class WebUserController implements Serializable {
 
     public boolean isLogged() {
         if (developmentStage == true) {
+            System.out.println("development Stage ");
             return true;
         }
+        System.out.println("logged = " + logged);
         return logged;
     }
 
@@ -789,6 +824,14 @@ public class WebUserController implements Serializable {
 
     public void setRdhsOffice(Institution rdhsOffice) {
         this.rdhsOffice = rdhsOffice;
+    }
+
+    public List<Area> getMyAreas() {
+        return myAreas;
+    }
+
+    public void setMyAreas(List<Area> myAreas) {
+        this.myAreas = myAreas;
     }
 
     @FacesConverter(forClass = WebUser.class)

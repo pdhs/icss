@@ -45,7 +45,7 @@ public class AreaController implements Serializable {
         selected.setType(AreaType.Province);
         return "/area/add_province";
     }
-    
+
     public String toAddDistrict() {
         if (!webUserController.isCapableOfAddingRdhsAreas()) {
             JsfUtil.addErrorMessage("You are not autherized");
@@ -55,7 +55,7 @@ public class AreaController implements Serializable {
         selected.setType(AreaType.District);
         return "/area/add_district";
     }
-    
+
     public String toAddMhoArea() {
         if (!webUserController.isCapableOfAddingMohAreas()) {
             JsfUtil.addErrorMessage("You are not autherized");
@@ -65,7 +65,17 @@ public class AreaController implements Serializable {
         selected.setType(AreaType.MOH);
         return "/area/add_moh";
     }
-    
+
+    public String toEducationalZones() {
+        if (!webUserController.isCapableOfAddingMohAreas()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected = new Area();
+        selected.setType(AreaType.EducationalZone);
+        return "/area/add_educational_zones";
+    }
+
     public String toAddPhiArea() {
         if (!webUserController.isCapableOfAddingPhiAreas()) {
             JsfUtil.addErrorMessage("You are not autherized");
@@ -89,8 +99,8 @@ public class AreaController implements Serializable {
         JsfUtil.addSuccessMessage("New Province Saved");
         return "/area/add_area_index";
     }
-    
-     public String saveNewDistrict() {
+
+    public String saveNewDistrict() {
         if (!webUserController.isCapableOfAddingRdhsAreas()) {
             JsfUtil.addErrorMessage("You are not autherized");
             return "";
@@ -103,8 +113,8 @@ public class AreaController implements Serializable {
         JsfUtil.addSuccessMessage("New District Saved");
         return "/area/add_area_index";
     }
-     
-     public String saveNewMoh() {
+
+    public String saveNewMoh() {
         if (!webUserController.isCapableOfAddingMohAreas()) {
             JsfUtil.addErrorMessage("You are not autherized");
             return "";
@@ -118,7 +128,21 @@ public class AreaController implements Serializable {
         return "/area/add_area_index";
     }
 
-     public String saveNewPhi() {
+    public String saveNewEducationalZone() {
+        if (!webUserController.isCapableOfAddingMohAreas()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected.setCreateAt(new Date());
+        getFacade().create(selected);
+        selected = null;
+        items = null;
+        webUserController.fillLogginDetails();
+        JsfUtil.addSuccessMessage("New Educational Zone Saved");
+        return "/area/add_area_index";
+    }
+    
+    public String saveNewPhi() {
         if (!webUserController.isCapableOfAddingPhiAreas()) {
             JsfUtil.addErrorMessage("You are not autherized");
             return "";
@@ -131,24 +155,24 @@ public class AreaController implements Serializable {
         JsfUtil.addSuccessMessage("New PHI Area Saved");
         return "/area/add_area_index";
     }
-    
-    public List<Area> getAreas(AreaType areaType, Area superArea){
-        String j ;
+
+    public List<Area> getAreas(AreaType areaType, Area superArea) {
+        String j;
         Map m = new HashMap();
-        j="select a "
+        j = "select a "
                 + " from Area a "
                 + " where a.name is not null ";
-        if(areaType!=null){
-            j+=" and a.type=:t";
+        if (areaType != null) {
+            j += " and a.type=:t";
             m.put("t", areaType);
         }
-        if(superArea!=null){
-            j+=" and (a.parentArea=:pa or a.parentArea.parentArea=:pa or a.parentArea.parentArea.parentArea=:pa  or a.parentArea.parentArea.parentArea.parentArea=:pa) ";
-            m.put("pa", areaType);
+        if (superArea != null) {
+            j += " and (a.parentArea=:pa or a.parentArea.parentArea=:pa or a.parentArea.parentArea.parentArea=:pa  or a.parentArea.parentArea.parentArea.parentArea=:pa) ";
+            m.put("pa", superArea);
         }
         return getFacade().findBySQL(j, m);
     }
-    
+
     public AreaController() {
     }
 
