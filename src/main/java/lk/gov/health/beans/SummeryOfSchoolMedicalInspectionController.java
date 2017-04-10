@@ -28,6 +28,11 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
     private List<SummeryOfSchoolMedicalInspection> items = null;
     private SummeryOfSchoolMedicalInspection selected;
 
+    public String toAddSummery() {
+        selected = new SummeryOfSchoolMedicalInspection();
+        return "/summeryOfSchoolMedicalInspection/add";
+    }
+
     public SummeryOfSchoolMedicalInspectionController() {
     }
 

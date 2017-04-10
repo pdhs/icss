@@ -84,6 +84,22 @@ public class SummeryOfSchoolMedicalInspection implements Serializable {
     private int numberOfDefectsOfChildrenMalePercentage;
     private int numberOfDefectsOfChildren1FemalePercentage;
 
+    private int numberOfDefectsOf1Male;
+    private int numberOfDefectsOf1Female;
+    private int numberOfDefectsOf4Male;
+    private int numberOfDefectsOf4Female;
+    private int numberOfDefectsOf7Male;
+    private int numberOfDefectsOf7Female;
+    private int numberOfDefectsOf10Male;
+    private int numberOfDefectsOf10Female;
+    private int numberOfDefectsOfOtherMale;
+    private int numberOfDefectsOfOtherFemale;
+    private int numberOfDefectsOfMale;
+    private int numberOfDefectsOfFemale;
+    private int numberOfDefectsOfMalePercentage;
+    private int numberOfDefectsOf1FemalePercentage;
+
+    
     private int numberGivenAdtVaccinesOfChildren1Male;
     private int numberGivenAdtVaccinesOfChildren1Female;
     private int numberGivenAdtVaccinesOfChildren4Male;
@@ -3661,6 +3677,118 @@ public class SummeryOfSchoolMedicalInspection implements Serializable {
 
     public void setMo(WebUser mo) {
         this.mo = mo;
+    }
+
+    public int getNumberOfDefectsOf1Male() {
+        return numberOfDefectsOf1Male;
+    }
+
+    public void setNumberOfDefectsOf1Male(int numberOfDefectsOf1Male) {
+        this.numberOfDefectsOf1Male = numberOfDefectsOf1Male;
+    }
+
+    public int getNumberOfDefectsOf1Female() {
+        return numberOfDefectsOf1Female;
+    }
+
+    public void setNumberOfDefectsOf1Female(int numberOfDefectsOf1Female) {
+        this.numberOfDefectsOf1Female = numberOfDefectsOf1Female;
+    }
+
+    public int getNumberOfDefectsOf4Male() {
+        return numberOfDefectsOf4Male;
+    }
+
+    public void setNumberOfDefectsOf4Male(int numberOfDefectsOf4Male) {
+        this.numberOfDefectsOf4Male = numberOfDefectsOf4Male;
+    }
+
+    public int getNumberOfDefectsOf4Female() {
+        return numberOfDefectsOf4Female;
+    }
+
+    public void setNumberOfDefectsOf4Female(int numberOfDefectsOf4Female) {
+        this.numberOfDefectsOf4Female = numberOfDefectsOf4Female;
+    }
+
+    public int getNumberOfDefectsOf7Male() {
+        return numberOfDefectsOf7Male;
+    }
+
+    public void setNumberOfDefectsOf7Male(int numberOfDefectsOf7Male) {
+        this.numberOfDefectsOf7Male = numberOfDefectsOf7Male;
+    }
+
+    public int getNumberOfDefectsOf7Female() {
+        return numberOfDefectsOf7Female;
+    }
+
+    public void setNumberOfDefectsOf7Female(int numberOfDefectsOf7Female) {
+        this.numberOfDefectsOf7Female = numberOfDefectsOf7Female;
+    }
+
+    public int getNumberOfDefectsOf10Male() {
+        return numberOfDefectsOf10Male;
+    }
+
+    public void setNumberOfDefectsOf10Male(int numberOfDefectsOf10Male) {
+        this.numberOfDefectsOf10Male = numberOfDefectsOf10Male;
+    }
+
+    public int getNumberOfDefectsOf10Female() {
+        return numberOfDefectsOf10Female;
+    }
+
+    public void setNumberOfDefectsOf10Female(int numberOfDefectsOf10Female) {
+        this.numberOfDefectsOf10Female = numberOfDefectsOf10Female;
+    }
+
+    public int getNumberOfDefectsOfOtherMale() {
+        return numberOfDefectsOfOtherMale;
+    }
+
+    public void setNumberOfDefectsOfOtherMale(int numberOfDefectsOfOtherMale) {
+        this.numberOfDefectsOfOtherMale = numberOfDefectsOfOtherMale;
+    }
+
+    public int getNumberOfDefectsOfOtherFemale() {
+        return numberOfDefectsOfOtherFemale;
+    }
+
+    public void setNumberOfDefectsOfOtherFemale(int numberOfDefectsOfOtherFemale) {
+        this.numberOfDefectsOfOtherFemale = numberOfDefectsOfOtherFemale;
+    }
+
+    public int getNumberOfDefectsOfMale() {
+        return numberOfDefectsOfMale;
+    }
+
+    public void setNumberOfDefectsOfMale(int numberOfDefectsOfMale) {
+        this.numberOfDefectsOfMale = numberOfDefectsOfMale;
+    }
+
+    public int getNumberOfDefectsOfFemale() {
+        return numberOfDefectsOfFemale;
+    }
+
+    public void setNumberOfDefectsOfFemale(int numberOfDefectsOfFemale) {
+        this.numberOfDefectsOfFemale = numberOfDefectsOfFemale;
+    }
+
+    public int getNumberOfDefectsOfMalePercentage() {
+        return numberOfDefectsOfMalePercentage;
+    }
+
+    public void setNumberOfDefectsOfMalePercentage(int numberOfDefectsOfMalePercentage) {
+        this.numberOfDefectsOfMalePercentage = numberOfDefectsOfMalePercentage;
+    }
+
+    public int getNumberOfDefectsOf1FemalePercentage() {
+        return numberOfDefectsOf1FemalePercentage;
+    }
+
+    public void setNumberOfDefectsOf1FemalePercentage(int numberOfDefectsOf1FemalePercentage) {
+        this.numberOfDefectsOf1FemalePercentage = numberOfDefectsOf1FemalePercentage;
     }
 
 }

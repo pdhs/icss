@@ -710,6 +710,16 @@ public class WebUserController implements Serializable {
         }
     }
 
+    public List<Institution> getMySchools() {
+        return mySchools;
+    }
+
+    public void setMySchools(List<Institution> mySchools) {
+        this.mySchools = mySchools;
+    }
+
+    
+    
     public List<WebUser> getItemsAvailableSelectMany() {
         return getFacade().findAll();
     }
