@@ -11,9 +11,7 @@
         <p:dialog id="QuarterlySchoolHealthReturnCreateDlg" widgetVar="QuarterlySchoolHealthReturnCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateQuarterlySchoolHealthReturnTitle}">
             <h:form id="QuarterlySchoolHealthReturnCreateForm">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{quarterlySchoolHealthReturnController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateQuarterlySchoolHealthReturnLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{quarterlySchoolHealthReturnController.selected.id}" title="#{bundle.CreateQuarterlySchoolHealthReturnTitle_id}" />
+                    <p:panelGrid columns="8" rendered="#{quarterlySchoolHealthReturnController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateQuarterlySchoolHealthReturnLabel_rdhs_division}" for="rdhs_division" />
                         <p:selectOneMenu id="rdhs_division" value="#{quarterlySchoolHealthReturnController.selected.rdhs_division}" >
                             <f:selectItems value="#{areaController.itemsAvailableSelectOne}"

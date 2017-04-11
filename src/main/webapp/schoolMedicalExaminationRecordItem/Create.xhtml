@@ -11,7 +11,7 @@
         <p:dialog id="SchoolMedicalExaminationRecordItemCreateDlg" widgetVar="SchoolMedicalExaminationRecordItemCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateSchoolMedicalExaminationRecordItemTitle}">
             <h:form id="SchoolMedicalExaminationRecordItemCreateForm">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{schoolMedicalExaminationRecordItemController.selected != null}">
+                    <p:panelGrid columns="6" rendered="#{schoolMedicalExaminationRecordItemController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateSchoolMedicalExaminationRecordItemLabel_id}" for="id" />
                         <p:inputText id="id" value="#{schoolMedicalExaminationRecordItemController.selected.id}" title="#{bundle.CreateSchoolMedicalExaminationRecordItemTitle_id}" />
                         <p:outputLabel value="#{bundle.CreateSchoolMedicalExaminationRecordItemLabel_schoolMedicalExaminationRecord}" for="schoolMedicalExaminationRecord" />
