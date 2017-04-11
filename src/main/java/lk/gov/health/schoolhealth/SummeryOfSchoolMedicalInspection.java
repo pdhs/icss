@@ -38,6 +38,12 @@ public class SummeryOfSchoolMedicalInspection implements Serializable {
     private Area phiArea;
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date dateExamined;
+    String schoolCensusNo;
+    @ManyToOne
+    WebUser creator;
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    Date createdAt;
+    
 
     private int totalNoOfChildren1Male;
     private int totalNoOfChildren1Female;
@@ -3790,5 +3796,31 @@ public class SummeryOfSchoolMedicalInspection implements Serializable {
     public void setNumberOfDefectsOf1FemalePercentage(int numberOfDefectsOf1FemalePercentage) {
         this.numberOfDefectsOf1FemalePercentage = numberOfDefectsOf1FemalePercentage;
     }
+
+    public String getSchoolCensusNo() {
+        return schoolCensusNo;
+    }
+
+    public void setSchoolCensusNo(String schoolCensusNo) {
+        this.schoolCensusNo = schoolCensusNo;
+    }
+
+    public WebUser getCreator() {
+        return creator;
+    }
+
+    public void setCreator(WebUser creator) {
+        this.creator = creator;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+    
+    
 
 }
