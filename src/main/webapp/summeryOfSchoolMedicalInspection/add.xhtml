@@ -78,7 +78,7 @@
                                                 <f:selectItem itemLabel="Select School" ></f:selectItem>
                                                 <f:selectItems value="#{webUserController.mySchools}"
                                                                var="s" itemValue="#{s}" itemLabel="#{s.name}"/>
-                                                <f:ajax event="valueChange" execute="school" render="sc" />
+<!--                                                <f:ajax event="valueChange" execute="school" render="sc" />-->
                                             </p:selectOneMenu>
 
                                         </td>
@@ -89,7 +89,7 @@
                                             <p:outputLabel value="School Census No.:"  />
                                         </td>
                                         <td>
-                                            <p:outputLabel id="sc" value="#{summeryOfSchoolMedicalInspectionController.selected.school.code}"/>
+                                            <p:inputText id="sc" value="#{summeryOfSchoolMedicalInspectionController.selected.schoolCensusNo}"/>
                                         </td>
                                         <td>
                                             <p:spacer height="1" width="30" ></p:spacer>

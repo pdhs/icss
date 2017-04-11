@@ -6,6 +6,7 @@ import lk.gov.health.beans.util.JsfUtil.PersistAction;
 import lk.gov.health.faces.SummeryOfSchoolMedicalInspectionFacade;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -17,12 +18,16 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
 @SessionScoped
 public class SummeryOfSchoolMedicalInspectionController implements Serializable {
 
+    @Inject
+    WebUserController webUserController;
+    
     @EJB
     private lk.gov.health.faces.SummeryOfSchoolMedicalInspectionFacade ejbFacade;
     private List<SummeryOfSchoolMedicalInspection> items = null;
@@ -39,6 +44,8 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
             return "";
         }
         if (selected.getId() == null) {
+            selected.setCreatedAt(new Date());
+            selected.setCreator(webUserController.getLoggedUser());
             getFacade().create(selected);
             JsfUtil.addSuccessMessage("Saved");
             return "";
