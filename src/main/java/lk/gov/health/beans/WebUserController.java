@@ -1,6 +1,5 @@
 package lk.gov.health.beans;
 
-import com.sun.javafx.scene.control.skin.VirtualFlow;
 import lk.gov.health.schoolhealth.WebUser;
 import lk.gov.health.beans.util.JsfUtil;
 import lk.gov.health.beans.util.JsfUtil.PersistAction;
