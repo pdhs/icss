@@ -29,12 +29,6 @@
 
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
                                 <h:outputText value="#{bundle.ListInstitutionTitle_type}"/>
                             </f:facet>
                             <h:outputText value="#{item.type}"/>
@@ -77,107 +71,15 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_parentInstitution}"/>
+                                <h:outputText value="PHI Area"/>
                             </f:facet>
-                            <h:outputText value="#{item.parentInstitution}"/>
+                            <h:outputText value="#{item.phiArea.name}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_area}"/>
+                                <h:outputText value="Educational Zone"/>
                             </f:facet>
-                            <h:outputText value="#{item.area}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_creater}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.creater}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_createAt}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.createAt}">
-                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                            </h:outputText>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_typeOfSchool}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.typeOfSchool}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_male_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.male_students}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_female_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.female_students}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_year_one_male_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.year_one_male_students}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_year_four_male_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.year_four_male_students}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_year_seven_male_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.year_seven_male_students}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_year_ten_male_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.year_ten_male_students}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_year_other_male_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.year_other_male_students}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_year_one_female_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.year_one_female_students}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_year_four_female_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.year_four_female_students}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_year_seven_female_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.year_seven_female_students}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_year_ten_female_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.year_ten_female_students}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListInstitutionTitle_year_other_female_students}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.year_other_female_students}"/>
+                            <h:outputText value="#{item.educationalZone.name}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{institutionController.prepareCreate}" update=":InstitutionCreateForm" oncomplete="PF('InstitutionCreateDialog').show()"/>

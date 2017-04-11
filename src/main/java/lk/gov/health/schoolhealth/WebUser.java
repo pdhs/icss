@@ -7,6 +7,7 @@ package lk.gov.health.schoolhealth;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -30,6 +31,7 @@ public class WebUser implements Serializable {
     @Enumerated(EnumType.STRING)
     PrivilegeType type;
     String name;
+    @Column(unique = true)
     String userName;
     String password;
     boolean active;

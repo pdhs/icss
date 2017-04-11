@@ -13,38 +13,23 @@
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{webUserController.selected != null}">
                         <p:outputLabel value="#{bundle.EditWebUserLabel_type}" for="type" />
-                        <p:inputText id="type" value="#{webUserController.selected.type}" title="#{bundle.EditWebUserTitle_type}" />
+                        <p:selectOneMenu id="type" value="#{webUserController.selected.type}" >
+                            <f:selectItems value="#{enumController.privilegeTypes}" ></f:selectItems>
+                        </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.EditWebUserLabel_name}" for="name" />
                         <p:inputText id="name" value="#{webUserController.selected.name}" title="#{bundle.EditWebUserTitle_name}" />
                         <p:outputLabel value="#{bundle.EditWebUserLabel_userName}" for="userName" />
-                        <p:inputText id="userName" value="#{webUserController.selected.userName}" title="#{bundle.EditWebUserTitle_userName}" />
+                        <p:inputText disabled="true" id="userName" value="#{webUserController.selected.userName}" title="#{bundle.EditWebUserTitle_userName}" />
                         <p:outputLabel value="#{bundle.EditWebUserLabel_password}" for="password" />
                         <p:inputText id="password" value="#{webUserController.selected.password}" title="#{bundle.EditWebUserTitle_password}" />
-                        <p:outputLabel value="#{bundle.EditWebUserLabel_creater}" for="creater" />
-                        <p:selectOneMenu id="creater" value="#{webUserController.selected.creater}" >
-                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
-                            <f:selectItems value="#{webUserController.itemsAvailableSelectOne}"
-                                           var="createrItem"
-                                           itemValue="#{createrItem}"/>
-                        </p:selectOneMenu>
-                        <p:outputLabel value="#{bundle.EditWebUserLabel_createAt}" for="createAt" />
-                        <p:calendar id="createAt" pattern="MM/dd/yyyy HH:mm:ss" value="#{webUserController.selected.createAt}" title="#{bundle.EditWebUserTitle_createAt}"  showOn="button"/>
-                        <p:outputLabel value="#{bundle.EditWebUserLabel_institution}" for="institution" />
-                        <p:selectOneMenu id="institution" value="#{webUserController.selected.institution}" >
-                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
-                            <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
-                                           var="institutionItem"
-                                           itemValue="#{institutionItem}"/>
-                        </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.EditWebUserLabel_area}" for="area" />
                         <p:selectOneMenu id="area" value="#{webUserController.selected.area}" >
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{areaController.itemsAvailableSelectOne}"
                                            var="areaItem"
-                                           itemValue="#{areaItem}"/>
+                                           itemValue="#{areaItem}"
+                                           itemLabel="#{areaItem.name}"/>
                         </p:selectOneMenu>
-                        <p:outputLabel value="#{bundle.EditWebUserLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{webUserController.selected.id}" title="#{bundle.EditWebUserTitle_id}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{webUserController.update}" value="#{bundle.Save}" update="display,:WebUserListForm:datalist,:growl" oncomplete="handleSubmit(args, 'WebUserEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="WebUserEditDialog.hide()"/>

@@ -5,17 +5,21 @@
  */
 package lk.gov.health.beans;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import java.util.ArrayList;
+import java.util.List;
+import javax.inject.Named;
+import javax.enterprise.context.ApplicationScoped;
 import lk.gov.health.schoolhealth.AreaType;
+import lk.gov.health.schoolhealth.HealthProblem;
 import lk.gov.health.schoolhealth.InstitutionType;
+import lk.gov.health.schoolhealth.PrivilegeType;
 
 /**
  *
- * @author pdhs-sp
+ * @author User
  */
-@ManagedBean
-@SessionScoped
+@Named(value = "enumController")
+@ApplicationScoped
 public class EnumController {
 
     /**
@@ -23,16 +27,43 @@ public class EnumController {
      */
     public EnumController() {
     }
-    
-    public AreaType[] getAreaTypes(){
+
+    public AreaType[] getAreaTypes() {
         return AreaType.values();
     }
-    
-    public InstitutionType[] getInstitutionTypes(){
+
+    public PrivilegeType[] getPrivilegeTypes() {
+        return PrivilegeType.values();
+    }
+
+    public InstitutionType[] getInstitutionTypes() {
         return InstitutionType.values();
     }
-    
-    
-    
-    
+
+    public HealthProblem[] getOtherHealthProblems() {
+        HealthProblem[] ahp = new HealthProblem[] {
+            HealthProblem.Other,
+            HealthProblem.Pediculosis,
+            HealthProblem.Night_blindness,
+            HealthProblem.Bitot_spots,
+            HealthProblem.Squint,
+            HealthProblem.Xeropthalmia,
+            HealthProblem.Angular_stomatitis_Glossitis,
+            HealthProblem.Fluorosis,
+            HealthProblem.Malocclusion,
+            HealthProblem.Giotre,
+            HealthProblem.Lymphadenopathy,
+            HealthProblem.Scabies,
+            HealthProblem.Hypopigmented_anaesthetic_patches,
+            HealthProblem.Other_skin_disorders,
+            HealthProblem.Orthopaedic_defects,
+            HealthProblem.Rheumatic_disorders,
+            HealthProblem.Lung_diseases,
+            HealthProblem.Thalassaemia,
+            HealthProblem.History_of_fits,
+            HealthProblem.Other_defects
+            };
+        return ahp;
+    }
+
 }

@@ -6,20 +6,25 @@ import lk.gov.health.beans.util.JsfUtil.PersistAction;
 import lk.gov.health.faces.AreaFacade;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.ejb.EJBException;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import javax.inject.Inject;
+import javax.inject.Named;
+import lk.gov.health.schoolhealth.AreaType;
 
-@ManagedBean(name = "areaController")
+@Named
 @SessionScoped
 public class AreaController implements Serializable {
 
@@ -27,6 +32,146 @@ public class AreaController implements Serializable {
     private lk.gov.health.faces.AreaFacade ejbFacade;
     private List<Area> items = null;
     private Area selected;
+
+    @Inject
+    WebUserController webUserController;
+
+    public String toAddProvince() {
+        if (!webUserController.isCapableOfAddingProvinces()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected = new Area();
+        selected.setType(AreaType.Province);
+        return "/area/add_province";
+    }
+
+    public String toAddDistrict() {
+        if (!webUserController.isCapableOfAddingRdhsAreas()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected = new Area();
+        selected.setType(AreaType.District);
+        return "/area/add_district";
+    }
+
+    public String toAddMhoArea() {
+        if (!webUserController.isCapableOfAddingMohAreas()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected = new Area();
+        selected.setType(AreaType.MOH);
+        return "/area/add_moh";
+    }
+
+    public String toEducationalZones() {
+        if (!webUserController.isCapableOfAddingMohAreas()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected = new Area();
+        selected.setType(AreaType.EducationalZone);
+        return "/area/add_educational_zones";
+    }
+
+    public String toAddPhiArea() {
+        if (!webUserController.isCapableOfAddingPhiAreas()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected = new Area();
+        selected.setType(AreaType.PHI);
+        return "/area/add_phi";
+    }
+
+    public String saveNewProvince() {
+        if (!webUserController.isCapableOfAddingProvinces()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected.setCreateAt(new Date());
+        getFacade().create(selected);
+        selected = null;
+        items = null;
+        webUserController.fillLogginDetails();
+        JsfUtil.addSuccessMessage("New Province Saved");
+        return "/area/add_area_index";
+    }
+
+    public String saveNewDistrict() {
+        if (!webUserController.isCapableOfAddingRdhsAreas()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected.setCreateAt(new Date());
+        getFacade().create(selected);
+        selected = null;
+        items = null;
+        webUserController.fillLogginDetails();
+        JsfUtil.addSuccessMessage("New District Saved");
+        return "/area/add_area_index";
+    }
+
+    public String saveNewMoh() {
+        if (!webUserController.isCapableOfAddingMohAreas()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected.setCreateAt(new Date());
+        getFacade().create(selected);
+        selected = null;
+        items = null;
+        webUserController.fillLogginDetails();
+        JsfUtil.addSuccessMessage("New MOH Area Saved");
+        return "/area/add_area_index";
+    }
+
+    public String saveNewEducationalZone() {
+        if (!webUserController.isCapableOfAddingMohAreas()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected.setCreateAt(new Date());
+        getFacade().create(selected);
+        selected = null;
+        items = null;
+        webUserController.fillLogginDetails();
+        JsfUtil.addSuccessMessage("New Educational Zone Saved");
+        return "/area/add_area_index";
+    }
+    
+    public String saveNewPhi() {
+        if (!webUserController.isCapableOfAddingPhiAreas()) {
+            JsfUtil.addErrorMessage("You are not autherized");
+            return "";
+        }
+        selected.setCreateAt(new Date());
+        getFacade().create(selected);
+        selected = null;
+        items = null;
+        webUserController.fillLogginDetails();
+        JsfUtil.addSuccessMessage("New PHI Area Saved");
+        return "/area/add_area_index";
+    }
+
+    public List<Area> getAreas(AreaType areaType, Area superArea) {
+        String j;
+        Map m = new HashMap();
+        j = "select a "
+                + " from Area a "
+                + " where a.name is not null ";
+        if (areaType != null) {
+            j += " and a.type=:t";
+            m.put("t", areaType);
+        }
+        if (superArea != null) {
+            j += " and (a.parentArea=:pa or a.parentArea.parentArea=:pa or a.parentArea.parentArea.parentArea=:pa  or a.parentArea.parentArea.parentArea.parentArea=:pa) ";
+            m.put("pa", superArea);
+        }
+        return getFacade().findBySQL(j, m);
+    }
 
     public AreaController() {
     }

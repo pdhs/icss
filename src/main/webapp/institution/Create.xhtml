@@ -11,7 +11,7 @@
         <p:dialog id="InstitutionCreateDlg" widgetVar="InstitutionCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateInstitutionTitle}">
             <h:form id="InstitutionCreateForm">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="6" rendered="#{institutionController.selected != null}">
+                    <p:panelGrid columns="2" rendered="#{institutionController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_type}" for="type" />
                         <p:selectOneMenu id="type" value="#{institutionController.selected.type}" >
                             <f:selectItems value="#{enumController.institutionTypes}" ></f:selectItems>
@@ -28,52 +28,20 @@
                         <p:inputText id="email" value="#{institutionController.selected.email}" title="#{bundle.CreateInstitutionTitle_email}" />
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_fax}" for="fax" />
                         <p:inputText id="fax" value="#{institutionController.selected.fax}" title="#{bundle.CreateInstitutionTitle_fax}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_parentInstitution}" for="parentInstitution" />
-                        <p:selectOneMenu id="parentInstitution" value="#{institutionController.selected.parentInstitution}" >
-                            <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
-                                           var="parentInstitutionItem" itemLabel="#{parentInstitutionItem.name}"
-                                           itemValue="#{parentInstitutionItem}"/>
-                        </p:selectOneMenu>
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_area}" for="area" />
-                        <p:selectOneMenu id="area" value="#{institutionController.selected.area}" >
+                        <p:outputLabel value="PHI Area" for="area" />
+                        <p:selectOneMenu id="area" value="#{institutionController.selected.phiArea}" >
                             <f:selectItems value="#{areaController.itemsAvailableSelectOne}"
-                                           var="areaItem" itemLabel="#{areaItem.name}"
-                                           itemValue="#{areaItem}"/>
+                                           var="areaItem"
+                                           itemValue="#{areaItem}"
+                                           itemLabel="#{areaItem.name}"/>
                         </p:selectOneMenu>
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_creater}" for="creater" />
-                        <p:selectOneMenu id="creater" value="#{institutionController.selected.creater}" >
-                            <f:selectItems value="#{webUserController.itemsAvailableSelectOne}"
-                                           var="createrItem"
-                                           itemValue="#{createrItem}"/>
-                        </p:selectOneMenu>
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_createAt}" for="createAt" />
-                        <p:calendar id="createAt" pattern="MM/dd/yyyy HH:mm:ss" value="#{institutionController.selected.createAt}" title="#{bundle.EditInstitutionTitle_createAt}"  showOn="button"/>
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_typeOfSchool}" for="typeOfSchool" />
-                        <p:inputText id="typeOfSchool" value="#{institutionController.selected.typeOfSchool}" title="#{bundle.CreateInstitutionTitle_typeOfSchool}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_male_students}" for="male_students" />
-                        <p:inputText id="male_students" value="#{institutionController.selected.male_students}" title="#{bundle.CreateInstitutionTitle_male_students}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_female_students}" for="female_students" />
-                        <p:inputText id="female_students" value="#{institutionController.selected.female_students}" title="#{bundle.CreateInstitutionTitle_female_students}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_year_one_male_students}" for="year_one_male_students" />
-                        <p:inputText id="year_one_male_students" value="#{institutionController.selected.year_one_male_students}" title="#{bundle.CreateInstitutionTitle_year_one_male_students}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_year_four_male_students}" for="year_four_male_students" />
-                        <p:inputText id="year_four_male_students" value="#{institutionController.selected.year_four_male_students}" title="#{bundle.CreateInstitutionTitle_year_four_male_students}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_year_seven_male_students}" for="year_seven_male_students" />
-                        <p:inputText id="year_seven_male_students" value="#{institutionController.selected.year_seven_male_students}" title="#{bundle.CreateInstitutionTitle_year_seven_male_students}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_year_ten_male_students}" for="year_ten_male_students" />
-                        <p:inputText id="year_ten_male_students" value="#{institutionController.selected.year_ten_male_students}" title="#{bundle.CreateInstitutionTitle_year_ten_male_students}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_year_other_male_students}" for="year_other_male_students" />
-                        <p:inputText id="year_other_male_students" value="#{institutionController.selected.year_other_male_students}" title="#{bundle.CreateInstitutionTitle_year_other_male_students}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_year_one_female_students}" for="year_one_female_students" />
-                        <p:inputText id="year_one_female_students" value="#{institutionController.selected.year_one_female_students}" title="#{bundle.CreateInstitutionTitle_year_one_female_students}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_year_four_female_students}" for="year_four_female_students" />
-                        <p:inputText id="year_four_female_students" value="#{institutionController.selected.year_four_female_students}" title="#{bundle.CreateInstitutionTitle_year_four_female_students}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_year_seven_female_students}" for="year_seven_female_students" />
-                        <p:inputText id="year_seven_female_students" value="#{institutionController.selected.year_seven_female_students}" title="#{bundle.CreateInstitutionTitle_year_seven_female_students}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_year_ten_female_students}" for="year_ten_female_students" />
-                        <p:inputText id="year_ten_female_students" value="#{institutionController.selected.year_ten_female_students}" title="#{bundle.CreateInstitutionTitle_year_ten_female_students}" />
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_year_other_female_students}" for="year_other_female_students" />
-                        <p:inputText id="year_other_female_students" value="#{institutionController.selected.year_other_female_students}" title="#{bundle.CreateInstitutionTitle_year_other_female_students}" />
+                        <p:outputLabel value="Educational Zone" for="ez" />
+                        <p:selectOneMenu id="ez" value="#{institutionController.selected.educationalZone}" >
+                            <f:selectItems value="#{areaController.itemsAvailableSelectOne}"
+                                           var="areaItem"
+                                           itemValue="#{areaItem}"
+                                           itemLabel="#{areaItem.name}"/>
+                        </p:selectOneMenu>                        
                     </p:panelGrid>
                     <p:commandButton actionListener="#{institutionController.create}" value="#{bundle.Save}" update="display,:InstitutionListForm:datalist,:growl" oncomplete="handleSubmit(args,'InstitutionCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="InstitutionCreateDialog.hide()"/>

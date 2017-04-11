@@ -6,20 +6,25 @@ import lk.gov.health.beans.util.JsfUtil.PersistAction;
 import lk.gov.health.faces.InstitutionFacade;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.ejb.EJBException;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import javax.inject.Named;
+import lk.gov.health.schoolhealth.Area;
+import lk.gov.health.schoolhealth.InstitutionType;
 
-@ManagedBean(name = "institutionController")
+@Named
 @SessionScoped
 public class InstitutionController implements Serializable {
 
@@ -27,6 +32,45 @@ public class InstitutionController implements Serializable {
     private lk.gov.health.faces.InstitutionFacade ejbFacade;
     private List<Institution> items = null;
     private Institution selected;
+
+    public String toAddSchool() {
+        selected = new Institution();
+        selected.setType(InstitutionType.School);
+        return "/institution/add_school";
+    }
+
+    public String saveNewSchool() {
+        selected.setCreateAt(new Date());
+        getFacade().create(selected);
+        JsfUtil.addSuccessMessage("New School Created");
+        selected = null;
+        return "/institution/index";
+    }
+
+    public List<Institution> getInstitutions(InstitutionType type, Area phiArea, Area area, Area educationalZone) {
+        String j;
+        Map m = new HashMap();
+        j = "select i from "
+                + " Institution i "
+                + " where i.name is not null";
+        if (type != null) {
+            j += " and i.type=:t ";
+            m.put("t", type);
+        }
+        if (phiArea != null) {
+            j += " and i.phiArea=:p ";
+            m.put("p", phiArea);
+        }
+        if (area != null) {
+            j += " and (i.phiArea=:a or i.phiArea.parentArea=:a or i.phiArea.parentArea.parentArea=:a  or i.phiArea.parentArea.parentArea.parentArea=:a ) ";
+            m.put("a", area);
+        }
+        if (educationalZone != null) {
+            j += " and i.educationalZone=:e ";
+            m.put("e", phiArea);
+        }
+        return getFacade().findBySQL(j, m);
+    }
 
     public InstitutionController() {
     }
