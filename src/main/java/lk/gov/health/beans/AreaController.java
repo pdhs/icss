@@ -167,10 +167,15 @@ public class AreaController implements Serializable {
             m.put("t", areaType);
         }
         if (superArea != null) {
-            j += " and (a.parentArea=:pa or a.parentArea.parentArea=:pa or a.parentArea.parentArea.parentArea=:pa  or a.parentArea.parentArea.parentArea.parentArea=:pa) ";
+            j += " and (a=:pa or a.parentArea=:pa or a.parentArea.parentArea=:pa or a.parentArea.parentArea.parentArea=:pa  or a.parentArea.parentArea.parentArea.parentArea=:pa) ";
             m.put("pa", superArea);
         }
-        return getFacade().findBySQL(j, m);
+        j+=" order by a.name";
+        System.out.println("m = " + m);
+        System.out.println("j = " + j);
+        List<Area> areas = getFacade().findBySQL(j, m);
+        System.out.println("areas.size() = " + areas.size());
+        return areas;
     }
 
     public AreaController() {

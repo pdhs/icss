@@ -100,17 +100,18 @@ public abstract class AbstractFacade<T> {
         TypedQuery<T> qry = getEntityManager().createQuery(temSQL, entityClass);
         Set s = parameters.entrySet();
         Iterator it = s.iterator();
+        System.out.println("temSQL = " + temSQL);
         while (it.hasNext()) {
             Map.Entry m = (Map.Entry) it.next();
             String pPara = (String) m.getKey();
             if (m.getValue() instanceof Date) {
                 Date pVal = (Date) m.getValue();
                 qry.setParameter(pPara, pVal, TemporalType.DATE);
-                System.out.println("Parameter " + pPara + "\tVal" + pVal);
+                System.out.println( pPara + " = " + pVal);
             } else {
                 Object pVal = (Object) m.getValue();
                 qry.setParameter(pPara, pVal);
-                System.out.println("Parameter " + pPara + "\tVal" + pVal);
+                System.out.println( pPara + " =" + pVal);
             }
         }
         return qry.getResultList();

@@ -177,6 +177,39 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
         selected.setTotalNoOfChildren1FemalePercentage(ifp);
         selected.setTotalNoOfChildrenMalePercentage(imp);
     }
+    
+    public void calNoOfChildrenExamined() {
+        if (selected == null) {
+            return;
+        }
+        selected.setNumberExaminedOfChildrenMale(
+                selected.getNumberExaminedOfChildren1Male()
+                + selected.getNumberExaminedOfChildren4Male()
+                + selected.getNumberExaminedOfChildren7Male()
+                + selected.getNumberExaminedOfChildren10Male()
+                + selected.getNumberExaminedOfChildrenOtherMale()
+        );
+        selected.setNumberExaminedOfChildrenFemale(
+                selected.getNumberExaminedOfChildren1Female()
+                + selected.getNumberExaminedOfChildren4Female()
+                + selected.getNumberExaminedOfChildren7Female()
+                + selected.getNumberExaminedOfChildren10Female()
+                + selected.getNumberExaminedOfChildrenOtherFemale()
+        );
+        int imp;
+        int ifp;
+        int tm = selected.getNumberExaminedOfChildrenMale();
+        int tf = selected.getNumberExaminedOfChildrenFemale();
+        if (tm + tf == 0) {
+            imp=0;
+            ifp=0;
+        } else {
+            imp = tm * 100 / (tm + tf);
+            ifp = tf * 100 / (tm + tf);
+        }
+        selected.setNumberExaminedOfChildren1FemalePercentage(ifp);
+        selected.setNumberExaminedOfChildrenMalePercentage(imp);
+    }
 
     @FacesConverter(forClass = SummeryOfSchoolMedicalInspection.class)
     public static class SummeryOfSchoolMedicalInspectionControllerConverter implements Converter {

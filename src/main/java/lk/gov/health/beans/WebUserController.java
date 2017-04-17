@@ -306,7 +306,7 @@ public class WebUserController implements Serializable {
                 myMohAreas.add(loggedMohArea);
                 myPhiAreas.add(loggedPhiArea);
                 myAreas = areaController.getAreas(null, loggedPhiArea);
-                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, loggedPdhsArea);
+                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
                 mySchools = institutionController.getInstitutions(InstitutionType.School, loggedPhiArea , null, null) ;
                 break;
             case SPHI:
@@ -323,7 +323,7 @@ public class WebUserController implements Serializable {
                 myMohAreas.add(loggedMohArea);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedMohArea);
                 myAreas = areaController.getAreas(null, loggedMohArea);
-                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, loggedPdhsArea);
+                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
                 mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, loggedRdhsArea) ;
                 break;
             case MO_RDHS:
@@ -338,7 +338,7 @@ public class WebUserController implements Serializable {
                 myMohAreas = areaController.getAreas(AreaType.MOH, loggedRdhsArea);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedRdhsArea);
                 myAreas = areaController.getAreas(null, loggedRdhsArea);
-                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, loggedPdhsArea);
+                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
                 mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, loggedRdhsArea) ;
                 break;
             case PSPHI:
@@ -347,11 +347,11 @@ public class WebUserController implements Serializable {
             case CCP_PDHS:
                 loggedPdhsArea = loggedUser.getArea();
                 myProvinces.add(loggedPdhsArea);
-                myDistricts = areaController.getAreas(AreaType.District, loggedPdhsArea);
+                myDistricts = areaController.getAreas(AreaType.District, loggedRdhsArea);
                 myMohAreas = areaController.getAreas(AreaType.MOH, loggedPdhsArea);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedPdhsArea);
                 myAreas = areaController.getAreas(null, loggedPdhsArea);
-                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, loggedPdhsArea);
+                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
                 mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, loggedPdhsArea) ;
                 break;
             case Institution_Administrator:
@@ -363,7 +363,7 @@ public class WebUserController implements Serializable {
                 myMohAreas = areaController.getAreas(AreaType.MOH, null);
                 myPhiAreas = areaController.getAreas(AreaType.PHI, null);
                 myAreas = areaController.getAreas(null, null);
-                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, loggedPdhsArea);
+                myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
                 mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, null) ;
                 break;
             case Guest:
@@ -392,8 +392,6 @@ public class WebUserController implements Serializable {
             case PSPHI:
             case DSPHI:
             case SPHI:
-            case PHI:
-            case PHI_Staff:
             case RDHS_Staff:
             case PDHS_Staff:
             case MO_School_Health:
@@ -402,6 +400,8 @@ public class WebUserController implements Serializable {
             case CCP_PDHS:
             case CCP_RDHS:
                 return true;
+            case PHI:
+            case PHI_Staff:
             case Guest:
                 return false;
 
