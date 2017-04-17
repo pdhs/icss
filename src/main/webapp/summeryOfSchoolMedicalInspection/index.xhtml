@@ -19,6 +19,11 @@
                     <p:panel header="Manage Summery of School Medical Inspections" >
                         <h:panelGrid columns="1" >
                             <p:commandButton styleClass="defaultButton" ajax="false" value="Add Summery" action="#{summeryOfSchoolMedicalInspectionController.toAddSummery}" ></p:commandButton>
+                            <p:commandButton styleClass="defaultButton" ajax="false" value="View My Summeries" action="#{summeryOfSchoolMedicalInspectionController.toViewMySummeries}" ></p:commandButton>
+                            <p:commandButton styleClass="defaultButton" ajax="false" value="View PHI Area Summeries" action="#{summeryOfSchoolMedicalInspectionController.toViewPhiAreaSummeries}" ></p:commandButton>
+                            <p:commandButton styleClass="defaultButton" ajax="false" value="View MOH Area Summeries" action="#{summeryOfSchoolMedicalInspectionController.toViewMohAreaSummeries}" ></p:commandButton>
+                            <p:commandButton styleClass="defaultButton" ajax="false" value="View RDHS Area Summeries" action="#{summeryOfSchoolMedicalInspectionController.toViewRdhsAreaSummeries}" ></p:commandButton>
+                            <p:commandButton styleClass="defaultButton" ajax="false" value="View PDHS Area Summeries" action="#{summeryOfSchoolMedicalInspectionController.toViewPdhsAreaSummeries}" ></p:commandButton>
                             <p:commandButton styleClass="defaultButton"  ajax="false" value="Manage All Summeries" action="/summeryOfSchoolMedicalInspection/List"  ></p:commandButton>
                         </h:panelGrid>
                     </p:panel>

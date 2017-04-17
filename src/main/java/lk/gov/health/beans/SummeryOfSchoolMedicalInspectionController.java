@@ -7,7 +7,9 @@ import lk.gov.health.faces.SummeryOfSchoolMedicalInspectionFacade;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,6 +22,7 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import javax.inject.Inject;
 import javax.inject.Named;
+import lk.gov.health.schoolhealth.Area;
 
 @Named
 @SessionScoped
@@ -27,15 +30,103 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
 
     @Inject
     WebUserController webUserController;
-    
+
     @EJB
     private lk.gov.health.faces.SummeryOfSchoolMedicalInspectionFacade ejbFacade;
     private List<SummeryOfSchoolMedicalInspection> items = null;
     private SummeryOfSchoolMedicalInspection selected;
+    Area area;
+    Date fromDate;
+    Date toDate;
 
     public String toAddSummery() {
         selected = new SummeryOfSchoolMedicalInspection();
         return "/summeryOfSchoolMedicalInspection/add";
+    }
+
+    public String toViewMySummeries() {
+        return "/summeryOfSchoolMedicalInspection/view_my_summery";
+    }
+
+    public String toViewPhiAreaSummeries() {
+        return "/summeryOfSchoolMedicalInspection/view_phi_summeries";
+    }
+
+    public String toViewMohAreaSummeries() {
+        return "/summeryOfSchoolMedicalInspection/view_moh_summeries";
+    }
+
+    public String toViewRdhsAreaSummeries() {
+        return "/summeryOfSchoolMedicalInspection/view_rdhs_summeries";
+    }
+
+    public String toViewPdhsAreaSummeries() {
+        return "/summeryOfSchoolMedicalInspection/view_pdhs_summeries";
+    }
+
+    public String viewMySummeries() {
+        String j;
+        Map m = new HashMap();
+        j = "select s from SummeryOfSchoolMedicalInspection s "
+                + " where s.creator=:c and "
+                + " s.dateExamined between :fd and :td ";
+        m.put("c", webUserController.getLoggedUser());
+        m.put("fd", fromDate);
+        m.put("td", toDate);
+        items = getFacade().findBySQL(j, m);
+        return "/summeryOfSchoolMedicalInspection/view_my_summery";
+    }
+
+    public String viewPhiAreaSummeries() {
+        String j;
+        Map m = new HashMap();
+        j = "select s from SummeryOfSchoolMedicalInspection s "
+                + " where s.dateExamined between :fd and :td and "
+                + " s.phiArea=:a ";
+        m.put("fd", fromDate);
+        m.put("td", toDate);
+        m.put("a", area);
+        items = getFacade().findBySQL(j, m);
+        return "/summeryOfSchoolMedicalInspection/view_phi_summeries";
+    }
+
+    public String viewMohAreaSummeries() {
+        String j;
+        Map m = new HashMap();
+        j = "select s from SummeryOfSchoolMedicalInspection s "
+                + " where s.dateExamined between :fd and :td and "
+                + " s.mohArea=:a ";
+        m.put("fd", fromDate);
+        m.put("td", toDate);
+        m.put("a", area);
+        items = getFacade().findBySQL(j, m);
+        return "/summeryOfSchoolMedicalInspection/view_moh_summeries";
+    }
+
+    public String viewRdhsAreaSummeries() {
+        String j;
+        Map m = new HashMap();
+        j = "select s from SummeryOfSchoolMedicalInspection s "
+                + " where s.dateExamined between :fd and :td and "
+                + " s.mohArea.parentArea=:a ";
+        m.put("fd", fromDate);
+        m.put("td", toDate);
+        m.put("a", area);
+        items = getFacade().findBySQL(j, m);
+        return "/summeryOfSchoolMedicalInspection/view_rdhs_summeries";
+    }
+
+    public String viewPdhsAreaSummeries() {
+        String j;
+        Map m = new HashMap();
+        j = "select s from SummeryOfSchoolMedicalInspection s "
+                + " where s.dateExamined between :fd and :td and "
+                + " s.mohArea.parentArea.parentArea=:a ";
+        m.put("fd", fromDate);
+        m.put("td", toDate);
+        m.put("a", area);
+        items = getFacade().findBySQL(j, m);
+        return "/summeryOfSchoolMedicalInspection/view_pdhs_summeries";
     }
 
     public String saveSummery() {
@@ -168,8 +259,8 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
         int tm = selected.getTotalNoOfChildrenMale();
         int tf = selected.getTotalNoOfChildrenFemale();
         if (tm + tf == 0) {
-            imp=0;
-            ifp=0;
+            imp = 0;
+            ifp = 0;
         } else {
             imp = tm * 100 / (tm + tf);
             ifp = tf * 100 / (tm + tf);
@@ -177,7 +268,7 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
         selected.setTotalNoOfChildren1FemalePercentage(ifp);
         selected.setTotalNoOfChildrenMalePercentage(imp);
     }
-    
+
     public void calNoOfChildrenExamined() {
         if (selected == null) {
             return;
@@ -201,14 +292,38 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
         int tm = selected.getNumberExaminedOfChildrenMale();
         int tf = selected.getNumberExaminedOfChildrenFemale();
         if (tm + tf == 0) {
-            imp=0;
-            ifp=0;
+            imp = 0;
+            ifp = 0;
         } else {
             imp = tm * 100 / (tm + tf);
             ifp = tf * 100 / (tm + tf);
         }
         selected.setNumberExaminedOfChildren1FemalePercentage(ifp);
         selected.setNumberExaminedOfChildrenMalePercentage(imp);
+    }
+
+    public Date getFromDate() {
+        return fromDate;
+    }
+
+    public void setFromDate(Date fromDate) {
+        this.fromDate = fromDate;
+    }
+
+    public Date getToDate() {
+        return toDate;
+    }
+
+    public void setToDate(Date toDate) {
+        this.toDate = toDate;
+    }
+
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
     }
 
     @FacesConverter(forClass = SummeryOfSchoolMedicalInspection.class)
