@@ -303,6 +303,9 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
     }
 
     public Date getFromDate() {
+        if(fromDate==null){
+            fromDate = webUserController.getFirstDayOfYear();
+        }
         return fromDate;
     }
 
@@ -311,6 +314,9 @@ public class SummeryOfSchoolMedicalInspectionController implements Serializable 
     }
 
     public Date getToDate() {
+        if(toDate==null){
+            toDate = webUserController.getLastDayOfYear();
+        }
         return toDate;
     }
 

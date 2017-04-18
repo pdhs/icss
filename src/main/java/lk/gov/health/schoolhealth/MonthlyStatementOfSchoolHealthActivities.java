@@ -6,12 +6,17 @@
 package lk.gov.health.schoolhealth;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 /**
@@ -62,25 +67,30 @@ public class MonthlyStatementOfSchoolHealthActivities implements Serializable {
     // 2. School ENvironment
 
     // 3. Health Promotion and Educational Programmes
-    
     // 4. Schoool Medical Inspection
-    
-    
     // 5. School Medical Inspection Summery
-    
-    
+    @OneToMany(mappedBy = "monthlyStatementOfSchoolHealthActivities", cascade = CascadeType.ALL)
+    private List<MonthlyStatementSummeryDataForSingleInspection> monthlyStatementSummeryDataForSingleInspections;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    MonthlyStatementSummeryDataForSingleInspection totalProbelms;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    MonthlyStatementSummeryDataForSingleInspection totalForTheMonth;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    MonthlyStatementSummeryDataForSingleInspection totalForTheYear;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    MonthlyStatementSummeryDataForSingleInspection numberCorrectedForTheMonth;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    MonthlyStatementSummeryDataForSingleInspection numberCorrectedForTheYear;
+
     // 6. Problems and Defects detected at School Medical Inspection
-    
-    
     // 7. Immunization
-    
     // 8. Micronutrients, anti Helminthic treatment and follow up activities
-    
     // 9. Information on Health Promoting Schools
-    
-    
-    
-    
     public Long getId() {
         return id;
     }
@@ -89,8 +99,57 @@ public class MonthlyStatementOfSchoolHealthActivities implements Serializable {
         this.id = id;
     }
 
-    
-    
+    public List<MonthlyStatementSummeryDataForSingleInspection> getMonthlyStatementSummeryDataForSingleInspections() {
+        if (monthlyStatementSummeryDataForSingleInspections == null) {
+            monthlyStatementSummeryDataForSingleInspections = new ArrayList<MonthlyStatementSummeryDataForSingleInspection>();
+        }
+        return monthlyStatementSummeryDataForSingleInspections;
+    }
+
+    public void setMonthlyStatementSummeryDataForSingleInspections(List<MonthlyStatementSummeryDataForSingleInspection> monthlyStatementSummeryDataForSingleInspections) {
+        this.monthlyStatementSummeryDataForSingleInspections = monthlyStatementSummeryDataForSingleInspections;
+    }
+
+    public MonthlyStatementSummeryDataForSingleInspection getTotalProbelms() {
+        return totalProbelms;
+    }
+
+    public void setTotalProbelms(MonthlyStatementSummeryDataForSingleInspection totalProbelms) {
+        this.totalProbelms = totalProbelms;
+    }
+
+    public MonthlyStatementSummeryDataForSingleInspection getTotalForTheMonth() {
+        return totalForTheMonth;
+    }
+
+    public void setTotalForTheMonth(MonthlyStatementSummeryDataForSingleInspection totalForTheMonth) {
+        this.totalForTheMonth = totalForTheMonth;
+    }
+
+    public MonthlyStatementSummeryDataForSingleInspection getTotalForTheYear() {
+        return totalForTheYear;
+    }
+
+    public void setTotalForTheYear(MonthlyStatementSummeryDataForSingleInspection totalForTheYear) {
+        this.totalForTheYear = totalForTheYear;
+    }
+
+    public MonthlyStatementSummeryDataForSingleInspection getNumberCorrectedForTheMonth() {
+        return numberCorrectedForTheMonth;
+    }
+
+    public void setNumberCorrectedForTheMonth(MonthlyStatementSummeryDataForSingleInspection numberCorrectedForTheMonth) {
+        this.numberCorrectedForTheMonth = numberCorrectedForTheMonth;
+    }
+
+    public MonthlyStatementSummeryDataForSingleInspection getNumberCorrectedForTheYear() {
+        return numberCorrectedForTheYear;
+    }
+
+    public void setNumberCorrectedForTheYear(MonthlyStatementSummeryDataForSingleInspection numberCorrectedForTheYear) {
+        this.numberCorrectedForTheYear = numberCorrectedForTheYear;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;

@@ -7,6 +7,8 @@ import lk.gov.health.faces.WebUserFacade;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +29,7 @@ import lk.gov.health.schoolhealth.AreaType;
 import lk.gov.health.schoolhealth.Institution;
 import lk.gov.health.schoolhealth.InstitutionType;
 import lk.gov.health.schoolhealth.PrivilegeType;
+import lk.gov.health.schoolhealth.Quarter;
 
 @Named
 @SessionScoped
@@ -71,7 +74,6 @@ public class WebUserController implements Serializable {
     private Area rdhsArea;
     private Institution mohOffice;
     private Institution rdhsOffice;
-
 
     public String toAddNewUser() {
         selected = new WebUser();
@@ -292,7 +294,7 @@ public class WebUserController implements Serializable {
         if (developmentStage) {
             myAreas = areaController.getAreas(null, null);
             myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
-            mySchools = institutionController.getInstitutions(InstitutionType.School, null, null, null) ;
+            mySchools = institutionController.getInstitutions(InstitutionType.School, null, null, null);
         }
         switch (loggedUser.getType()) {
             case PHI:
@@ -307,7 +309,7 @@ public class WebUserController implements Serializable {
                 myPhiAreas.add(loggedPhiArea);
                 myAreas = areaController.getAreas(null, loggedPhiArea);
                 myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
-                mySchools = institutionController.getInstitutions(InstitutionType.School, loggedPhiArea , null, null) ;
+                mySchools = institutionController.getInstitutions(InstitutionType.School, loggedPhiArea, null, null);
                 break;
             case SPHI:
             case MOH:
@@ -324,7 +326,7 @@ public class WebUserController implements Serializable {
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedMohArea);
                 myAreas = areaController.getAreas(null, loggedMohArea);
                 myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
-                mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, loggedRdhsArea) ;
+                mySchools = institutionController.getInstitutions(InstitutionType.School, null, null, loggedRdhsArea);
                 break;
             case MO_RDHS:
             case CCP_RDHS:
@@ -339,7 +341,7 @@ public class WebUserController implements Serializable {
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedRdhsArea);
                 myAreas = areaController.getAreas(null, loggedRdhsArea);
                 myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
-                mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, loggedRdhsArea) ;
+                mySchools = institutionController.getInstitutions(InstitutionType.School, null, null, loggedRdhsArea);
                 break;
             case PSPHI:
             case PDHS_Staff:
@@ -352,7 +354,7 @@ public class WebUserController implements Serializable {
                 myPhiAreas = areaController.getAreas(AreaType.PHI, loggedPdhsArea);
                 myAreas = areaController.getAreas(null, loggedPdhsArea);
                 myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
-                mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, loggedPdhsArea) ;
+                mySchools = institutionController.getInstitutions(InstitutionType.School, null, null, loggedPdhsArea);
                 break;
             case Institution_Administrator:
             case Institution_Super_User:
@@ -364,7 +366,7 @@ public class WebUserController implements Serializable {
                 myPhiAreas = areaController.getAreas(AreaType.PHI, null);
                 myAreas = areaController.getAreas(null, null);
                 myEducationalZones = areaController.getAreas(AreaType.EducationalZone, null);
-                mySchools = institutionController.getInstitutions(InstitutionType.School, null , null, null) ;
+                mySchools = institutionController.getInstitutions(InstitutionType.School, null, null, null);
                 break;
             case Guest:
                 break;
@@ -717,8 +719,6 @@ public class WebUserController implements Serializable {
         this.mySchools = mySchools;
     }
 
-    
-    
     public List<WebUser> getItemsAvailableSelectMany() {
         return getFacade().findAll();
     }
@@ -882,6 +882,164 @@ public class WebUserController implements Serializable {
 
     public void setMyAreas(List<Area> myAreas) {
         this.myAreas = myAreas;
+    }
+
+    public Date getFirstDayOfQuarter() {
+        Calendar c = Calendar.getInstance();
+        int month = c.get(Calendar.MONTH);
+        Quarter q = null;
+        switch (month) {
+            case Calendar.JANUARY:
+            case Calendar.FEBRUARY:
+            case Calendar.MARCH:
+                q = Quarter.First;
+                break;
+            case Calendar.APRIL:
+            case Calendar.MAY:
+            case Calendar.JUNE:
+                q = Quarter.Second;
+                break;
+            case Calendar.JULY:
+            case Calendar.AUGUST:
+            case Calendar.SEPTEMBER:
+                q = Quarter.Thired;
+                break;
+            case Calendar.OCTOBER:
+            case Calendar.NOVEMBER:
+            case Calendar.DECEMBER:
+                q = Quarter.Forth;
+        }
+        return getFirstDayOfQuarter(q);
+    }
+
+    public Date getFirstDayOfQuarter(Quarter quarter) {
+        Calendar c = Calendar.getInstance();
+        int y = c.get(Calendar.YEAR);
+        return getFirstDayOfQuarter(y, quarter);
+    }
+
+    public Date getFirstDayOfQuarter(int year, Quarter quarter) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        switch (quarter) {
+            case First:
+                c.set(Calendar.MONTH, Calendar.JANUARY);
+                break;
+            case Second:
+                c.set(Calendar.MONTH, Calendar.APRIL);
+                break;
+            case Thired:
+                c.set(Calendar.MONTH, Calendar.JULY);
+                break;
+            case Forth:
+                c.set(Calendar.MONTH, Calendar.OCTOBER);
+                break;
+        }
+        return getFirstDayOfMonth(c.getTime());
+    }
+
+    public Date getLastDayOfQuarter() {
+        Calendar c = Calendar.getInstance();
+        int month = c.get(Calendar.MONTH);
+        Quarter q = null;
+        switch (month) {
+            case Calendar.JANUARY:
+            case Calendar.FEBRUARY:
+            case Calendar.MARCH:
+                q = Quarter.First;
+                break;
+            case Calendar.APRIL:
+            case Calendar.MAY:
+            case Calendar.JUNE:
+                q = Quarter.Second;
+                break;
+            case Calendar.JULY:
+            case Calendar.AUGUST:
+            case Calendar.SEPTEMBER:
+                q = Quarter.Thired;
+                break;
+            case Calendar.OCTOBER:
+            case Calendar.NOVEMBER:
+            case Calendar.DECEMBER:
+                q = Quarter.Forth;
+        }
+        return getLastDayOfQuarter(q);
+    }
+
+    public Date getLastDayOfQuarter(Quarter quarter) {
+        Calendar c = Calendar.getInstance();
+        int y = c.get(Calendar.YEAR);
+        return getLastDayOfQuarter(y, quarter);
+    }
+
+    public Date getLastDayOfQuarter(int year, Quarter quarter) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        switch (quarter) {
+            case First:
+                c.set(Calendar.MONTH, Calendar.MARCH);
+                break;
+            case Second:
+                c.set(Calendar.MONTH, Calendar.JUNE);
+                break;
+            case Thired:
+                c.set(Calendar.MONTH, Calendar.SEPTEMBER);
+                break;
+            case Forth:
+                c.set(Calendar.MONTH, Calendar.DECEMBER);
+                break;
+        }
+        return getLastDayOfMonth(c.getTime());
+    }
+
+    public Date getFirstDayOfYear() {
+        return getFirstDayOfYear(new Date());
+    }
+
+    public Date getFirstDayOfYear(Date date) {
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.set(Calendar.MONTH, Calendar.JANUARY);
+        return getFirstDayOfMonth(c.getTime());
+    }
+
+    public Date getLastDayOfYear() {
+        return getLastDayOfYear(new Date());
+    }
+
+    public Date getLastDayOfYear(Date date) {
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.set(Calendar.MONTH, Calendar.DECEMBER);
+        return getLastDayOfMonth(c.getTime());
+    }
+
+    public Date getFirstDayOfMonth() {
+        return getFirstDayOfMonth(new Date());
+    }
+
+    public Date getFirstDayOfMonth(Date date) {
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.set(Calendar.DAY_OF_MONTH, c.getActualMinimum(Calendar.DAY_OF_MONTH));
+        c.set(Calendar.HOUR_OF_DAY, c.getActualMinimum(Calendar.HOUR_OF_DAY));
+        c.set(Calendar.MINUTE, c.getActualMinimum(Calendar.MINUTE));
+        c.set(Calendar.SECOND, c.getActualMinimum(Calendar.SECOND));
+        return c.getTime();
+    }
+
+    public Date getLastDayOfMonth() {
+        return getLastDayOfMonth(new Date());
+    }
+
+    public Date getLastDayOfMonth(Date date) {
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.set(Calendar.DAY_OF_MONTH, c.getActualMaximum(Calendar.DAY_OF_MONTH));
+        c.set(Calendar.HOUR_OF_DAY, c.getActualMaximum(Calendar.HOUR_OF_DAY));
+        c.set(Calendar.MINUTE, c.getActualMaximum(Calendar.MINUTE));
+        c.set(Calendar.SECOND, c.getActualMaximum(Calendar.SECOND));
+        return c.getTime();
     }
 
     @FacesConverter(forClass = WebUser.class)

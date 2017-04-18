@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="MonthlyStatementOfSchoolHealthActivitiesViewDlg" widgetVar="MonthlyStatementOfSchoolHealthActivitiesViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle}">
+            <h:form id="MonthlyStatementOfSchoolHealthActivitiesViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{monthlyStatementOfSchoolHealthActivitiesController.selected != null}">
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_id}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.id}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_id}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalProbelms}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalProbelms}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalProbelms}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalForTheMonth}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalForTheMonth}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalForTheMonth}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalForTheYear}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalForTheYear}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalForTheYear}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_numberCorrectedForTheMonth}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.numberCorrectedForTheMonth}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_numberCorrectedForTheMonth}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_numberCorrectedForTheYear}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.numberCorrectedForTheYear}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_numberCorrectedForTheYear}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_rdhsArea}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.rdhsArea}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_rdhsArea}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_mohArea}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.mohArea}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_mohArea}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_phiArea}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.phiArea}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_phiArea}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_statementYear}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.statementYear}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_statementYear}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_statementMonth}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.statementMonth}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_statementMonth}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_statementDate}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.statementDate}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_statementDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfSchoolsLessThan200}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfSchoolsLessThan200}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfSchoolsLessThan200}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfSchoolsMoreThan200}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfSchoolsMoreThan200}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfSchoolsMoreThan200}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfSchools}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfSchools}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfSchools}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsMaleInLessThan200Schools}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsMaleInLessThan200Schools}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsMaleInLessThan200Schools}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsFemaleInLessThan200Schools}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsFemaleInLessThan200Schools}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsFemaleInLessThan200Schools}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsMaleInMoreThan200Schools}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsMaleInMoreThan200Schools}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsMaleInMoreThan200Schools}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsFemaleInMoreThan200Schools}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsFemaleInMoreThan200Schools}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsFemaleInMoreThan200Schools}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearGrade1Male}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearGrade1Male}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearGrade1Male}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearGrade1Female}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearGrade1Female}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearGrade1Female}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearGrade4Male}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearGrade4Male}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearGrade4Male}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearGrade4Female}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearGrade4Female}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearGrade4Female}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearGrade7Male}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearGrade7Male}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearGrade7Male}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearGrade7Female}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearGrade7Female}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearGrade7Female}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearGrade10Male}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearGrade10Male}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearGrade10Male}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearGrade10Female}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearGrade10Female}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearGrade10Female}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearGradeOtherMale}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearGradeOtherMale}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearGradeOtherMale}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearGradeOtherFemale}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearGradeOtherFemale}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearGradeOtherFemale}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearMale}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearMale}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearMale}"/>
+                        <h:outputText value="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesLabel_totalNoOfStudentsToBeExaminedDuringTheYearFemale}"/>
+                        <h:outputText value="#{monthlyStatementOfSchoolHealthActivitiesController.selected.totalNoOfStudentsToBeExaminedDuringTheYearFemale}" title="#{bundle4.ViewMonthlyStatementOfSchoolHealthActivitiesTitle_totalNoOfStudentsToBeExaminedDuringTheYearFemale}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle4.Close}" onclick="MonthlyStatementOfSchoolHealthActivitiesViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

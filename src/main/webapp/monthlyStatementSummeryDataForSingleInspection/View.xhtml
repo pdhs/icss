@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="MonthlyStatementSummeryDataForSingleInspectionViewDlg" widgetVar="MonthlyStatementSummeryDataForSingleInspectionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle}">
+            <h:form id="MonthlyStatementSummeryDataForSingleInspectionViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{monthlyStatementSummeryDataForSingleInspectionController.selected != null}">
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_summeryOfSchoolMedicalInspection}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.summeryOfSchoolMedicalInspection}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_summeryOfSchoolMedicalInspection}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_monthlyStatementOfSchoolHealthActivities}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.monthlyStatementOfSchoolHealthActivities}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_monthlyStatementOfSchoolHealthActivities}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildren1Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildren1Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildren1Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildren1Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildren4Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildren4Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildren4Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildren4Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildren7Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildren7Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildren7Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildren7Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildren10Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildren10Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildren10Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildren10Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildrenOtherMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildrenOtherMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildrenOtherFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildrenMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildrenMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildrenFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildrenFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildrenMalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfChildren1FemalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildren1Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildren1Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildren1Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildren1Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildren4Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildren4Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildren4Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildren4Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildren7Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildren7Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildren7Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildren7Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildren10Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildren10Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildren10Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildren10Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildrenOtherMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildrenOtherMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildrenOtherFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildrenMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildrenMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildrenFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildrenFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildrenMalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_numberExaminedOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.numberExaminedOfChildren1FemalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_numberExaminedOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildren1Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildren1Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildren1Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildren1Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildren4Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildren4Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildren4Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildren4Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildren7Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildren7Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildren7Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildren7Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildren10Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildren10Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildren10Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildren10Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildrenOtherMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildrenOtherMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildrenOtherFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildrenMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildrenMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildrenFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildrenFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildrenMalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_stuntingOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.stuntingOfChildren1FemalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_stuntingOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildren1Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildren1Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildren1Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildren1Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildren4Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildren4Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildren4Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildren4Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildren7Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildren7Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildren7Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildren7Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildren10Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildren10Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildren10Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildren10Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildrenOtherMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildrenOtherMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildrenOtherFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildrenMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildrenMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildrenFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildrenFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildrenMalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_wastingOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.wastingOfChildren1FemalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_wastingOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildren1Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildren1Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildren1Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildren1Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildren4Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildren4Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildren4Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildren4Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildren7Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildren7Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildren7Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildren7Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildren10Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildren10Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildren10Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildren10Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildrenOtherMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildrenOtherMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildrenOtherFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildrenMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildrenMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildrenFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildrenFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildrenMalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_overweightOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.overweightOfChildren1FemalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_overweightOfChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildren1Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildren1Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildren1Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildren1Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildren1Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildren1Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildren4Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildren4Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildren4Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildren4Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildren4Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildren4Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildren7Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildren7Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildren7Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildren7Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildren7Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildren7Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildren10Male}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildren10Male}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildren10Male}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildren10Female}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildren10Female}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildren10Female}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildrenOtherMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildrenOtherMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildrenOtherMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildrenOtherFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildrenOtherFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildrenOtherFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildrenMale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildrenMale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildrenMale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildrenFemale}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildrenFemale}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildrenFemale}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildrenMalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildrenMalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildrenMalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_obesityChildren1FemalePercentage}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.obesityChildren1FemalePercentage}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_obesityChildren1FemalePercentage}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_visualDefects}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.visualDefects}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_visualDefects}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_hearingDefects}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.hearingDefects}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_hearingDefects}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_speechDeefcts}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.speechDeefcts}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_speechDeefcts}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_pediculosis}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.pediculosis}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_pediculosis}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_nightBlindness}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.nightBlindness}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_nightBlindness}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_bitotSpots}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.bitotSpots}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_bitotSpots}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_squint}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.squint}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_squint}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_pallor}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.pallor}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_pallor}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_xeropthalmia}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.xeropthalmia}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_xeropthalmia}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_angularStomatitisGlossitis}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.angularStomatitisGlossitis}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_angularStomatitisGlossitis}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_dentalCaries}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.dentalCaries}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_dentalCaries}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_calculus}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.calculus}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_calculus}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_fluorosis}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.fluorosis}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_fluorosis}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_malocclusion}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.malocclusion}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_malocclusion}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_goitre}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.goitre}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_goitre}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_entDefects}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.entDefects}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_entDefects}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_lympahdenopathy}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.lympahdenopathy}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_lympahdenopathy}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_scabies}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.scabies}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_scabies}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_hypopigmentedAnaestheticPatches}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.hypopigmentedAnaestheticPatches}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_hypopigmentedAnaestheticPatches}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_otherSkinDisorders}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.otherSkinDisorders}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_otherSkinDisorders}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_orthopaedicDefects}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.orthopaedicDefects}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_orthopaedicDefects}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_rheumaticDisorders}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.rheumaticDisorders}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_rheumaticDisorders}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_heartDeceases}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.heartDeceases}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_heartDeceases}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_lungDiseases}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.lungDiseases}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_lungDiseases}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_asthma}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.asthma}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_asthma}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_behaviouralProblems}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.behaviouralProblems}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_behaviouralProblems}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_learningDifficulties}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.learningDifficulties}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_learningDifficulties}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_otherDefects}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.otherDefects}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_otherDefects}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_otherDefectsSpecify}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.otherDefectsSpecify}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_otherDefectsSpecify}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_totalNoOfDefectsExcludingNutritionProblems}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.totalNoOfDefectsExcludingNutritionProblems}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_totalNoOfDefectsExcludingNutritionProblems}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_noOfStudentsWithDefectsExcludingNutritionProblems}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.noOfStudentsWithDefectsExcludingNutritionProblems}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_noOfStudentsWithDefectsExcludingNutritionProblems}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_noReferredExcludingNutritionProblems}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.noReferredExcludingNutritionProblems}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_noReferredExcludingNutritionProblems}"/>
+                        <h:outputText value="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionLabel_id}"/>
+                        <h:outputText value="#{monthlyStatementSummeryDataForSingleInspectionController.selected.id}" title="#{bundle2.ViewMonthlyStatementSummeryDataForSingleInspectionTitle_id}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle2.Close}" onclick="MonthlyStatementSummeryDataForSingleInspectionViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
